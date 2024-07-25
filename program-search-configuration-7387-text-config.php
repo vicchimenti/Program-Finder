@@ -148,7 +148,7 @@ try {
         $exactSearch->runFilter();
     }
 
-    if ($queryHandler->isQuerySet('school')) {
+    if ($queryHandler->isQuerySet('secondarySchool')) {
         $exactSearch->setMember('element', 'secondarySchool');
         $exactSearch->setMember('query', $queryHandler->getQueryValue('secondarySchool'));
         $exactSearch->setMember('multipleValueState', true);
