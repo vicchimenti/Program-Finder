@@ -105,6 +105,8 @@ try {
         $substringSearch->runFilter();
         $substringSearch->setMember('element', 'school');
         $substringSearch->runFilter();
+        $substringSearch->setMember('element', 'secondarySchool');
+        $substringSearch->runFilter();
       	$substringSearch->setMember('element', 'programType');
       	$substringSearch->runFilter();
         $substringSearch->setMember('element', 'areaOfStudy');
