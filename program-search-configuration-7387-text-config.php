@@ -80,8 +80,8 @@ try {
 
     $queryHandler = \T4\PHPSearchLibrary\QueryHandlerFactory::getInstance('QueryHandler', $queryString);
     $queryHandler->setStopWords($stopWords);
-    $queryHandler->setDontRemoveStopwords(array('learningFormat', 'programLevel', 'areaOfStudy', 'school','programType','degree'));
-    $queryHandler->setDontTokenize(array('learningFormat', 'programLevel', 'areaOfStudy', 'school','programType','degree'));
+    $queryHandler->setDontRemoveStopwords(array('learningFormat', 'programLevel', 'areaOfStudy', 'school', 'secondarySchool', 'programType','degree'));
+    $queryHandler->setDontTokenize(array('learningFormat', 'programLevel', 'areaOfStudy', 'school','secondarySchool', 'programType','degree'));
     $queryHandler->setIgnoreQueries(array('addCourse','removeCourse','paginate','page'));
     $queryHandler->addCharactersToGenericRegex(array('-','/','&','.','\'','(',')','_'));
     $queryHandler->stemQuery(array('keywords'));
