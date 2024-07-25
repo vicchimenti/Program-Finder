@@ -148,13 +148,13 @@ try {
         $exactSearch->runFilter();
     }
 
-    if ($queryHandler->isQuerySet('secondarySchool')) {
-        $exactSearch->setMember('element', 'secondarySchool');
-        $exactSearch->setMember('query', $queryHandler->getQueryValue('secondarySchool'));
-        $exactSearch->setMember('multipleValueState', true);
-        $exactSearch->setMember('multipleValueSeparator', '|');
-        $exactSearch->runFilter();
-    }
+    // if ($queryHandler->isQuerySet('secondarySchool')) {
+    //     $exactSearch->setMember('element', 'secondarySchool');
+    //     $exactSearch->setMember('query', $queryHandler->getQueryValue('secondarySchool'));
+    //     $exactSearch->setMember('multipleValueState', true);
+    //     $exactSearch->setMember('multipleValueSeparator', '|');
+    //     $exactSearch->runFilter();
+    // }
 
     if ($queryHandler->isQuerySet('programType')) {
         $exactSearch->setMember('element', 'programType');
