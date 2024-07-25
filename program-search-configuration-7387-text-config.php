@@ -226,6 +226,7 @@ try {
         $frequencySearch->setMember('boost', 4);
         $frequencySearch->setMember('element', 'school');
         $frequencySearch->runProcessor();
+        $frequencySearch->setMember('boost', 4);
         $frequencySearch->setMember('element', 'secondarySchool');
         $frequencySearch->runProcessor();
         $frequencySearch->setMember('boost', 3);
