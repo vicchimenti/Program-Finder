@@ -80,8 +80,8 @@ try {
 
     $queryHandler = \T4\PHPSearchLibrary\QueryHandlerFactory::getInstance('QueryHandler', $queryString);
     $queryHandler->setStopWords($stopWords);
-    $queryHandler->setDontRemoveStopwords(array('learningFormat', 'programLevel', 'areaOfStudy', 'school', 'secondarySchool', 'programType','degree'));
-    $queryHandler->setDontTokenize(array('learningFormat', 'programLevel', 'areaOfStudy', 'school','secondarySchool', 'programType','degree'));
+    $queryHandler->setDontRemoveStopwords(array('learningFormat', 'programLevel', 'areaOfStudy', 'school', 'programType','degree'));
+    $queryHandler->setDontTokenize(array('learningFormat', 'programLevel', 'areaOfStudy', 'school', 'programType','degree'));
     $queryHandler->setIgnoreQueries(array('addCourse','removeCourse','paginate','page'));
     $queryHandler->addCharactersToGenericRegex(array('-','/','&','.','\'','(',')','_'));
     $queryHandler->stemQuery(array('keywords'));
@@ -104,8 +104,6 @@ try {
         $substringSearch->setMember('element', 'keywordTags');
         $substringSearch->runFilter();
         $substringSearch->setMember('element', 'school');
-        $substringSearch->runFilter();
-        $substringSearch->setMember('element', 'secondarySchool');
         $substringSearch->runFilter();
       	$substringSearch->setMember('element', 'programType');
       	$substringSearch->runFilter();
