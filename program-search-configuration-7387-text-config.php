@@ -141,8 +141,9 @@ try {
     }
 
     if ($queryHandler->isQuerySet('school')) {
-        $exactSearch->setMember('element', 'school');
+        $exactSearch->setMember('element', 'school', 'secondarySchool');
         $exactSearch->setMember('query', $queryHandler->getQueryValue('school'));
+        $exactSearch->setMember('query', $queryHandler->getQueryValue('secondarySchool'));
         $exactSearch->setMember('multipleValueState', true);
         $exactSearch->setMember('multipleValueSeparator', '|');
         $exactSearch->runFilter();
