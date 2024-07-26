@@ -35,7 +35,7 @@ $rangeFilters = array();
                         <?php $i = 0; ?>
                         <?php foreach ($search as $item) : ?>
                             <div class="fieldset--checkbox">
-                                <input type="checkbox" id="<?php echo $element . '[' . ++$i . ']'; ?>" value="<?php echo strtolower($item['value']); ?>" data-cookie="T4_persona" name="<?php echo $element; ?>" <?php echo $item['selected'] ? 'checked' : '' ?>>
+                                <input type="checkbox" id="<?php echo $element . '[' . ++$i . ']'; ?>" value="<?php echo strtolower($item['value']); ?>" data-cookie="T4_persona" data-t4-value="<?php echo strtolower($item['value']) ?>" name="<?php echo $element; ?>" <?php echo $item['selected'] ? 'checked' : '' ?>>
                                 <label for="<?php echo $element . '[' . $i . ']'; ?>"><?php echo $item['label']; ?></label>
                             </div>
                         <?php endforeach; ?>
@@ -180,5 +180,3 @@ $rangeFilters = array();
         </div>
     </div>
 </section>
-
-
