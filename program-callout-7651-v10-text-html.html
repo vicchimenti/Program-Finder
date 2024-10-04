@@ -97,7 +97,13 @@
             <dd><t4 type="content" name="Learning Format" output="normal" display_field="name" /></dd>
             <dt>Duration</dt>
             <dd><t4 type="content" name="Duration" output="normal" modifiers="striptags,htmlentities" /></dd>
-            <dt>Start Date</dt>
+            
+            <t4 type="content" name="Name" output="selective-output" modifiers="striptags,htmlentities" format="<dt>Start Date</dt>" />
+
+            
+
+            <t4 type="content" name="Start Date" output="normal" modifiers="striptags,htmlentities" />
+
             <t4 type="content" name="Tuition & Fees - Text" output="selective-output" process-format="true" format="<dd><a href=&quot;<t4 type=&quot;content&quot; name=&quot;Tuition & Fees - Link&quot; output=&quot;linkurl&quot; modifiers=&quot;nav_sections&quot; />&quot;><t4 type=&quot;content&quot; name=&quot;Tuition & Fees - Text&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a></dd>" />
             <dt>Credits</dt>
             <dd><t4 type="content" name="Credits" output="normal" modifiers="striptags,htmlentities" /></dd>
