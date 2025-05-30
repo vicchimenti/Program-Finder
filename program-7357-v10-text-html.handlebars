@@ -1,0 +1,169 @@
+<div class="hero--basic hero--program-detail bg--dark global-padding--15x with-photo">
+    {{embed layout="text/program-hero-image"}}
+  <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+          <div class="cell large-8">
+              <div class="hero--basic__text text-margin-reset">
+                  <h1>
+                      {{selectedValues element="Program Title"}}
+                  </h1>
+                  <div class="global-spacing--3x">
+                      <div class="wysiwyg">
+                          <p>
+                              {{publish element="Program Description"}}
+                          </p>
+                      </div>
+                  </div>
+
+                  <div class="global-spacing--3x">
+                      {{nav id="955" name="Breadcrumbs"}}
+                  </div>
+              </div>
+          </div>
+          {{#ifSet element="Callout Title" ~}}
+              <div class="cell large-4">
+                  <article class="callout text-margin-reset oho-animate oho-animate-single fade-in">
+                      <h2 class="h6">{{publish element="Callout Title"}}</h2>
+                        {{#ifSet element="Callout Description" ~}}
+                            <div class="global-spacing--2x">
+                                <div class="wysiwyg">
+                                       {{{publish element="Callout Description"}}}
+                                  </div>
+                            </div>
+                        {{~/ifSet}}
+                        {{#ifSet element="Callout CTA Title" ~}}
+                          <div class="global-spacing--3x">
+                              <a href="{{#link element="Callout CTA Internal Link" }}{{linkUrl}}{{/link}}{{publish element="Callout CTA External Link"}}" class="btn">
+                                     {{publish element="Callout CTA Title"}}
+                                </a>
+                          </div>
+                        {{~/ifSet}}
+                  </article>
+              </div>
+          {{~/ifSet}}
+      </div>  
+  </div>
+</div>
+
+<section class="program-info global-margin--10x">
+  <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+          <div class="cell medium-8">
+              <h2>About this Program</h2>
+              <div class="wysiwyg">
+                  {{{publish element="About this Program"}}}
+              </div>
+              <!-- /.wysiwyg -->
+              <div class="btn-row global-spacing--3x">
+                    {{#ifSet element="Main CTA link" ~}}
+                      <ul>
+                          <li class="external">
+                                <a href="{{#link element="Main CTA link" }}{{linkUrl}}{{/link}}" class="btn">
+                                    {{#link element="Main CTA link" }}{{linkText}}{{/link}}
+                                </a>
+                          </li>
+                      </ul>
+                    {{~/ifSet}}
+                    {{#or (ifSet element="Second CTA Link") (ifSet element="Third CTA Link")~}}
+                      <ul>
+                            {{#ifSet element="Second CTA link" ~}}<li class="funderline">{{{publish element="Second CTA Link"}}}</li>{{~/ifSet}}
+                            {{#ifSet element="Third CTA link" ~}}<li class="funderline">{{{publish element="Third CTA Link"}}}</li>{{~/ifSet}}
+                      </ul>
+                    {{~/or}}
+              </div>
+          </div>
+          <div class="cell medium-4">
+              <aside class="callout">
+                  <h2 class="eyebrow">Program Information</h2>
+                  <dl class="global-spacing--2x">
+                    	{{#ifSet element="Program Type" ~}}
+                            <dt>Program Type</dt>
+                            <dd>
+                                {{{publish element="Program Type"}}}
+                            </dd>
+                    	{{~/ifSet}}
+                    	{{#ifSet element="Degree" ~}}
+                            <dt>Degree</dt>
+                            <dd>
+                                <div class="program-degrees">
+                                    <ul>
+                                        <li>
+                                            {{publish element="Degree"}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                    	{{~/ifSet}}
+                        {{#ifSet element="School" ~}}
+                            <dt>School</dt>
+                            <dd>
+                              	{{#each (selected element="School") ~}}
+                                    {{#eq name "Albers School of Business & Economics"~}}
+                                        {{nav name="Path to Albers School of Business & Economics" id="1098"}}
+                                    {{~/eq}}
+                                    {{#eq name "College of Arts & Sciences"~}}
+                                        {{nav name="Path to College of Arts & Sciences" id="1099"}}
+                                    {{~/eq}}
+                                    {{#eq name "College of Education"~}}
+                                        {{nav name="Path to College of Education" id="1100"}}
+                                    {{~/eq}}
+                              		{{#eq name "College of Nursing"~}}
+                                        {{nav name="Path to College of Nursing" id="1101"}}
+                                    {{~/eq}}
+                              		{{#eq name "College of Science & Engineering"~}}
+                                        {{nav name="Path to College of Science & Engineering" id="1102"}}
+                                    {{~/eq}}
+                                    {{#eq name "Cornish College of the Arts"~}}
+                                        {{nav name="Path to Cornish College of Arts" id="1107"}}
+                                    {{~/eq}}
+                              		{{#eq name "School of Law"~}}
+                              			<a href="https://law.seattleu.edu/">School of Law</a>
+                                    {{~/eq}}
+                                    {{#not @last}} | {{/not}}
+                                {{~/each}}
+                            </dd>
+                        {{~/ifSet}}
+                        <dt>Learning Format</dt>
+                        <dd>
+                              {{#each (selected element="Learning Format") ~}}
+                                  {{#eq name "In-Person"~}}
+                                      {{#ifSet element="In-Person Program Link" ~}}<a href="{{#link element="In-Person Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
+                                      {{name}}
+                                      {{#ifSet element="In-Person Program Link" ~}}</a>{{~/ifSet}}
+                                  {{~/eq}}
+                                  {{#eq name "Online"~}}
+                                      {{#ifSet element="Online Program Link" ~}}<a href="{{#link element="Online Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
+                                      {{name}}
+                                      {{#ifSet element="Online Program Link" ~}}</a>{{~/ifSet}}
+                                  {{~/eq}}
+                                  {{#eq name "Hybrid"~}}
+                                      {{#ifSet element="Hybrid Program Link" ~}}<a href="{{#link element="Hybrid Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
+                                      {{name}}
+                                      {{#ifSet element="Hybrid Program Link" ~}}</a>{{~/ifSet}}
+                                  {{~/eq}}
+                                  {{#not @last}} | {{/not}}
+                              {{~/each}}
+                        </dd>
+                        <dt>Duration</dt>
+                        <dd>
+                            {{publish element="Duration"}}
+                        </dd>
+                        {{#ifSet element="Start Date" ~}}
+                            <dt>Start Date</dt>
+                            <dd>{{publish element="Start Date"}}</dd>
+                        {{~/ifSet}}
+                        <dt>Credits</dt>
+                        <dd>
+                            {{publish element="Credits"}}
+                        </dd>
+                          {{#and (ifSet element="Tuition & Fees - Link") (ifSet element="Tuition & Fees - Text")~}}
+                            <dt>Tuition & Fees</dt>
+                            <dd><a href="{{#link element="Tuition & Fees - Link" }}{{linkUrl}}{{/link}}">{{publish element="Tuition & Fees - Text"}}</a></dd>
+                          {{~/and}}
+                  	</dl>
+              </aside>
+
+          </div>
+      </div>
+  </div>
+</section>
