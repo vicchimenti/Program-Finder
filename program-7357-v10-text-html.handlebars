@@ -123,31 +123,45 @@
                                 {{~/each}}
                             </dd>
                         {{~/ifSet}}
+                        {{#ifSet element="Campus" ~}}
+                            <dt>Campus</dt>
+                                <dd>
+                                    {{#each (selected element="Campus") ~}}
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    {{selectedValues element="Campus"}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    {{~/each}}
+                                </dd>
+                        {{~/ifSet}}
                         <dt>Learning Format</dt>
-                        <dd>
-                              {{#each (selected element="Learning Format") ~}}
-                                  {{#eq name "In-Person"~}}
-                                      {{#ifSet element="In-Person Program Link" ~}}<a href="{{#link element="In-Person Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
-                                      {{name}}
-                                      {{#ifSet element="In-Person Program Link" ~}}</a>{{~/ifSet}}
-                                  {{~/eq}}
-                                  {{#eq name "Online"~}}
-                                      {{#ifSet element="Online Program Link" ~}}<a href="{{#link element="Online Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
-                                      {{name}}
-                                      {{#ifSet element="Online Program Link" ~}}</a>{{~/ifSet}}
-                                  {{~/eq}}
-                                  {{#eq name "Hybrid"~}}
-                                      {{#ifSet element="Hybrid Program Link" ~}}<a href="{{#link element="Hybrid Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
-                                      {{name}}
-                                      {{#ifSet element="Hybrid Program Link" ~}}</a>{{~/ifSet}}
-                                  {{~/eq}}
-                                  {{#not @last}} | {{/not}}
-                              {{~/each}}
-                        </dd>
+                            <dd>
+                                {{#each (selected element="Learning Format") ~}}
+                                    {{#eq name "In-Person"~}}
+                                        {{#ifSet element="In-Person Program Link" ~}}<a href="{{#link element="In-Person Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
+                                        {{name}}
+                                        {{#ifSet element="In-Person Program Link" ~}}</a>{{~/ifSet}}
+                                    {{~/eq}}
+                                    {{#eq name "Online"~}}
+                                        {{#ifSet element="Online Program Link" ~}}<a href="{{#link element="Online Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
+                                        {{name}}
+                                        {{#ifSet element="Online Program Link" ~}}</a>{{~/ifSet}}
+                                    {{~/eq}}
+                                    {{#eq name "Hybrid"~}}
+                                        {{#ifSet element="Hybrid Program Link" ~}}<a href="{{#link element="Hybrid Program Link" }}{{linkUrl}}{{/link}}">{{~/ifSet}}
+                                        {{name}}
+                                        {{#ifSet element="Hybrid Program Link" ~}}</a>{{~/ifSet}}
+                                    {{~/eq}}
+                                    {{#not @last}} | {{/not}}
+                                {{~/each}}
+                            </dd>
                         <dt>Duration</dt>
-                        <dd>
-                            {{publish element="Duration"}}
-                        </dd>
+                            <dd>
+                                {{publish element="Duration"}}
+                            </dd>
                         {{#ifSet element="Start Date" ~}}
                             <dt>Start Date</dt>
                             <dd>{{publish element="Start Date"}}</dd>
