@@ -126,15 +126,15 @@
                         {{#ifSet element="Campus" ~}}
                             <dt>Campus</dt>
                                 <dd>
-                                    {{#each (selected element="Campus") ~}}
-                                        <div>
-                                            <ul>
+                                    <div class="program-degrees">
+                                        <ul>
+                                            {{#each (selected element="Campus") ~}}
                                                 <li>
                                                     {{selectedValues element="Campus"}}
                                                 </li>
-                                            </ul>
-                                        </div>
-                                    {{~/each}}
+                                            {{~/each}}
+                                        </ul>
+                                    </div>
                                 </dd>
                         {{~/ifSet}}
                         <dt>Learning Format</dt>
