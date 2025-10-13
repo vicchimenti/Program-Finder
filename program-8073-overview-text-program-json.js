@@ -11,6 +11,7 @@ try {
   list['programID'] = processTags('<t4 type="meta" meta="content_id" />');
   list['school'] = processTags('<t4 type="content" name="School" output="normal" display_field="name" delimiter="|" />');
   list['secondarySchool'] = processTags('<t4 type="content" name="Secondary School" output="normal" display_field="name" delimiter="|" />');
+  list['programDepartment'] = processTags('<t4 type="content" name="Program Department" output="normal" display_field="name" delimiter="|" />');
   list['programType'] = processTags('<t4 type="content" name="Program Type" output="normal" display_field="name" delimiter="|" />');
   list['areaOfStudy'] = processTags('<t4 type="content" name="Area of Study" output="normal" display_field="value" delimiter="|" />');
   list['programDescription'] = processTags('<t4 type="content" name="Program Description" output="normal" modifiers="striptags,htmlentities" />');
