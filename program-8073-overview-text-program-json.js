@@ -5,14 +5,6 @@ try {
     return String(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, myContent, language, isPreview, t4Tag));
   }
 
-  function getLayout(contentLayout) {
-    var tid = content.getContentTypeID();
-    formatter = contentLayout;
-    format = publishCache.getTemplateFormatting(dbStatement, tid, formatter);
-    formatString = format.getFormatting();
-    return processTags(formatString);
-  }
-
   var list = {};
   list['id'] = processTags('<t4 type="meta" meta="content_id" />');
   list['programName'] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
