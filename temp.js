@@ -83,16 +83,16 @@ try {
     };
 
     if (collegeName) {
-        provider["department"] = {
+        provider["school"] = {
             "@type": "EducationalOrganization",
             "name": collegeName,
             "url": collegeUrl
         };
 
-        if (list["secondarySchool"]) {
-            provider["department"]["department"] = {
+        if (list["programDepartment"]) {
+            provider["programDepartment"] = {
                 "@type": "EducationalOrganization",
-                "name": list["secondarySchool"]
+                "name": list["programDepartment"]
             };
         }
     }
@@ -102,21 +102,16 @@ try {
     // Build JSON-LD for EducationalOccupationalProgram
     // ---------------------------------------------
     var jsonLD = {
-        "@context": "https://schema.org",
-        "@type": "EducationalOccupationalProgram",
-        "name": list["programName"],
-        "description": list["programSummary"] || list["programDescription"],
-        "educationalCredentialAwarded": list["degree"],
-        "timeToComplete": list["duration"],
-        "numberOfCredits": list["credits"],
-        "programMode": list["learningFormat"],
-        "programType": list["programType"],
-        "provider": {
-            "@type": "CollegeOrUniversity",
-            "name": list["school"],
-            "url": "https://www.seattleu.edu/",
-            "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/favicons/favicon-32x32.png"
-        }
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": list["programName"],
+    "description": list["programSummary"] || list["programDescription"],
+    "educationalCredentialAwarded": list["degree"],
+    "timeToComplete": list["duration"],
+    "numberOfCredits": list["credits"],
+    "programMode": list["learningFormat"],
+    "programType": list["programType"],
+    "provider": provider
     };
 
     // ---------------------------------------------
