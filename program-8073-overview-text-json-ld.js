@@ -1,7 +1,5 @@
 try {
-    // ---------------------------------------------
-    // Define main helper functions
-    // ---------------------------------------------
+
     function processTags(t4Tag) {
         myContent = content || null;
         return String(
@@ -17,9 +15,6 @@ try {
         );
     }
 
-    // ---------------------------------------------
-    // Build metadata list
-    // ---------------------------------------------
     var list = {};
     list["id"] = processTags('<t4 type="meta" meta="content_id" />');
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
@@ -39,34 +34,19 @@ try {
     list["credits"] = processTags('<t4 type="content" name="Credits" output="normal" modifiers="striptags,htmlentities" />');
     list["keywordTags"] = processTags('<t4 type="content" name="Hidden Seach Terms" output="normal" modifiers="striptags,htmlentities" delimiter="," />');
 
-    // ---------------------------------------------
-    // Output the original JSON
-    // ---------------------------------------------
-    // var jsonObj = new org.json.JSONObject(list);
-    // document.write(jsonObj.toString() + ",");
-
-    // ---------------------------------------------
-    // Hardcoded mapping for college URLs
-    // ---------------------------------------------
     var collegeUrls = {
-        "Albers School of Business and Economics": "https://www.seattleu.edu/business/",
-        "College of Arts and Sciences": "https://www.seattleu.edu/arts-sciences/",
+        "Albers School of Business & Economics": "https://www.seattleu.edu/business/",
+        "College of Arts & Sciences": "https://www.seattleu.edu/arts-sciences/",
         "College of Education": "https://www.seattleu.edu/education/",
         "College of Nursing & Health Sciences": "https://www.seattleu.edu/nursing-health-sciences/",
-        "College of Science and Engineering": "https://www.seattleu.edu/science-engineering/",
+        "College of Science & Engineering": "https://www.seattleu.edu/science-engineering/",
         "Cornish College of the Arts": "https://www.cornish.edu/",
         "School of Law": "https://law.seattleu.edu/"
     };
 
-    // ---------------------------------------------
-    // Resolve college URL dynamically
-    // ---------------------------------------------
     var collegeName = list["school"];
     var collegeUrl = collegeUrls[collegeName] || "https://www.seattleu.edu/";
 
-    // ---------------------------------------------
-    // Build provider object with nested departments
-    // ---------------------------------------------
     var provider = {
         "@type": "CollegeOrUniversity",
         "name": "Seattle University",
@@ -89,10 +69,6 @@ try {
         }
     }
 
-
-    // ---------------------------------------------
-    // Build JSON-LD for EducationalOccupationalProgram
-    // ---------------------------------------------
     var jsonLD = {
         "@context": "https://schema.org",
         "@type": "EducationalOccupationalProgram",
@@ -106,9 +82,6 @@ try {
         "provider": provider
     };
 
-    // ---------------------------------------------
-    // Output JSON-LD <script> block
-    // ---------------------------------------------
     document.write(
         '<script type="application/ld+json">' +
         JSON.stringify(jsonLD) +
