@@ -17,14 +17,6 @@ try {
         );
     }
 
-    function getLayout(contentLayout) {
-        var tid = content.getContentTypeID();
-        formatter = contentLayout;
-        format = publishCache.getTemplateFormatting(dbStatement, tid, formatter);
-        formatString = format.getFormatting();
-        return processTags(formatString);
-    }
-
     // ---------------------------------------------
     // Build metadata list
     // ---------------------------------------------
@@ -63,7 +55,7 @@ try {
         "College of Nursing & Health Sciences": "https://www.seattleu.edu/nursing-health-sciences/",
         "College of Science and Engineering": "https://www.seattleu.edu/science-engineering/",
         "Cornish College of the Arts": "https://www.cornish.edu/",
-        "School of Law": "https://law.seattleu.edu/"       
+        "School of Law": "https://law.seattleu.edu/"
     };
 
     // ---------------------------------------------
@@ -102,16 +94,16 @@ try {
     // Build JSON-LD for EducationalOccupationalProgram
     // ---------------------------------------------
     var jsonLD = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOccupationalProgram",
-    "name": list["programName"],
-    "description": list["programSummary"] || list["programDescription"],
-    "educationalCredentialAwarded": list["degree"],
-    "timeToComplete": list["duration"],
-    "numberOfCredits": list["credits"],
-    "programMode": list["learningFormat"],
-    "programType": list["programType"],
-    "provider": provider
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalProgram",
+        "name": list["programName"],
+        "description": list["programSummary"] || list["programDescription"],
+        "educationalCredentialAwarded": list["degree"],
+        "timeToComplete": list["duration"],
+        "numberOfCredits": list["credits"],
+        "programMode": list["learningFormat"],
+        "programType": list["programType"],
+        "provider": provider
     };
 
     // ---------------------------------------------
