@@ -42,8 +42,8 @@ try {
     // ---------------------------------------------
     // Output the original JSON
     // ---------------------------------------------
-    var jsonObj = new org.json.JSONObject(list);
-    document.write(jsonObj.toString() + ",");
+    // var jsonObj = new org.json.JSONObject(list);
+    // document.write(jsonObj.toString() + ",");
 
     // ---------------------------------------------
     // Hardcoded mapping for college URLs
