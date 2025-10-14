@@ -9,7 +9,6 @@
     <meta property="publisher" @type="Organization" name="Seattle University">
     <t4 type="navigation" name="Return Canonical Tags" id="975" />
     <t4 type="navigation" name="V10 - Recursive Title" id="971" />
-    <t4 type="navigation" name="JSON-LD Meta Tags" id="1128" />
     <t4 type="navigation" name="Return Meta Tags" id="973" />
     <t4 type="navigation" name="Fulltext Meta Navigation" id="1019" />
     <t4 type="meta" id="54" />
@@ -21,7 +20,7 @@
     <meta name="country" content="United States">
     <meta name="Language" content="en-US">
     <meta name="googlebot" content="all">
-    <meta name="robots" content="all">    
+    <meta name="robots" content="all">
 
     <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com"  />
@@ -38,6 +37,9 @@
         href="/media/seattle-university/site-assets/css/theme.min.css"
         as="style"
     />
+
+    <!-- JSON-LD -->
+    <t4 type="navigation" name="JSON-LD Meta Tags" id="1128" />
 
     <!-- Custom Head Code -->
     <t4 type="navigation" name="V10 - Custom Header Code" id="1014" />
