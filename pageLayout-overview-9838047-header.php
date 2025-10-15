@@ -38,8 +38,8 @@
         as="style"
     />
 
-    <!-- JSON-LD -->
     <t4 type="navigation" name="JSON-LD Meta Tags" id="1128" />
+    <!-- JSON-LD -->
 
     <!-- Custom Head Code -->
     <t4 type="navigation" name="V10 - Custom Header Code" id="1014" />
