@@ -139,7 +139,7 @@ try {
     }
 
     if ($queryHandler->isQuerySet('school')) {
-        $exactSearch->setMember('element', 'school', 'secondarySchool');
+        $exactSearch->setMember('element', 'school');
         $exactSearch->setMember('query', $queryHandler->getQueryValue('school'));
         $exactSearch->setMember('multipleValueState', true);
         $exactSearch->setMember('multipleValueSeparator', '|');
@@ -215,9 +215,6 @@ try {
         $frequencySearch->runProcessor();
         $frequencySearch->setMember('boost', 4);
         $frequencySearch->setMember('element', 'school');
-        $frequencySearch->runProcessor();
-        $frequencySearch->setMember('boost', 4);
-        $frequencySearch->setMember('element', 'secondarySchool');
         $frequencySearch->runProcessor();
         $frequencySearch->setMember('boost', 3);
         $frequencySearch->setMember('element', 'programType');
