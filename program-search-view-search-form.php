@@ -8,13 +8,14 @@
 
 
 
-<?php
+ <?php
 
 $genericFacet = \T4\PHPSearchLibrary\FacetFactory::getInstance('GenericFacet', $documentCollection, $queryHandler);
 $filters = $queryHandler->getQueryValuesForPrint();
 $categoryFilters = array('learningFormat', 'programLevel', 'programType', 'areaOfStudy', 'school');
 $dateFilters = array();
 $rangeFilters = array();
+$i = 0;
 ?>
 <section class="su-listing">
     <div id="searchoptionsGeneric" role="search" class="su-listing--form-wrapper bg--dark global-padding--8x" data-t4-ajax-group="courseSearch">
@@ -140,41 +141,35 @@ $rangeFilters = array();
                 <div id="event-filters" class="active-filters--list" >
                     <span>Active filters:</span>
                     <?php if ($filters !== null) : ?>
-                        <ul class="no-bullet">
-                            <?php
-                            $i = 0;
-                            foreach ($categoryFilters as $key) {
-                                if (isset($filters[$key]) && is_array($filters[$key])) :
-                                    foreach ($filters[$key] as $value) : ?>
-                                        <li class="filter-<?php echo $i++ ?>  small primary" role="button" tabindex="0" data-t4-value="<?php echo strtolower($value) ?>" data-t4-filter="<?php echo $key ?>"><?php echo $value ?><span class="remove"><i class="fa fa-times"></i></span></li>
-                                    <?php
-                                    endforeach;
-                                elseif (isset($filters[$key])) :
-                                    $value = $filters[$key]; ?>
-                                    <li class="filter-<?php echo $i++ ?>  small primary" role="button" tabindex="0" data-t4-value="<?php echo strtolower($value) ?>" data-t4-filter="<?php echo $key ?>"><?php echo $value ?><span class="remove"><i class="fa fa-times"></i></span></li>
-                                <?php
-                                endif;
-                            }
-                            foreach ($dateFilters as $key) {
-                                if (isset($filters[$key])) :
-                                    $value = $filters[$key]; ?>
-                                    <li class="filter-<?php echo $i++ ?>  small primary" role="button" tabindex="0" data-t4-filter="<?php echo $key ?>"><?php echo date('m/d/Y', strtotime($value)); ?><span class="remove"><i class="fa fa-times"></i></span></li>
-                                <?php
-                                endif;
-                            }
-                            foreach ($rangeFilters as $key => $max) {
-                                if (isset($filters[$key]) && $filters[$key] !== $max) :
-                                    $value = $filters[$key]; ?>
-                                    <li class="filter-<?php echo $i++ ?>  small primary" role="button" tabindex="0" data-t4-filter="<?php echo $key ?>"><?php echo '$' . $value; ?><span class="remove"><i class="fa fa-times"></i></span></li>
-                                <?php
-                                endif;
-                            }
-                            if (isset($filters['keywords'])) :
-                                ?>
-                                <li class="filter-<?php echo $i++ ?> small primary" role="button" tabindex="0" data-t4-filter="keywords"> <?php echo $filters['keywords'] ?><span class="remove"><i class="fa fa-times"></i></span></li>
-                            <?php
-                            endif; ?>
-                        </ul>
+                        <?php
+                        $tagsHTML = '';
+                        foreach ($categoryFilters as $key) {
+                            if (isset($filters[$key]) && is_array($filters[$key])) :
+                                foreach ($filters[$key] as $value) : 
+                                    $tagsHTML .= '<li class="filter-' . $i++ . ' small primary" role="button" tabindex="0" data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">' . $value . '<span class="remove"><i class="fa fa-times"></i></span></li>'; 
+                                endforeach;
+                            elseif (isset($filters[$key])) :
+                                $value = $filters[$key];
+                                $tagsHTML .= '<li class="filter-' . $i++ . ' small primary" role="button" tabindex="0" data-t4-value="' . strtolower($value) . '" data-t4-filter="' . $key . '">' . $value . '<span class="remove"><i class="fa fa-times"></i></span></li>'; 
+                            endif;
+                        }
+                        foreach ($dateFilters as $key) {
+                            if (isset($filters[$key])) :
+                                $value = $filters[$key]; 
+                                $tagsHTML .= '<li class="filter-' . $i++ . ' small primary" role="button" tabindex="0" data-t4-filter="' . $key . '">' . date('m/d/Y', strtotime($value)) . '<span class="remove"><i class="fa fa-times"></i></span></li>'; 
+                            endif;
+                        }
+                        foreach ($rangeFilters as $key => $max) {
+                            if (isset($filters[$key]) && $filters[$key] !== $max) :
+                                $value = $filters[$key]; 
+                                $tagsHTML .= '<li class="filter-' . $i++ . ' small primary" role="button" tabindex="0" data-t4-filter="' . $key . '">$' . $value . '<span class="remove"><i class="fa fa-times"></i></span></li>'; 
+                            endif;
+                        }
+                        if (isset($filters['keywords'])) :
+                            $tagsHTML .= '<li class="filter-' . $i++ . ' small primary" role="button" tabindex="0" data-t4-filter="keywords">' . $filters['keywords'] . '<span class="remove"><i class="fa fa-times"></i></span></li>'; 
+                        endif; 
+                        echo $tagsHTML != '' ? '<ul class="no-bullet">' . $tagsHTML . '</ul>' : '';
+                        ?>
                     <?php endif; ?>
                 </div>
               <?php if ($i > 0) : ?>
@@ -190,3 +185,6 @@ $rangeFilters = array();
         </div>
     </div>
 </section>
+
+
+
