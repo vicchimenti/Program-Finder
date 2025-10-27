@@ -70,6 +70,8 @@ try {
         }
     }
 
+    var categories = list["occupationalCategory"].split(",");
+
     var jsonLD = {
         "@context": "https://schema.org",
         "@type": "EducationalOccupationalProgram",
@@ -81,6 +83,7 @@ try {
         "programMode": list["learningFormat"],
         "programType": list["programType"],
         "programPrerequisites": list["programPrerequisites"],
+        "occupationalCategory": categories,
         "provider": provider
     };
 
