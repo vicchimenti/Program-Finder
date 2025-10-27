@@ -31,6 +31,7 @@ try {
     list["degree"] = processTags('<t4 type="content" name="Degree" output="normal" modifiers="striptags,htmlentities" />');
     list["duration"] = processTags('<t4 type="content" name="Time to Complete" output="normal" modifiers="striptags,htmlentities" />');
     list["credits"] = processTags('<t4 type="content" name="Credits" output="normal" modifiers="striptags,htmlentities" />');
+    list["programPrerequisites"] = processTags('<t4 type="content" name="Program Prerequisites" output="normal" modifiers="striptags,htmlentities" />');
     list["keywordTags"] = processTags('<t4 type="content" name="Hidden Seach Terms" output="normal" modifiers="striptags,htmlentities" delimiter="," />');
 
     var collegeUrls = {
