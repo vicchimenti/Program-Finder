@@ -80,6 +80,7 @@ try {
         "numberOfCredits": list["credits"],
         "programMode": list["learningFormat"],
         "programType": list["programType"],
+        "programPrerequisites": list["programPrerequisites"],
         "provider": provider
     };
 
