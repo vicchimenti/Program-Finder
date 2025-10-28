@@ -1,31 +1,32 @@
-/* Scrollable Slate RFI form inside Unbounce box */
-#lp-code-416 {
-  max-height: 420px;        /* Match current box height */
-  overflow-y: auto;         /* Enable vertical scrolling */
-  overflow-x: hidden;       /* Prevent horizontal scroll */
-  padding-right: 8px;       /* Add room for scrollbar */
-  scrollbar-width: thin;    /* Firefox */
+/* Scrollable Slate RFI form */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  max-height: 420px;         
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;        /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin;     /* Firefox styling */
   scrollbar-color: #bbb transparent;
 }
 
 /* Chrome, Edge, Safari */
-#lp-code-416::-webkit-scrollbar {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
 
-#lp-code-416::-webkit-scrollbar-track {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#lp-code-416::-webkit-scrollbar-thumb {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 
-/* Optional: on small screens, let it expand instead of scrolling */
+/* Optional: remove scroll restriction for mobile users */
 @media (max-width: 600px) {
-  #lp-code-416 {
+  #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
     max-height: none;
     overflow-y: visible;
   }
 }
+
