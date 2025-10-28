@@ -1,22 +1,31 @@
-/* Target the Unbounce form container */
-#lp-pom-form-XX, .lp-pom-form, form {
-  max-height: 400px; /* adjust to match your current box height */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin; /* for Firefox */
-  scrollbar-color: #ccc transparent;
+/* Scrollable Slate RFI form inside Unbounce box */
+#lp-code-416 {
+  max-height: 420px;        /* Match current box height */
+  overflow-y: auto;         /* Enable vertical scrolling */
+  overflow-x: hidden;       /* Prevent horizontal scroll */
+  padding-right: 8px;       /* Add room for scrollbar */
+  scrollbar-width: thin;    /* Firefox */
+  scrollbar-color: #bbb transparent;
 }
 
-/* Optional: for WebKit browsers (Chrome, Edge, Safari) */
-#lp-pom-form-XX::-webkit-scrollbar {
+/* Chrome, Edge, Safari */
+#lp-code-416::-webkit-scrollbar {
   width: 8px;
 }
 
-#lp-pom-form-XX::-webkit-scrollbar-track {
+#lp-code-416::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#lp-pom-form-XX::-webkit-scrollbar-thumb {
+#lp-code-416::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+}
+
+/* Optional: on small screens, let it expand instead of scrolling */
+@media (max-width: 600px) {
+  #lp-code-416 {
+    max-height: none;
+    overflow-y: visible;
+  }
 }
