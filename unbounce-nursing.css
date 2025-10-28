@@ -1,0 +1,22 @@
+/* Target the Unbounce form container */
+#lp-pom-form-XX, .lp-pom-form, form {
+  max-height: 400px; /* adjust to match your current box height */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin; /* for Firefox */
+  scrollbar-color: #ccc transparent;
+}
+
+/* Optional: for WebKit browsers (Chrome, Edge, Safari) */
+#lp-pom-form-XX::-webkit-scrollbar {
+  width: 8px;
+}
+
+#lp-pom-form-XX::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#lp-pom-form-XX::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
