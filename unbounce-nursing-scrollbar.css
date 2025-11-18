@@ -9,16 +9,16 @@
 }
 
 /* Make scroll work on any page, regardless of Unbounce box ID */
-.form_container form,
-.form_container,
-form[id^="form_93a74e7c-"] {
-  max-height: 420px;
+#lp-pom-root div[id^="lp-code-"],
+#lp-pom-root .form_container,
+#lp-pom-root form[id^="form_93a74e7c-"] {
+  overflow: visible !important;
+  max-height: 420px !important;
+  height: 420px !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  display: block !important;
   position: relative;
 }
-
 
 /* Chrome, Edge, Safari */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
@@ -33,6 +33,12 @@ form[id^="form_93a74e7c-"] {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
+
+div[id^="lp-code-"] {
+  overflow: visible !important;
+  height: auto !important;
+}
+
 
 /* Optional: remove scroll restriction for mobile users */
 @media (max-width: 600px) {
