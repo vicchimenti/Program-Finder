@@ -78,34 +78,30 @@ screen and (48.0625em <=width <=64.0625em) {
   }
 }
 
+
 /* =============================
    Scroll Behavior for Embedded Slate Forms
    ============================= */
 
-/* Contain form area without forcing scroll on load */
+/* Contain form area */
 #lp-code-416 {
   max-height: 420px;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   display: block;
 }
 
-#lp-code-416 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: 420px;
-  overflow-y: auto;
-}
-
-/* Allow scroll only when content exceeds bounds */
+/* Enable scroll inside when content exceeds bounds */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: inherit;
-  overflow-y: auto;
+  max-height: 420px;              /* fixed visual limit */
+  overflow-y: auto;               /* show scroll only if needed */
   overflow-x: hidden;
   padding-right: 8px;
   scrollbar-width: thin;
   scrollbar-color: #bbb transparent;
 }
 
-/* Chrome, Edge, Safari scrollbars */
+/* Chrome, Edge, Safari */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
