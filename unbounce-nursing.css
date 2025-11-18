@@ -85,9 +85,14 @@ screen and (48.0625em <=width <=64.0625em) {
 /* Contain form area without forcing scroll on load */
 #lp-code-416 {
   max-height: 420px;
-  overflow: hidden;           /* prevents spill */
+  overflow: visible;
   position: relative;
   display: block;
+}
+
+#lp-code-416 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  max-height: 420px;
+  overflow-y: auto;
 }
 
 /* Allow scroll only when content exceeds bounds */
