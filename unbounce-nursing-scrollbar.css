@@ -1,50 +1,53 @@
-/* Scrollable Slate RFI form */
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: 420px;         
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 8px;        /* avoid content hiding behind scrollbar */
-  scrollbar-width: thin;     /* Firefox styling */
-  scrollbar-color: #bbb transparent;
+/* -------------------------------------------------
+   UNIVERSAL SLATE FORM SCROLL FIX (WITH FORM ID)
+   Works across all Nursing pages & Unbounce boxes
+   ------------------------------------------------- */
+
+/* Release Unbounce root overflow locally */
+#lp-pom-root div[id^="lp-code-"] {
+  overflow: visible !important;
+  height: auto !important;
 }
 
-/* Make scroll work on any page, regardless of Unbounce box ID */
-#lp-pom-root div[id^="lp-code-"],
-#lp-pom-root .form_container,
-#lp-pom-root form[id^="form_93a74e7c-"] {
-  overflow: visible !important;
+/* Primary scroll container tied to your Slate form ID */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  position: relative !important;
   max-height: 420px !important;
   height: 420px !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
-  position: relative;
+  display: block !important;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #bbb transparent;
 }
 
-/* Chrome, Edge, Safari */
+/* Ensure all nested form wrappers behave */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f,
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f .form_container,
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f form {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: block !important;
+}
+
+/* WebKit scrollbar styling */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
-
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
   background: transparent;
 }
-
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 
-div[id^="lp-code-"] {
-  overflow: visible !important;
-  height: auto !important;
-}
-
-
-/* Optional: remove scroll restriction for mobile users */
+/* Restore full expansion on mobile */
 @media (max-width: 600px) {
   #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-    max-height: none;
-    overflow-y: visible;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 }
-
