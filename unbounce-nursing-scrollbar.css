@@ -8,16 +8,17 @@
   scrollbar-color: #bbb transparent;
 }
 
-/* Ensure all form wrappers allow the scroll region to behave */
-#lp-code-416,
-#lp-code-416 .form_container,
-#lp-code-416 form {
+/* Make scroll work on any page, regardless of Unbounce box ID */
+.form_container form,
+.form_container,
+form[id^="form_93a74e7c-"] {
   max-height: 420px;
   overflow-y: auto !important;
   overflow-x: hidden !important;
   display: block !important;
   position: relative;
 }
+
 
 /* Chrome, Edge, Safari */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
