@@ -1,50 +1,52 @@
 /* -------------------------------------------------
-   UNIFIED SLATE FORM SCROLL FIX
-   (Keeps full scroll range & works in all Nursing LPs)
+   UNBOUNCE NURSING SCROLLBAR CSS
+   Slate RFI Form universal scroll and visual fix
    ------------------------------------------------- */
 
-/* Allow scroll rendering even if root hides overflow */
+/* Enable overflow inside Unbounce code boxes */
 #lp-pom-root div[id^="lp-code-"] {
   overflow: visible !important;
   height: auto !important;
 }
 
-/* Limit the visual box but allow inner content to scroll */
+/* Unified scroll fix tied to Slate container & ID */
 #lp-pom-root div.form_container,
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
   position: relative !important;
-  max-height: 420px !important;   /* fixed box height */
-  overflow-y: auto !important;    /* enable vertical scroll */
+  max-height: 420px !important;
+  overflow-y: auto !important;
   overflow-x: hidden !important;
   display: block !important;
-  padding: 0 8px 60px 0 !important; /* bottom padding keeps submit visible */
+  padding: 0 8px 60px 0 !important;
   scrollbar-width: thin;
   scrollbar-color: #bbb transparent;
   z-index: 10;
 }
 
-/* WebKit scrollbar styling */
+/* Chrome / Safari scrollbar visuals */
 #lp-pom-root div.form_container::-webkit-scrollbar,
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
+
 #lp-pom-root div.form_container::-webkit-scrollbar-track,
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
   background: transparent;
 }
+
 #lp-pom-root div.form_container::-webkit-scrollbar-thumb,
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 
-/* Ensure form fields themselves can expand */
+/* Always allow inner content to flow */
 #lp-pom-root div.form_container form {
   height: auto !important;
   max-height: none !important;
 }
 
-/* Mobile view – no fixed height */
+/* Remove fixed height on small screens */
 @media (max-width: 600px) {
   #lp-pom-root div.form_container,
   #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
