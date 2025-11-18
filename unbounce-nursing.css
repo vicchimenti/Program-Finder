@@ -82,25 +82,22 @@ screen and (48.0625em <=width <=64.0625em) {
    Scroll Behavior for Embedded Slate Forms
    ============================= */
 
-/* Dynamic scroll: only appear when content exceeds container height */
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+/* Contain form area without forcing scroll on load */
+#lp-code-416 {
   max-height: 420px;
+  overflow: hidden;           /* prevents spill */
+  position: relative;
+  display: block;
+}
+
+/* Allow scroll only when content exceeds bounds */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  max-height: inherit;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 8px;
   scrollbar-width: thin;
   scrollbar-color: #bbb transparent;
-}
-
-/* Ensure parent containers don't force scroll prematurely */
-#lp-code-416,
-#lp-code-416 .form_container,
-#lp-code-416 form {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-  display: block !important;
-  position: relative;
 }
 
 /* Chrome, Edge, Safari scrollbars */
@@ -115,8 +112,12 @@ screen and (48.0625em <=width <=64.0625em) {
   border-radius: 4px;
 }
 
-/* On mobile: no scroll restriction at all */
+/* Mobile: disable scroll cap */
 @media (max-width: 600px) {
+  #lp-code-416 {
+    max-height: none;
+    overflow: visible;
+  }
   #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
     max-height: none;
     overflow-y: visible;
