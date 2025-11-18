@@ -1,11 +1,6 @@
 /* =======================================================
    Unbounce Nursing Form Styles (Merged Final Version)
-   Combines: unbounce-nursing-dnp-stylesheet-1.css + unbounce-nursing-dnp.css
    ======================================================= */
-
-/* -----------------------------------------
-   BASE PAGE AND LAYOUT RULES (from stylesheet-1)
-   ----------------------------------------- */
 
 #lp-pom-root {
   overflow: hidden;
@@ -83,27 +78,27 @@ screen and (48.0625em <=width <=64.0625em) {
   }
 }
 
-/* -----------------------------------------
-   SCROLLABLE SLATE RFI FORM (from dnp.css)
-   ----------------------------------------- */
+/* =============================
+   Scroll Behavior for Embedded Slate Forms
+   ============================= */
 
-/* Primary scroll region */
+/* Dynamic scroll: only appear when content exceeds container height */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
   max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 8px;        /* avoid content hiding behind scrollbar */
-  scrollbar-width: thin;     /* Firefox styling */
+  padding-right: 8px;
+  scrollbar-width: thin;
   scrollbar-color: #bbb transparent;
 }
 
-/* Ensure all form wrappers allow scroll region to behave */
+/* Ensure parent containers don't force scroll prematurely */
 #lp-code-416,
 #lp-code-416 .form_container,
 #lp-code-416 form {
-  max-height: 420px;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
   display: block !important;
   position: relative;
 }
@@ -112,24 +107,18 @@ screen and (48.0625em <=width <=64.0625em) {
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
-
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
   background: transparent;
 }
-
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 
-/* Optional: remove scroll restriction for mobile users */
+/* On mobile: no scroll restriction at all */
 @media (max-width: 600px) {
   #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
     max-height: none;
     overflow-y: visible;
   }
 }
-
-/* =======================================================
-   END OF FILE
-   ======================================================= */
