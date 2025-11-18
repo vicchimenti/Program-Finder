@@ -83,27 +83,29 @@ screen and (48.0625em <=width <=64.0625em) {
    Scroll Behavior for Embedded Slate Forms
    ============================= */
 
-/* Contain form area */
-#lp-code-416 {
-  max-height: 420px;
-  height: 420px;
-  overflow: hidden;
-  position: relative;
-  display: block;
-}
 
-/* Enable scroll inside when content exceeds bounds */
+/* Primary scroll region */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  height: 100%;
-  max-height: 100%;
-  overflow-y: auto;               /* show scroll only if needed */
+  max-height: 420px;
+  overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 8px;
-  scrollbar-width: thin;
+  padding-right: 8px;        /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin;     /* Firefox styling */
   scrollbar-color: #bbb transparent;
 }
 
-/* Chrome, Edge, Safari */
+/* Ensure all form wrappers allow scroll region to behave */
+#lp-code-416,
+#lp-code-416 .form_container,
+#lp-code-416 form {
+  max-height: 420px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: block !important;
+  position: relative;
+}
+
+/* Chrome, Edge, Safari scrollbars */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
@@ -115,16 +117,10 @@ screen and (48.0625em <=width <=64.0625em) {
   border-radius: 4px;
 }
 
-/* Mobile: disable scroll cap */
+/* Optional: remove scroll restriction for mobile users */
 @media (max-width: 600px) {
-  #lp-code-416 {
-    max-height: none;
-    height: auto;
-    overflow: visible;
-  }
   #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
     max-height: none;
-    height: auto;
     overflow-y: visible;
   }
 }
