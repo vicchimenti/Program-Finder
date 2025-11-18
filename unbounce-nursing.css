@@ -86,6 +86,7 @@ screen and (48.0625em <=width <=64.0625em) {
 /* Contain form area */
 #lp-code-416 {
   max-height: 420px;
+  height: 420px;
   overflow: hidden;
   position: relative;
   display: block;
@@ -93,7 +94,8 @@ screen and (48.0625em <=width <=64.0625em) {
 
 /* Enable scroll inside when content exceeds bounds */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: 420px;              /* fixed visual limit */
+  height: 100%;
+  max-height: 100%;
   overflow-y: auto;               /* show scroll only if needed */
   overflow-x: hidden;
   padding-right: 8px;
@@ -117,10 +119,12 @@ screen and (48.0625em <=width <=64.0625em) {
 @media (max-width: 600px) {
   #lp-code-416 {
     max-height: none;
+    height: auto;
     overflow: visible;
   }
   #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
     max-height: none;
+    height: auto;
     overflow-y: visible;
   }
 }
