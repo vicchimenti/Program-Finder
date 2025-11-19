@@ -7,7 +7,7 @@
 /* Primary scroll region */
 #form_a53b5cf1-954c-41ca-8ab3-a6b0b5806538 {
   max-height: 420px;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 8px; /* avoid content hiding behind scrollbar */
   scrollbar-width: thin; /* Firefox styling */
@@ -19,7 +19,7 @@
 #lp-code-519 .form_container,
 #lp-code-519 form {
   max-height: 420px;
-  overflow-y: auto !important;
+  overflow-y: scroll !important;
   overflow-x: hidden !important;
   display: block !important;
   position: relative;
