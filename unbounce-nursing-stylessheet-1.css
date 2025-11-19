@@ -71,6 +71,7 @@
 #lp-code-519 {
   background: #fff;
   max-height: 420px;
+  height: auto !important;
   overflow-y: hidden;   /* ensure parent never scrolls */
   overflow-x: hidden;
   position: relative;
