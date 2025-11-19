@@ -90,6 +90,8 @@
   overflow-y: scroll !important;   /* Always visible */
   overflow-x: hidden;
   padding-right: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
   scrollbar-color: #bbb transparent;
   position: relative;
