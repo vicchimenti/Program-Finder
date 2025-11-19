@@ -1,6 +1,11 @@
-/* Scrollable Slate RFI form */
+/* =============================
+   Scroll Behavior for Embedded Slate Forms
+   ============================= */
+
+
+/* Primary scroll region */
 #form_5b088635-4bf3-469f-9104-4f9c6363546c {
-  max-height: 420px;         
+  max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 8px;        /* avoid content hiding behind scrollbar */
@@ -8,7 +13,7 @@
   scrollbar-color: #bbb transparent;
 }
 
-/* Ensure all form wrappers allow the scroll region to behave */
+/* Ensure all form wrappers allow scroll region to behave */
 #lp-code-416,
 #lp-code-416 .form_container,
 #lp-code-416 form {
@@ -19,15 +24,13 @@
   position: relative;
 }
 
-/* Chrome, Edge, Safari */
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
+/* Chrome, Edge, Safari scrollbars */
+#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar {
   width: 8px;
 }
-
 #form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-track {
   background: transparent;
 }
-
 #form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -40,4 +43,3 @@
     overflow-y: visible;
   }
 }
-
