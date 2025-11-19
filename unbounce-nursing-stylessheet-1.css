@@ -78,24 +78,28 @@
 
 #lp-code-519,
 #lp-code-519 .form_container {
-  overflow: visible !important;
+  overflow: visible !important;   /* allows scrollbar to render inside */
   position: relative;
-  max-height: 420px;
   display: block;
 }
 
-/* Scoped scroll region — always visible, contained */
-#lp-code-519 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: 420px;
-  overflow-y: scroll !important;   /* Always visible */
-  overflow-x: hidden;
+/* 2. The form itself is the only scrollable element */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  max-height: 420px !important;
+  overflow-y: scroll !important;  /* always visible */
+  overflow-x: hidden !important;
   padding-right: 8px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
   scrollbar-color: #bbb transparent;
+  scrollbar-gutter: stable;       /* reserve space, prevents layout shift */
+  -webkit-overflow-scrolling: touch;
   position: relative;
-  z-index: 10; /* ensures scrollbar isn't hidden by root overlay */
+  z-index: 10;
+}
+
+/* 3. Ensure no ancestor reintroduces overflow rules */
+#lp-code-519 form:not(#form_93a74e7c-9f4b-42d5-b312-2512bab5856f) {
+  overflow: visible !important;
 }
 
 /* Optional: WebKit track for macOS and Chrome overlay scrollbars */
