@@ -68,55 +68,23 @@
   }
 }
 
-
-
-/*
-  =============================
-  Scroll Behavior for Embedded Slate Forms
-  ============================
-*/
-
-#lp-code-519,
-#lp-code-519 .form_container {
-  overflow: visible !important;   /* allows scrollbar to render inside */
+#lp-code-519 {
+  background: #fff;
+  max-height: 420px;          /* defines the visible area */
+  overflow: hidden;           /* contain form visually */
   position: relative;
-  display: block;
 }
 
-/* 2. The form itself is the only scrollable element */
+/* --- Actual Slate form (scroll logic lives here) --- */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: 420px !important;
-  overflow-y: scroll !important;  /* always visible */
+  height: 100%;
+  max-height: 420px;          /* match parent height */
+  overflow-y: scroll !important;   /* always show scrollbar */
   overflow-x: hidden !important;
-  padding-right: 8px;
+  scrollbar-gutter: stable;        /* keeps gutter even when not scrolling */
   scrollbar-width: thin;
-  scrollbar-color: #bbb transparent;
-  scrollbar-gutter: stable;       /* reserve space, prevents layout shift */
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-  z-index: 10;
-}
-
-/* 3. Ensure no ancestor reintroduces overflow rules */
-#lp-code-519 form:not(#form_93a74e7c-9f4b-42d5-b312-2512bab5856f) {
-  overflow: visible !important;
-}
-
-/* Optional: WebKit track for macOS and Chrome overlay scrollbars */
-#lp-code-519 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
-  width: 10px;
-  background-color: rgba(0,0,0,0.05);
-}
-
-#lp-code-519 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.3);
-  border-radius: 4px;
-}
-
-/* Optional: remove scroll restriction for mobile users */
-@media (max-width: 600px) {
-  #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-    max-height: none;
-    overflow-y: visible;
-  }
+  scrollbar-color: #bbb #fff;
+  padding-right: 8px;              /* text never sits under scrollbar */
+  box-sizing: border-box;
+  background: transparent;         /* no visual box around inputs */
 }
