@@ -1,0 +1,48 @@
+/*
+    =============================
+    Scroll Behavior for Embedded Slate Forms
+    ============================= 
+*/
+
+/* Primary scroll region */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px; /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin; /* Firefox styling */
+  scrollbar-color: #bbb transparent;
+}
+
+/* Ensure all form wrappers allow scroll region to behave */
+#lp-code-519,
+#lp-code-519 .form_container,
+#lp-code-519 form {
+  max-height: 420px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: block !important;
+  position: relative;
+}
+
+/* Chrome, Edge, Safari scrollbars */
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
+  width: 8px;
+}
+
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Optional: remove scroll restriction for mobile users */
+@media (max-width: 600px) {
+  #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
