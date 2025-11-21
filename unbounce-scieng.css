@@ -70,52 +70,51 @@ screen and (48.0625em <=width <=64.0625em) {
 }
 
 
-
-
-/* 
-
-    Form  ID #form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee
-    COE RFI Form
-
+/*
+    =============================
+    Scroll Behavior for Embedded Slate Forms
+    ============================= 
 */
 
-#form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 700;
-    padding: 0.875rem;
-    overflow: auto;
+/* Primary scroll region */
+#form_c5b1ed69-d18a-4f78-8e73-0f695c660a2e {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px; /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin; /* Firefox styling */
+  scrollbar-color: #bbb transparent;
 }
 
-#form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee div.form_question {
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-    margin: 0 0 1em 0;
-    overflow: auto;
-    padding: 0;
-    width: 100% !important;
+/* Ensure all form wrappers allow scroll region to behave */
+#lp-code-519,
+#lp-code-519 .form_container,
+#lp-code-519 form {
+  max-height: 420px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: block !important;
+  position: relative;
 }
 
-#form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee fieldset {
-    background: #f7f7f7 !important;
+/* Chrome, Edge, Safari scrollbars */
+#form_c5b1ed69-d18a-4f78-8e73-0f695c660a2e::-webkit-scrollbar {
+  width: 8px;
 }
 
-div #form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee p {
-    color: black;
+#form_c5b1ed69-d18a-4f78-8e73-0f695c660a2e::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-#form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee fieldset select {
-    width: 30% !important;
+#form_c5b1ed69-d18a-4f78-8e73-0f695c660a2e::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
 }
 
-#form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee div.form_responses select {
-    width: 100%;
-}
-
-#form_f7ff7324-a332-4237-bd06-a7c29fe8b8ee fieldset div.form_responses {
-    padding: 0.5rem 0;
+/* Optional: remove scroll restriction for mobile users */
+@media (max-width: 600px) {
+  #form_c5b1ed69-d18a-4f78-8e73-0f695c660a2e {
+    max-height: none;
+    overflow-y: visible;
+  }
 }
