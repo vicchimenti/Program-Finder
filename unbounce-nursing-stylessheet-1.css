@@ -71,7 +71,11 @@
 #lp-code-519 {
   background: #fff;
   max-height: 420px;
+<<<<<<< HEAD
   overflow-y: hidden;
+=======
+  overflow-y: hidden;   /* ensure parent never scrolls */
+>>>>>>> 34e7346998bdac780336bd17e14a8ea214a6ad4b
   overflow-x: hidden;
   position: relative;
 }
