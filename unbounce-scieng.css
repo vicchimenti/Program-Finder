@@ -1,72 +1,72 @@
-#lp-pom-root{overflow:hidden;}
-  
-  
-  
-  .border{border-bottom: 4px solid #000 !important;}
-    @media only screen and (min-width: 600px){
-  
+#lp-pom-root {
+  overflow: hidden;
+}
+
+.border {
+  border-bottom: 4px solid #000 !important;
+}
+
+@media only screen and (min-width: 600px) {
   #ub-option-current_skill_level-item-1 {
-        top: 0;
+    top: 0;
     left: 140px;
   }
-  
+
   #ub-option-current_skill_level-item-2 {
-       top: 0;
+    top: 0;
     left: 309px;
   }
+
   #container_area_of_interest {
-    
     top: 400px;
   }
-  
+
   #ub-option-area_of_interest-item-1 {
-      top: 0px;
+    top: 0px;
     left: 123px;
   }
+
   #ub-option-area_of_interest-item-2 {
-    
     top: 0px;
     left: 303px;
   }
+
   #ub-option-area_of_interest-item-3 {
-        top: 0;
+    top: 0;
     left: 504px;
   }
-  
-  }
+}
+
 .hero--program-detail.bg--dark h2 {
-    color: black;
+  color: black;
 }
 
 .hero--program-detail .callout {
-    background-color: #f7f7f7;
-    border: 1px solid #f7f7f7;
-    -webkit-box-shadow: 3px 3px 8px 0 rgba(104, 104, 104, 0.2);
-    box-shadow: 3px 3px 8px 0 rgba(104, 104, 104, 0.2);
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  -webkit-box-shadow: 3px 3px 8px 0 rgba(104, 104, 104, 0.2);
+  box-shadow: 3px 3px 8px 0 rgba(104, 104, 104, 0.2);
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+@media print, screen and (min-width: 64.0625em) {
+  .global-margin--15x {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media print, screen and (min-width: 64.0625em) {
+  .program-info .callout {
+    margin-top: -5rem;
+  }
+}
+
+@media print, screen and (48.0625em <=width <=64.0625em) {
+  .program-info .callout {
     margin-top: 2rem;
-    padding: 2rem;
-}
-
-@media print,
-screen and (min-width: 64.0625em) {
-    .global-margin--15x {
-        margin-top: 4rem;
-        margin-bottom: 4rem;
-    }
-}
-
-@media print,
-screen and (min-width: 64.0625em) {
-    .program-info .callout {
-        margin-top: -5rem;
-    }
-}
-
-@media print,
-screen and (48.0625em <=width <=64.0625em) {
-    .program-info .callout {
-        margin-top: 2rem;
-    }
+  }
 }
 
 
