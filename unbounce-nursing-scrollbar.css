@@ -1,15 +1,16 @@
- /* =============================
-   Scroll Behavior for Embedded Slate Forms
-   ============================= */
-
+/*
+    =============================
+    Scroll Behavior for Embedded Slate Forms
+    ============================= 
+*/
 
 /* Primary scroll region */
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+#form_5b088635-4bf3-469f-9104-4f9c6363546c {
   max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 8px;        /* avoid content hiding behind scrollbar */
-  scrollbar-width: thin;     /* Firefox styling */
+  padding-right: 8px; /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin; /* Firefox styling */
   scrollbar-color: #bbb transparent;
 }
 
@@ -25,68 +26,23 @@
 }
 
 /* Chrome, Edge, Safari scrollbars */
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
+#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar {
   width: 8px;
 }
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
+
+#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-track {
   background: transparent;
 }
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
+
+#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 
 /* Optional: remove scroll restriction for mobile users */
 @media (max-width: 600px) {
-  #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
+  #form_5b088635-4bf3-469f-9104-4f9c6363546c {
     max-height: none;
     overflow-y: visible;
   }
-}
-
-
-
-/* ============================================
-   Universal Unbounce Nursing Form Scroll System
-   Requirements:
-   - All content stays within white box
-   - Scrollbar always visible
-   - Compatible with #lp-pom-root { overflow:hidden; }
-   ============================================ */
-
-/* 1️⃣ The outer white box container (Unbounce block wrapper)
-   This defines the boundaries of the white background */
-#lp-code-519 {
-  background: #fff;                /* make sure background is solid */
-  max-height: 420px;               /* define scroll limit */
-  overflow: hidden;                /* contain everything visually */
-  position: relative;              /* ensure stacking context */
-  border-radius: 2px;              /* optional aesthetic */
-  box-shadow: 0 0 8px rgba(0,0,0,0.1); /* subtle shadow if desired */
-}
-
-/* 2️⃣ Inner form container wrapper (Slate embed area)
-   This handles the scrolling logic, but is clipped by the white box */
-#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
-  max-height: 100%;                /* matches the white box height */
-  overflow-y: scroll !important;   /* always show scrollbar */
-  overflow-x: hidden !important;   /* prevent horizontal scroll */
-  box-sizing: border-box;
-  scrollbar-width: thin;           /* Firefox thin style */
-  scrollbar-color: #bbb #fff;      /* visible but subtle */
-  scrollbar-gutter: stable;        /* keep space for scrollbar always */
-  padding-right: 8px;              /* prevent text under scrollbar */
-  position: relative;
-  z-index: 2;
-}
-
-/* 3️⃣ Optional: reset nested elements that might inherit overflow */
-#lp-code-519 form,
-#lp-code-519 .form_container {
-  overflow: visible !important;
-}
-
-/* 4️⃣ Keep Unbounce layout stable sitewide */
-#lp-pom-root {
-  overflow: hidden;
 }
