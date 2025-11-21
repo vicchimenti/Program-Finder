@@ -1,6 +1,6 @@
-/* =======================================================
-   Unbounce Nursing Form Styles (Merged Final Version)
-   ======================================================= */
+/* 
+  Nursing Slate Form Rules
+*/
 
 #lp-pom-root {
   overflow: hidden;
@@ -11,7 +11,6 @@
 }
 
 @media only screen and (min-width: 600px) {
-
   #ub-option-current_skill_level-item-1 {
     top: 0;
     left: 140px;
@@ -42,7 +41,6 @@
   }
 }
 
-/* Hero section styles */
 .hero--program-detail.bg--dark h2 {
   color: black;
 }
@@ -56,48 +54,46 @@
   padding: 2rem;
 }
 
-@media print,
-screen and (min-width: 64.0625em) {
+@media print, screen and (min-width: 64.0625em) {
   .global-margin--15x {
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
 }
 
-@media print,
-screen and (min-width: 64.0625em) {
+@media print, screen and (min-width: 64.0625em) {
   .program-info .callout {
     margin-top: -5rem;
   }
 }
 
-@media print,
-screen and (48.0625em <=width <=64.0625em) {
+@media print, screen and (48.0625em <=width <=64.0625em) {
   .program-info .callout {
     margin-top: 2rem;
   }
 }
 
 
-/* =============================
-   Scroll Behavior for Embedded Slate Forms
-   ============================= */
-
+/*
+    =============================
+    Scroll Behavior for Embedded Slate Forms
+    ============================= 
+*/
 
 /* Primary scroll region */
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
   max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 8px;        /* avoid content hiding behind scrollbar */
-  scrollbar-width: thin;     /* Firefox styling */
+  padding-right: 8px; /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin; /* Firefox styling */
   scrollbar-color: #bbb transparent;
 }
 
 /* Ensure all form wrappers allow scroll region to behave */
-#lp-code-416,
-#lp-code-416 .form_container,
-#lp-code-416 form {
+#lp-code-519,
+#lp-code-519 .form_container,
+#lp-code-519 form {
   max-height: 420px;
   overflow-y: auto !important;
   overflow-x: hidden !important;
@@ -109,9 +105,11 @@ screen and (48.0625em <=width <=64.0625em) {
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
+
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
   background: transparent;
 }
+
 #form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;

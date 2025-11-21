@@ -5,7 +5,7 @@
 */
 
 /* Primary scroll region */
-#form_5b088635-4bf3-469f-9104-4f9c6363546c {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
   max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -26,22 +26,22 @@
 }
 
 /* Chrome, Edge, Safari scrollbars */
-#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar {
   width: 8px;
 }
 
-#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-track {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-thumb {
+#form_93a74e7c-9f4b-42d5-b312-2512bab5856f::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
 }
 
 /* Optional: remove scroll restriction for mobile users */
 @media (max-width: 600px) {
-  #form_5b088635-4bf3-469f-9104-4f9c6363546c {
+  #form_93a74e7c-9f4b-42d5-b312-2512bab5856f {
     max-height: none;
     overflow-y: visible;
   }
