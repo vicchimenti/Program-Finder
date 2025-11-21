@@ -1,15 +1,16 @@
-/* =============================
-   Scroll Behavior for Embedded Slate Forms
-   ============================= */
-
+/*
+      =============================
+      Scroll Behavior for Embedded Slate Forms
+      ============================= 
+  */
 
 /* Primary scroll region */
 #form_5b088635-4bf3-469f-9104-4f9c6363546c {
   max-height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 8px;        /* avoid content hiding behind scrollbar */
-  scrollbar-width: thin;     /* Firefox styling */
+  padding-right: 8px; /* avoid content hiding behind scrollbar */
+  scrollbar-width: thin; /* Firefox styling */
   scrollbar-color: #bbb transparent;
 }
 
@@ -28,9 +29,11 @@
 #form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar {
   width: 8px;
 }
+
 #form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-track {
   background: transparent;
 }
+
 #form_5b088635-4bf3-469f-9104-4f9c6363546c::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
