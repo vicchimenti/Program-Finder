@@ -16,7 +16,6 @@ try {
     }
 
     var list = {};
-    list["id"] = processTags('<t4 type="meta" meta="content_id" />');
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
     list["programID"] = processTags('<t4 type="meta" meta="content_id" />');
     list["school"] = processTags('<t4 type="content" name="School" output="normal" display_field="name" delimiter="|" />');
@@ -35,64 +34,103 @@ try {
     list["occupationalCategory"] = processTags('<t4 type="content" name="Occupational Category" output="normal" display_field="value" delimiter="," />');
     list["keywordTags"] = processTags('<t4 type="content" name="Hidden Seach Terms" output="normal" modifiers="striptags,htmlentities" delimiter="," />');
 
-    var collegeUrls = {
-        "Albers School of Business & Economics": "https://www.seattleu.edu/business/",
-        "College of Arts & Sciences": "https://www.seattleu.edu/arts-sciences/",
-        "College of Education": "https://www.seattleu.edu/education/",
-        "College of Nursing & Health Sciences": "https://www.seattleu.edu/nursing-health-sciences/",
-        "College of Science & Engineering": "https://www.seattleu.edu/science-engineering/",
-        "Cornish College of the Arts": "https://www.cornish.edu/",
-        "School of Law": "https://law.seattleu.edu/"
-    };
+    // Critical field check
+    if (!list["programName"]) {
+        document.write("<!-- JSON-LD skipped: missing programName -->");
+    } else {
 
-    var collegeName = list["school"];
-    var collegeUrl = collegeUrls[collegeName] || "https://www.seattleu.edu/";
-
-    var provider = {
-        "@type": "CollegeOrUniversity",
-        "name": "Seattle University",
-        "url": "https://www.seattleu.edu/",
-        "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png"
-    };
-
-    if (collegeName) {
-        provider["school"] = {
-            "@type": "EducationalOrganization",
-            "name": collegeName,
-            "url": collegeUrl
+        // College/School URL mapping
+        var collegeUrls = {
+            "Albers School of Business & Economics": "https://www.seattleu.edu/business/",
+            "College of Arts & Sciences": "https://www.seattleu.edu/arts-sciences/",
+            "College of Education": "https://www.seattleu.edu/education/",
+            "College of Nursing & Health Sciences": "https://www.seattleu.edu/nursing-health-sciences/",
+            "College of Science & Engineering": "https://www.seattleu.edu/science-engineering/",
+            "Cornish College of the Arts": "https://www.cornish.edu/",
+            "School of Law": "https://law.seattleu.edu/"
         };
 
-        if (list["programDepartment"]) {
-            provider["programDepartment"] = {
+        var collegeName = list["school"];
+        var collegeUrl = collegeUrls[collegeName] || "https://www.seattleu.edu/";
+
+        // Build provider with conditional college/department nesting
+        var provider = {
+            "@type": "CollegeOrUniversity",
+            "name": "Seattle University",
+            "url": "https://www.seattleu.edu/",
+            "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png"
+        };
+
+        if (collegeName && list["programDepartment"]) {
+            // Both: nest department inside college
+            provider["department"] = {
+                "@type": "EducationalOrganization",
+                "name": collegeName,
+                "url": collegeUrl,
+                "subOrganization": {
+                    "@type": "EducationalOrganization",
+                    "name": list["programDepartment"]
+                }
+            };
+        } else if (collegeName) {
+            // College only
+            provider["department"] = {
+                "@type": "EducationalOrganization",
+                "name": collegeName,
+                "url": collegeUrl
+            };
+        } else if (list["programDepartment"]) {
+            // Department only (e.g., Campus Ministry)
+            provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": list["programDepartment"]
             };
         }
+        // Neither: provider stays as Seattle University base only
+
+        // Process occupationalCategory: split, trim, filter empties
+        var categories = list["occupationalCategory"]
+            .split(",")
+            .map(function(item) { return item.trim(); })
+            .filter(function(item) { return item !== ""; });
+
+        // Build main JSON-LD object
+        var jsonLD = {
+            "@context": "https://schema.org",
+            "@type": "EducationalOccupationalProgram",
+            "name": list["programName"],
+            "description": list["programSummary"] || list["programDescription"],
+            "educationalCredentialAwarded": list["degree"],
+            "timeToComplete": list["duration"],
+            "numberOfCredits": list["credits"],
+            "programMode": list["learningFormat"],
+            "programType": list["programType"],
+            "programPrerequisites": list["programPrerequisites"],
+            "occupationalCategory": categories,
+            "provider": provider
+        };
+
+        // Filter out empty properties
+        Object.keys(jsonLD).forEach(function(key) {
+            var val = jsonLD[key];
+            // Remove null, undefined, empty strings
+            if (val === null || val === undefined || val === "") {
+                delete jsonLD[key];
+            }
+            // Remove empty arrays
+            if (Array.isArray(val) && val.length === 0) {
+                delete jsonLD[key];
+            }
+        });
+
+        // Output JSON-LD
+        document.write(
+            '<script type="application/ld+json">' +
+            JSON.stringify(jsonLD) +
+            "</" + "script>"
+        );
     }
 
-    var categories = list["occupationalCategory"].split(",");
-
-    var jsonLD = {
-        "@context": "https://schema.org",
-        "@type": "EducationalOccupationalProgram",
-        "name": list["programName"],
-        "description": list["programSummary"] || list["programDescription"],
-        "educationalCredentialAwarded": list["degree"],
-        "timeToComplete": list["duration"],
-        "numberOfCredits": list["credits"],
-        "programMode": list["learningFormat"],
-        "programType": list["programType"],
-        "programPrerequisites": list["programPrerequisites"],
-        "occupationalCategory": categories,
-        "provider": provider
-    };
-
-    document.write(
-        '<script type="application/ld+json">' +
-        JSON.stringify(jsonLD) +
-        "</" + "script>"
-    );
-
 } catch (err) {
-    document.write(err);
+    document.write("<!-- JSON-LD error: " + err + " -->");
 }
