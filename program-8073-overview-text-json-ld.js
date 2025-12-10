@@ -22,25 +22,20 @@ try {
         );
     }
 
-    // Load occupation dictionary from media library
-    var occupationDict = {};
-    try {
-        var dictPath = processTags('<t4 type="media" id="10011365" formatter="path/*" />');
-        
-        // Use Java to fetch the file content
-        var url = new java.net.URL(dictPath);
-        var reader = new java.io.BufferedReader(new java.io.InputStreamReader(url.openStream()));
-        var dictJson = "";
-        var line;
-        while ((line = reader.readLine()) !== null) {
-            dictJson += line;
+    function readMediaText(mediaID) {
+        let mediaObj = getMediaInfo(mediaID);
+        let oMediaStream = mediaObj.getMedia();
+        let oScanner = new java.util.Scanner(oMediaStream).useDelimiter("\\A");
+        let sMedia = "";
+        while (oScanner.hasNext()) {
+            sMedia += oScanner.next();
         }
-        reader.close();
-        
-        occupationDict = JSON.parse(dictJson);
-    } catch (dictErr) {
-        document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
+        return sMedia;
     }
+
+    // Then load dictionary
+    var dictJson = readMediaText(10011365);
+    var occupationDict = JSON.parse(dictJson);
 
     var list = {};
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
