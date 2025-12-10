@@ -1,6 +1,6 @@
 /** 
  * program-8073-overview-text-json-ld.js
- * text/json+ld for Program Detail AI Overview
+ * text/json-ld for Program Detail AI Overview
  * id: 8073
  * 
  */
