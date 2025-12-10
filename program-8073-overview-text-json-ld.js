@@ -25,7 +25,18 @@ try {
     // Load occupation dictionary from media library
     var occupationDict = {};
     try {
-        var dictJson = processTags('<t4 type="media" id="10011365" formatter="path/*" />');
+        var dictPath = processTags('<t4 type="media" id="10011365" formatter="path/*" />');
+        
+        // Use Java to fetch the file content
+        var url = new java.net.URL(dictPath);
+        var reader = new java.io.BufferedReader(new java.io.InputStreamReader(url.openStream()));
+        var dictJson = "";
+        var line;
+        while ((line = reader.readLine()) !== null) {
+            dictJson += line;
+        }
+        reader.close();
+        
         occupationDict = JSON.parse(dictJson);
     } catch (dictErr) {
         document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
