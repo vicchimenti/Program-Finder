@@ -15,6 +15,15 @@ try {
         );
     }
 
+    // Load occupation dictionary from media library
+    var occupationDict = {};
+    try {
+        var dictJson = processTags('<t4 type="media" id="XXXXXX" formatter="text/*" />');
+        occupationDict = JSON.parse(dictJson);
+    } catch (dictErr) {
+        document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
+    }
+
     var list = {};
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
     list["programID"] = processTags('<t4 type="meta" meta="content_id" />');
@@ -62,7 +71,6 @@ try {
         };
 
         if (collegeName && list["programDepartment"]) {
-            // Both: nest department inside college
             provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": collegeName,
@@ -73,26 +81,74 @@ try {
                 }
             };
         } else if (collegeName) {
-            // College only
             provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": collegeName,
                 "url": collegeUrl
             };
         } else if (list["programDepartment"]) {
-            // Department only (e.g., Campus Ministry)
             provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": list["programDepartment"]
             };
         }
-        // Neither: provider stays as Seattle University base only
 
         // Process occupationalCategory: split, trim, filter empties
         var categories = list["occupationalCategory"]
             .split(",")
             .map(function(item) { return item.trim(); })
             .filter(function(item) { return item !== ""; });
+
+        // Build occupationalCategory array with CategoryCode objects
+        var occupationalCategoryArray = [];
+        
+        categories.forEach(function(title) {
+            var occ = occupationDict[title];
+            
+            if (occ) {
+                // SOC code
+                if (occ.soc && occ.soc.code) {
+                    occupationalCategoryArray.push({
+                        "@type": "CategoryCode",
+                        "name": occ.title,
+                        "codeValue": occ.soc.code,
+                        "inCodeSet": {
+                            "@type": "CategoryCodeSet",
+                            "name": occ.soc.source
+                        }
+                    });
+                }
+                
+                // ISCO code
+                if (occ.isco && occ.isco.code) {
+                    occupationalCategoryArray.push({
+                        "@type": "CategoryCode",
+                        "name": occ.title,
+                        "codeValue": occ.isco.code,
+                        "inCodeSet": {
+                            "@type": "CategoryCodeSet",
+                            "name": occ.isco.source
+                        }
+                    });
+                }
+                
+                // O*NET code
+                if (occ.onet && occ.onet.code) {
+                    occupationalCategoryArray.push({
+                        "@type": "CategoryCode",
+                        "name": occ.soc.detailed,
+                        "codeValue": occ.onet.code,
+                        "inCodeSet": {
+                            "@type": "CategoryCodeSet",
+                            "name": occ.onet.source
+                        }
+                    });
+                }
+            } else {
+                // Fallback: occupation not in dictionary, include title only
+                document.write("<!-- Occupation not found in dictionary: " + title + " -->");
+            }
+        });
 
         // Build main JSON-LD object
         var jsonLD = {
@@ -106,18 +162,16 @@ try {
             "programMode": list["learningFormat"],
             "programType": list["programType"],
             "programPrerequisites": list["programPrerequisites"],
-            "occupationalCategory": categories,
+            "occupationalCategory": occupationalCategoryArray,
             "provider": provider
         };
 
         // Filter out empty properties
         Object.keys(jsonLD).forEach(function(key) {
             var val = jsonLD[key];
-            // Remove null, undefined, empty strings
             if (val === null || val === undefined || val === "") {
                 delete jsonLD[key];
             }
-            // Remove empty arrays
             if (Array.isArray(val) && val.length === 0) {
                 delete jsonLD[key];
             }
