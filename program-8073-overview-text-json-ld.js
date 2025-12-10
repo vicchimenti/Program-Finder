@@ -61,7 +61,7 @@ try {
         var dictJson = readMediaText(10011365);
         occupationDict = JSON.parse(dictJson);
     } catch (dictErr) {
-        document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
+        isPreview && document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
     }
 
     var list = {};
@@ -85,7 +85,7 @@ try {
 
     // Critical field check
     if (!list["programName"]) {
-        document.write("<!-- JSON-LD skipped: missing programName -->");
+        isPreview && document.write("<!-- JSON-LD skipped: missing programName -->");
     } else {
 
         // College/School URL mapping
@@ -185,8 +185,7 @@ try {
                     });
                 }
             } else {
-                // Fallback: occupation not in dictionary, include title only
-                document.write("<!-- Occupation not found in dictionary: " + title + " -->");
+                isPreview && document.write("<!-- Occupation not found in dictionary: " + title + " -->");
             }
         });
 
@@ -226,5 +225,5 @@ try {
     }
 
 } catch (err) {
-    document.write("<!-- JSON-LD error: " + err + " -->");
+    isPreview && document.write("<!-- JSON-LD error: " + err + " -->");
 }
