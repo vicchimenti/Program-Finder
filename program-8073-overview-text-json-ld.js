@@ -42,9 +42,13 @@ try {
         return sMedia;
     }
 
-    // Then load dictionary
-    var dictJson = readMediaText(10011365);
-    var occupationDict = JSON.parse(dictJson);
+    var occupationDict = {};
+    try {
+        var dictJson = readMediaText(10011365);
+        occupationDict = JSON.parse(dictJson);
+    } catch (dictErr) {
+        document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
+    }
 
     var list = {};
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
