@@ -195,13 +195,13 @@ try {
             "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
             "name": list["programName"],
-            "description": list["programSummary"] || list["programDescription"],
-            "educationalCredentialAwarded": list["degree"],
+            "description": decodeHtmlEntities(list["programSummary"] || list["programDescription"]),
+            "educationalCredentialAwarded": decodeHtmlEntities(list["degree"]),
             "timeToComplete": list["duration"],
             "numberOfCredits": list["credits"],
             "programMode": list["learningFormat"],
             "programType": list["programType"],
-            "programPrerequisites": list["programPrerequisites"],
+            "programPrerequisites": decodeHtmlEntities(list["programPrerequisites"]),
             "occupationalCategory": occupationalCategoryArray,
             "provider": provider
         };
