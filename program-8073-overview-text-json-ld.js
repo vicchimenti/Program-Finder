@@ -25,6 +25,20 @@ try {
         );
     }
 
+    function decodeHtmlEntities(str) {
+        if (!str) return str;
+        return str
+            .replace(/&rsquo;/g, "'")
+            .replace(/&lsquo;/g, "'")
+            .replace(/&rdquo;/g, '"')
+            .replace(/&ldquo;/g, '"')
+            .replace(/&mdash;/g, "—")
+            .replace(/&ndash;/g, "–")
+            .replace(/&amp;/g, "&")
+            .replace(/&nbsp;/g, " ")
+            .replace(/&hellip;/g, "…");
+    }
+
     function getMediaInfo(mediaID) {
         let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
         let media = mediaManager.get(mediaID, language);
