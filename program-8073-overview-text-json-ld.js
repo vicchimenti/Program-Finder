@@ -5,6 +5,9 @@
  * 
  */
 
+importClass(com.terminalfour.media.IMediaManager);
+importClass(com.terminalfour.spring.ApplicationContextProvider);
+
 try {
 
     function processTags(t4Tag) {
@@ -20,6 +23,12 @@ try {
                 t4Tag
             )
         );
+    }
+
+    function getMediaInfo(mediaID) {
+        let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+        let media = mediaManager.get(mediaID, language);
+        return media;
     }
 
     function readMediaText(mediaID) {
