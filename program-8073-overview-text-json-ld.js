@@ -199,7 +199,7 @@ try {
             "educationalCredentialAwarded": decodeHtmlEntities(list["degree"]),
             "timeToComplete": list["duration"],
             "numberOfCredits": list["credits"],
-            "programMode": list["learningFormat"],
+            "educationalProgramMode": decodeHtmlEntities(list["learningFormat"]),
             "programType": list["programType"],
             "programPrerequisites": decodeHtmlEntities(list["programPrerequisites"]),
             "occupationalCategory": occupationalCategoryArray,
