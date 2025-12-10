@@ -18,7 +18,7 @@ try {
     // Load occupation dictionary from media library
     var occupationDict = {};
     try {
-        var dictJson = processTags('<t4 type="media" id="XXXXXX" formatter="text/*" />');
+        var dictJson = processTags('<t4 type="media" id="10011365" formatter="text/*" />');
         occupationDict = JSON.parse(dictJson);
     } catch (dictErr) {
         document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
