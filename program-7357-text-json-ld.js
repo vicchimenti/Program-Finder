@@ -1,3 +1,13 @@
+/** 
+ * program-7357-text-json-ld.js
+ * text/json-ld for Program Detail Hero
+ * id: 7357
+ * 
+ */
+
+importClass(com.terminalfour.media.IMediaManager);
+importClass(com.terminalfour.spring.ApplicationContextProvider);
+
 try {
 
     function processTags(t4Tag) {
@@ -13,6 +23,45 @@ try {
                 t4Tag
             )
         );
+    }
+
+    function decodeHtmlEntities(str) {
+        if (!str) return str;
+        return str
+            .replace(/&rsquo;/g, "'")
+            .replace(/&lsquo;/g, "'")
+            .replace(/&rdquo;/g, '"')
+            .replace(/&ldquo;/g, '"')
+            .replace(/&mdash;/g, "—")
+            .replace(/&ndash;/g, "–")
+            .replace(/&amp;/g, "&")
+            .replace(/&nbsp;/g, " ")
+            .replace(/&hellip;/g, "…");
+    }
+
+    function getMediaInfo(mediaID) {
+        let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+        let media = mediaManager.get(mediaID, language);
+        return media;
+    }
+
+    function readMediaText(mediaID) {
+        let mediaObj = getMediaInfo(mediaID);
+        let oMediaStream = mediaObj.getMedia();
+        let oScanner = new java.util.Scanner(oMediaStream).useDelimiter("\\A");
+        let sMedia = "";
+        while (oScanner.hasNext()) {
+            sMedia += oScanner.next();
+        }
+        return sMedia;
+    }
+
+    var occupationDict = {};
+    try {
+        var dictJson = readMediaText(10011365);
+        occupationDict = JSON.parse(dictJson);
+    } catch (dictErr) {
+        isPreview && document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
     }
 
     var list = {};
@@ -36,7 +85,7 @@ try {
 
     // Critical field check
     if (!list["programName"]) {
-        document.write("<!-- JSON-LD skipped: missing programName -->");
+        isPreview && document.write("<!-- JSON-LD skipped: missing programName -->");
     } else {
 
         // College/School URL mapping
@@ -56,13 +105,32 @@ try {
         // Build provider with conditional college/department nesting
         var provider = {
             "@type": "CollegeOrUniversity",
+            "@id": "https://www.seattleu.edu/#organization",
             "name": "Seattle University",
             "url": "https://www.seattleu.edu/",
-            "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png"
+            "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
+            "identifier": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "IPEDS ID",
+                    "value": "236595"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "OPE ID",
+                    "value": "00379000"
+                }
+            ],
+            "sameAs": [
+                "https://x.com/seattleu/",
+                "https://www.facebook.com/seattleu/",
+                "https://www.instagram.com/seattleu/",
+                "https://www.linkedin.com/school/seattle-university/",
+                "https://en.wikipedia.org/wiki/Seattle_University"
+            ]
         };
 
         if (collegeName && list["programDepartment"]) {
-            // Both: nest department inside college
             provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": collegeName,
@@ -73,51 +141,96 @@ try {
                 }
             };
         } else if (collegeName) {
-            // College only
             provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": collegeName,
                 "url": collegeUrl
             };
         } else if (list["programDepartment"]) {
-            // Department only (e.g., Campus Ministry)
             provider["department"] = {
                 "@type": "EducationalOrganization",
                 "name": list["programDepartment"]
             };
         }
-        // Neither: provider stays as Seattle University base only
 
         // Process occupationalCategory: split, trim, filter empties
         var categories = list["occupationalCategory"]
             .split(",")
-            .map(function(item) { return item.trim(); })
-            .filter(function(item) { return item !== ""; });
+            .map(function (item) { return item.trim(); })
+            .filter(function (item) { return item !== ""; });
+
+        // Build occupationalCategory array with CategoryCode objects
+        var occupationalCategoryArray = [];
+
+        categories.forEach(function (title) {
+            var occ = occupationDict[title];
+
+            if (occ) {
+                // SOC code
+                if (occ.soc && occ.soc.code) {
+                    occupationalCategoryArray.push({
+                        "@type": "CategoryCode",
+                        "name": occ.title,
+                        "codeValue": occ.soc.code,
+                        "inCodeSet": {
+                            "@type": "CategoryCodeSet",
+                            "name": occ.soc.source
+                        }
+                    });
+                }
+
+                // ISCO code
+                if (occ.isco && occ.isco.code) {
+                    occupationalCategoryArray.push({
+                        "@type": "CategoryCode",
+                        "name": occ.title,
+                        "codeValue": occ.isco.code,
+                        "inCodeSet": {
+                            "@type": "CategoryCodeSet",
+                            "name": occ.isco.source
+                        }
+                    });
+                }
+
+                // O*NET code
+                if (occ.onet && occ.onet.code) {
+                    occupationalCategoryArray.push({
+                        "@type": "CategoryCode",
+                        "name": occ.soc.detailed,
+                        "codeValue": occ.onet.code,
+                        "inCodeSet": {
+                            "@type": "CategoryCodeSet",
+                            "name": occ.onet.source
+                        }
+                    });
+                }
+            } else {
+                isPreview && document.write("<!-- Occupation not found in dictionary: " + title + " -->");
+            }
+        });
 
         // Build main JSON-LD object
         var jsonLD = {
             "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
             "name": list["programName"],
-            "description": list["programSummary"] || list["programDescription"],
-            "educationalCredentialAwarded": list["degree"],
+            "description": decodeHtmlEntities(list["programSummary"] || list["programDescription"]),
+            "educationalCredentialAwarded": decodeHtmlEntities(list["degree"]),
             "timeToComplete": list["duration"],
             "numberOfCredits": list["credits"],
-            "programMode": list["learningFormat"],
+            "educationalProgramMode": decodeHtmlEntities(list["learningFormat"]),
             "programType": list["programType"],
-            "programPrerequisites": list["programPrerequisites"],
-            "occupationalCategory": categories,
+            "programPrerequisites": decodeHtmlEntities(list["programPrerequisites"]),
+            "occupationalCategory": occupationalCategoryArray,
             "provider": provider
         };
 
         // Filter out empty properties
-        Object.keys(jsonLD).forEach(function(key) {
+        Object.keys(jsonLD).forEach(function (key) {
             var val = jsonLD[key];
-            // Remove null, undefined, empty strings
             if (val === null || val === undefined || val === "") {
                 delete jsonLD[key];
             }
-            // Remove empty arrays
             if (Array.isArray(val) && val.length === 0) {
                 delete jsonLD[key];
             }
@@ -132,5 +245,5 @@ try {
     }
 
 } catch (err) {
-    document.write("<!-- JSON-LD error: " + err + " -->");
+    isPreview && document.write("<!-- JSON-LD error: " + err + " -->");
 }
