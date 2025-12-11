@@ -105,6 +105,7 @@ try {
         // Build provider with conditional college/department nesting
         var provider = {
             "@type": "CollegeOrUniversity",
+            "@id": "https://www.seattleu.edu/#organization",
             "name": "Seattle University",
             "url": "https://www.seattleu.edu/",
             "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
@@ -119,6 +120,13 @@ try {
                     "propertyID": "OPE ID",
                     "value": "00379000"
                 }
+            ],
+            "sameAs": [
+                "https://x.com/seattleu/",
+                "https://www.facebook.com/seattleu/",
+                "https://www.instagram.com/seattleu/",
+                "https://www.linkedin.com/school/seattle-university/",
+                "https://en.wikipedia.org/wiki/Seattle_University"
             ]
         };
 
