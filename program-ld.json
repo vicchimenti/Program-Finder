@@ -1,0 +1,110 @@
+{
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": "Business Analytics, BABA",
+    "description": "As a business analytics major, you'll gain the technical and professional skills to harness the power of data and help businesses thrive for the good of all.",
+    "educationalCredentialAwarded": "BA in Business Administration",
+    "timeToComplete": "P4Y",
+    "numberOfCredits": "180",
+    "educationalProgramMode": "In-Person",
+    "programType": "Major",
+    "programPrerequisites": "Business Calculus",
+    "occupationalCategory": [
+        {
+            "@type": "CategoryCode",
+            "name": "Credit Analyst",
+            "codeValue": "13-2041",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "BLS SOC 2018"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Credit Analyst",
+            "codeValue": "2413",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "ILO ISCO-08"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Credit Analysts",
+            "codeValue": "13-2041.00",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "O*NET 29.1"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Analyst",
+            "codeValue": "13-2051",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "BLS SOC 2018"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Analyst",
+            "codeValue": "2413",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "ILO ISCO-08"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial and Investment Analysts",
+            "codeValue": "13-2051.00",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "O*NET 29.1"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Planner",
+            "codeValue": "13-2052",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "BLS SOC 2018"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Planner",
+            "codeValue": "2412",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "ILO ISCO-08"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Personal Financial Advisors",
+            "codeValue": "13-2052.00",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "O*NET 29.1"
+            }
+        }
+    ],
+    "provider": {
+        "@type": "CollegeOrUniversity",
+        "name": "Seattle University",
+        "url": "https://www.seattleu.edu/",
+        "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
+        "department": {
+            "@type": "EducationalOrganization",
+            "name": "Albers School of Business & Economics",
+            "url": "https://www.seattleu.edu/business/",
+            "subOrganization": {
+                "@type": "EducationalOrganization",
+                "name": "Department of Accounting"
+            }
+        }
+    }
+}

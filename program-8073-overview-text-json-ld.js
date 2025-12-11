@@ -107,7 +107,19 @@ try {
             "@type": "CollegeOrUniversity",
             "name": "Seattle University",
             "url": "https://www.seattleu.edu/",
-            "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png"
+            "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
+            "identifier": [
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "IPEDS ID",
+                    "value": "236595"
+                },
+                {
+                    "@type": "PropertyValue",
+                    "propertyID": "OPE ID",
+                    "value": "00379000"
+                }
+            ]
         };
 
         if (collegeName && list["programDepartment"]) {
@@ -136,15 +148,15 @@ try {
         // Process occupationalCategory: split, trim, filter empties
         var categories = list["occupationalCategory"]
             .split(",")
-            .map(function(item) { return item.trim(); })
-            .filter(function(item) { return item !== ""; });
+            .map(function (item) { return item.trim(); })
+            .filter(function (item) { return item !== ""; });
 
         // Build occupationalCategory array with CategoryCode objects
         var occupationalCategoryArray = [];
-        
-        categories.forEach(function(title) {
+
+        categories.forEach(function (title) {
             var occ = occupationDict[title];
-            
+
             if (occ) {
                 // SOC code
                 if (occ.soc && occ.soc.code) {
@@ -158,7 +170,7 @@ try {
                         }
                     });
                 }
-                
+
                 // ISCO code
                 if (occ.isco && occ.isco.code) {
                     occupationalCategoryArray.push({
@@ -171,7 +183,7 @@ try {
                         }
                     });
                 }
-                
+
                 // O*NET code
                 if (occ.onet && occ.onet.code) {
                     occupationalCategoryArray.push({
@@ -206,7 +218,7 @@ try {
         };
 
         // Filter out empty properties
-        Object.keys(jsonLD).forEach(function(key) {
+        Object.keys(jsonLD).forEach(function (key) {
             var val = jsonLD[key];
             if (val === null || val === undefined || val === "") {
                 delete jsonLD[key];
