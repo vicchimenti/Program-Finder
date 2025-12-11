@@ -1,0 +1,634 @@
+{
+  "Accounting, BABA": {
+    "cip": "52.0301",
+    "url": "https://www.seattleu.edu/academics/all-programs/accounting-baba/"
+  },
+  "Accounting, Certificate": {
+    "cip": "52.0301",
+    "url": "https://www.seattleu.edu/academics/all-programs/accounting-certificate/"
+  },
+  "Accounting & Analytics, MS": {
+    "cip": "52.0301",
+    "url": "https://www.seattleu.edu/academics/all-programs/accounting-analytics-ms/"
+  },
+  "Acting & Original Works, BFA": {
+    "cip": "50.0506",
+    "url": "https://www.seattleu.edu/academics/all-programs/acting--original-works-bfa/"
+  },
+  "African & African American Studies, Minor": {
+    "cip": "5.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/african--african-american-studies-minor/"
+  },
+  "American Legal Studies, LLM": {
+    "cip": "22.0203",
+    "url": "https://www.seattleu.edu/academics/all-programs/american-legal-studies-llm/"
+  },
+  "Animation, BFA": {
+    "cip": "10.0304",
+    "url": "https://www.seattleu.edu/academics/all-programs/animation-bfa/"
+  },
+  "Anthropology & Sociology, BA": {
+    "cip": "45.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/anthropology--sociology-ba/"
+  },
+  "Art, BFA": {
+    "cip": "36.011",
+    "url": "https://www.seattleu.edu/academics/all-programs/art-bfa/"
+  },
+  "Art and Visual Culture Studies, BA": {
+    "cip": "50.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/art-and-visual-culture-studies-ba/"
+  },
+  "Artificial Intelligence, Online, MS": {
+    "cip": "11.0102",
+    "url": "https://www.seattleu.edu/academics/all-programs/artificial-intelligence-online-ms/"
+  },
+  "Arts Leadership, MFA": {
+    "cip": "50.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/arts-leadership-mfa/"
+  },
+  "Asian Studies, BA": {
+    "cip": "5.0103",
+    "url": "https://www.seattleu.edu/academics/all-programs/asian-studies/"
+  },
+  "Biochemistry, BS": {
+    "cip": "26.0202",
+    "url": "https://www.seattleu.edu/academics/all-programs/biochemistry-bs/"
+  },
+  "Biology, BA": {
+    "cip": "26.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/biology-ba/"
+  },
+  "Biology, BS": {
+    "cip": "26.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/biology-bs/"
+  },
+  "Business & Law, BABA": {
+    "cip": "52.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-law-baba/"
+  },
+  "Business Administration, Certificate": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-administration-certificate/"
+  },
+  "Business Administration, Minor": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-administration-minor/"
+  },
+  "Business Analytics, BABA": {
+    "cip": "30.7102",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-analytics-baba/"
+  },
+  "Business Analytics, Certificate": {
+    "cip": "30.7102",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-analytics-certificate/"
+  },
+  "Business Analytics, MS": {
+    "cip": "30.7102",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-analytics-ms/"
+  },
+  "Business Analytics, Online, MS": {
+    "cip": "30.7102",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-analytics-online-ms/"
+  },
+  "Business Economics, BABA": {
+    "cip": "52.0601",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-economics-baba/"
+  },
+  "Catholic Studies, Minor": {
+    "cip": "38.0208",
+    "url": "https://www.seattleu.edu/academics/all-programs/catholic-studies-minor/"
+  },
+  "Cell & Molecular Biology, BS": {
+    "cip": "26.0406",
+    "url": "https://www.seattleu.edu/academics/all-programs/cell--molecular-biology-bs/"
+  },
+  "Chemical Sciences, BS": {
+    "cip": "40.0501",
+    "url": "https://www.seattleu.edu/academics/all-programs/chemical-sciences-bs/"
+  },
+  "Chemistry, BS": {
+    "cip": "40.0501",
+    "url": "https://www.seattleu.edu/academics/all-programs/chemistry-bs/"
+  },
+  "Chinese, Minor": {
+    "cip": "16.0301",
+    "url": "https://www.seattleu.edu/academics/all-programs/chinese-minor/"
+  },
+  "Civil Engineering, BS": {
+    "cip": "14.0801",
+    "url": "https://www.seattleu.edu/academics/all-programs/civil-engineering-bs/"
+  },
+  "Clinical Mental Health Counseling, MAEd": {
+    "cip": "51.1508",
+    "url": "https://www.seattleu.edu/academics/all-programs/clinical-mental-health-counseling-maed/"
+  },
+  "Clinical Mental Health Counseling, Online, MAEd": {
+    "cip": "51.1508",
+    "url": "https://www.seattleu.edu/academics/all-programs/clinical-mental-health-counseling-online-maed/"
+  },
+  "Communication & Media, BA": {
+    "cip": "9.0702",
+    "url": "https://www.seattleu.edu/academics/all-programs/communication--media-ba/"
+  },
+  "Compliance & Risk Management, MLS": {
+    "cip": "22.0216",
+    "url": "https://www.seattleu.edu/academics/all-programs/compliance-risk-management-mls/"
+  },
+  "Computer Engineering, BS": {
+    "cip": "14.0901",
+    "url": "https://www.seattleu.edu/academics/all-programs/computer-engineering-bs/"
+  },
+  "Computer Science, BA & BS ": {
+    "cip": "11.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/computer-science-ba-bs/"
+  },
+  "Computer Science, MS": {
+    "cip": "11.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/computer-science-ms/"
+  },
+  "Computer Science Fundamentals, Certificate": {
+    "cip": "11.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/computer-science-fundamentals-certificate/"
+  },
+  "Couples & Family Therapy, MA": {
+    "cip": "51.1505",
+    "url": "https://www.seattleu.edu/academics/all-programs/couples--family-therapy-ma/"
+  },
+  "Crime Analysis, Certificate": {
+    "cip": "43.0104",
+    "url": "https://www.seattleu.edu/academics/all-programs/crime-analysis-certificate/"
+  },
+  "Criminal Justice, Joint MA & JD": {
+    "cip": "43.0104",
+    "url": "https://www.seattleu.edu/academics/all-programs/criminal-justice-joint-ma--jd/"
+  },
+  "Criminal Justice, MA": {
+    "cip": "43.0104",
+    "url": "https://www.seattleu.edu/academics/all-programs/criminal-justice-ma/"
+  },
+  "Criminal Justice and Criminology, BA": {
+    "cip": "45.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/criminal-justice-and-criminology-ba/"
+  },
+  "Criminal Justice, Online, MA": {
+    "cip": "43.0104",
+    "url": "https://www.seattleu.edu/academics/all-programs/criminal-justice-online-ma/"
+  },
+  "Cybersecurity Leadership, Online, MS": {
+    "cip": "11.1003",
+    "url": "https://www.seattleu.edu/academics/all-programs/online-masters-cybersecurity-leadership/"
+  },
+  "Dance,\u202fBFA": {
+    "cip": "50.0301",
+    "url": "https://www.seattleu.edu/academics/all-programs/dance-bfa/"
+  },
+  "Data Science, Certificate": {
+    "cip": "30.7001",
+    "url": "https://www.seattleu.edu/academics/all-programs/data-science-certificate/"
+  },
+  "Data Science, MS": {
+    "cip": "30.7001",
+    "url": "https://www.seattleu.edu/academics/all-programs/data-science-ms/"
+  },
+  "Data Science, Online, MS": {
+    "cip": "30.7001",
+    "url": "https://www.seattleu.edu/academics/all-programs/data-science-online-ms/"
+  },
+  "Design, BA": {
+    "cip": "50.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/design-ba/"
+  },
+  "Design, BFA": {
+    "cip": "50.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/design-bfa/"
+  },
+  "Diagnostic Ultrasound, BS": {
+    "cip": "51.091",
+    "url": "https://www.seattleu.edu/academics/all-programs/diagnostic-ultrasound-bs/"
+  },
+  "Diagnostic Ultrasound, Post-Baccalaureate Certificate": {
+    "cip": "51.091",
+    "url": "https://www.seattleu.edu/academics/all-programs/diagnostic-ultrasound-certificate/"
+  },
+  "Early Career, MBA": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/early-career-mba/"
+  },
+  "Economics, BA": {
+    "cip": "45.0601",
+    "url": "https://www.seattleu.edu/academics/all-programs/economics-ba/"
+  },
+  "Educational & Organizational Learning and Leadership, EdD": {
+    "cip": "13.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/educational-organizational-learning-leadership/"
+  },
+  "Electrical Engineering, BS": {
+    "cip": "14.1001",
+    "url": "https://www.seattleu.edu/academics/all-programs/electrical-engineering-bs/"
+  },
+  "English, BA & English & Creative Writing, BA": {
+    "cip": "23.1302",
+    "url": "https://www.seattleu.edu/academics/all-programs/english-creative-writing-ba/"
+  },
+  "Entrepreneurship & Innovation Minor": {
+    "cip": "52.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/entrepreneurship-innovation-minor/"
+  },
+  "Environmental Studies, BA & BS": {
+    "cip": "3.0103",
+    "url": "https://www.seattleu.edu/academics/all-programs/environmental-studies-ba-bs/"
+  },
+  "Ethics, Minor": {
+    "cip": "38.0103",
+    "url": "https://www.seattleu.edu/academics/all-programs/ethics-minor/"
+  },
+  "Executive Leadership, Certificate": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/executive-leadership-certificate/"
+  },
+  "Film, BFA": {
+    "cip": "50.0601",
+    "url": "https://www.seattleu.edu/academics/all-programs/film-bfa/"
+  },
+  "Film and Media, BA": {
+    "cip": "50.0601",
+    "url": "https://www.seattleu.edu/academics/all-programs/film--media-ba/"
+  },
+  "Finance, BABA": {
+    "cip": "52.0801",
+    "url": "https://www.seattleu.edu/academics/all-programs/finance-baba/"
+  },
+  "Finance, Certificate": {
+    "cip": "52.0801",
+    "url": "https://www.seattleu.edu/academics/all-programs/finance-certificate/"
+  },
+  "Finance, MS": {
+    "cip": "52.0801",
+    "url": "https://www.seattleu.edu/academics/all-programs/finance-ms/"
+  },
+  "Forensic Psychology, BA\u00a0& BS": {
+    "cip": "42.2812",
+    "url": "https://www.seattleu.edu/academics/all-programs/forensic-psychology-ba--bs/"
+  },
+  "Forensic Science, BS": {
+    "cip": "43.0406",
+    "url": "https://www.seattleu.edu/academics/all-programs/forensic-science-bs/"
+  },
+  "French, BA": {
+    "cip": "16.0901",
+    "url": "https://www.seattleu.edu/academics/all-programs/french-ba/"
+  },
+  "Fundamentals of Management, Certificate": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/fundamentals-of-management-certificate/"
+  },
+  "Fundraising Leadership, Certificate": {
+    "cip": "52.0804",
+    "url": "https://www.seattleu.edu/academics/all-programs/fundraising-leadership-certificate/"
+  },
+  "Game Art, BFA": {
+    "cip": "50.0411",
+    "url": "https://www.seattleu.edu/academics/all-programs/game-art-bfa/"
+  },
+  "Geographic Information Systems (GIS) & Geospatial Technology, Certificate": {
+    "cip": "45.0702",
+    "url": "https://www.seattleu.edu/academics/all-programs/geographic-information-systems-geospatial-technology-certificate/"
+  },
+  "Global Business Minor": {
+    "cip": "52.1101",
+    "url": "https://www.seattleu.edu/academics/all-programs/global-business/"
+  },
+  "Global Business, Certificate": {
+    "cip": "52.1101",
+    "url": "https://www.seattleu.edu/academics/all-programs/global-business-certificate/"
+  },
+  "Health Law, MLS": {
+    "cip": "22.0208",
+    "url": "https://www.seattleu.edu/academics/all-programs/health-law-mls/"
+  },
+  "History, BA": {
+    "cip": "54.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/history-ba/"
+  },
+  "Humanitarian Engineering, Minor": {
+    "cip": "14.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/humanitarian-engineering-minor/"
+  },
+  "Humanities, BA": {
+    "cip": "24.0103",
+    "url": "https://www.seattleu.edu/academics/all-programs/humanities-ba/"
+  },
+  "Humanities for Teaching, BA": {
+    "cip": "24.0103",
+    "url": "https://www.seattleu.edu/academics/all-programs/humanities-for-teaching-ba/"
+  },
+  "Illustration, BFA": {
+    "cip": "50.041",
+    "url": "https://www.seattleu.edu/academics/all-programs/illustration-bfa/"
+  },
+  "Individualized Major, BABA": {
+    "cip": "24.0102",
+    "url": "https://www.seattleu.edu/academics/all-programs/individualized-major-baba/"
+  },
+  "Innovation & Entrepreneurship, Certificate": {
+    "cip": "52.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/innovation--entrepreneurship-certificate/"
+  },
+  "Interaction (UX) Design, BFA": {
+    "cip": "11.0801",
+    "url": "https://www.seattleu.edu/academics/all-programs/interactive-ux-design-bfa/"
+  },
+  "Interdisciplinary Arts, Arts Leadership, BA": {
+    "cip": "50.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-arts-leadership-ba/"
+  },
+  "Interdisciplinary Arts, Music, BA": {
+    "cip": "50.0901",
+    "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-music-ba/"
+  },
+  "Interdisciplinary Arts, Photography, BA": {
+    "cip": "50.0605",
+    "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-photography-ba/"
+  },
+  "Interdisciplinary Arts, Theatre, BA": {
+    "cip": "50.0501",
+    "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-theatre-ba/"
+  },
+  "Interdisciplinary Arts, Visual Art, BA": {
+    "cip": "50.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-visual-art-ba/"
+  },
+  "International Studies, BA": {
+    "cip": "30.2001",
+    "url": "https://www.seattleu.edu/academics/all-programs/international-studies-ba/"
+  },
+  "Japanese, Minor": {
+    "cip": "16.0302",
+    "url": "https://www.seattleu.edu/academics/all-programs/japanese-minor/"
+  },
+  "Juridical Science, SJD": {
+    "cip": "22.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/juridical-science-sjd/"
+  },
+  "Juris Doctor (JD)": {
+    "cip": "22.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/juris-doctor-jd/"
+  },
+  "Juris Doctor (JD), Global Accelerated": {
+    "cip": "22.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/juris-doctor-jd-global-accelerated/"
+  },
+  "Juris Doctor (JD), Part-Time Flex": {
+    "cip": "22.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/juris-doctor-jd-part-time-flex/"
+  },
+  "Kinesiology, BS": {
+    "cip": "31.0505",
+    "url": "https://www.seattleu.edu/academics/all-programs/kinesiology-bs/"
+  },
+  "Kinesiology, MS": {
+    "cip": "31.0505",
+    "url": "https://www.seattleu.edu/academics/all-programs/kinesiology-ms/"
+  },
+  "Latin America & Latinx Studies, Minor": {
+    "cip": "5.0107",
+    "url": "https://www.seattleu.edu/academics/all-programs/latin-america--latinx-studies-minor/"
+  },
+  "Leadership Executive, MBA": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/leadership-executive-mba/"
+  },
+  "Leadership Formation, Certificate": {
+    "cip": "52.1003",
+    "url": "https://www.seattleu.edu/academics/all-programs/leadership-formation-certificate/"
+  },
+  "Legal Studies, MLS": {
+    "cip": "22.0",
+    "url": "https://www.seattleu.edu/academics/all-programs/legal-studies-mls/"
+  },
+  "Management, BABA": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/management-baba/"
+  },
+  "Marine & Conservation Biology, BS": {
+    "cip": "30.3201",
+    "url": "https://www.seattleu.edu/academics/all-programs/marine-conservation-biology-bs/"
+  },
+  "Marketing, BABA": {
+    "cip": "52.1401",
+    "url": "https://www.seattleu.edu/academics/all-programs/marketing-baba/"
+  },
+  "Marketing, Certificate": {
+    "cip": "52.1401",
+    "url": "https://www.seattleu.edu/academics/all-programs/marketing-certificate/"
+  },
+  "Master in Teaching, MIT": {
+    "cip": "13.121",
+    "url": "https://www.seattleu.edu/academics/all-programs/master-in-teaching-mit/"
+  },
+  "Master of Professional Accounting": {
+    "cip": "52.0301",
+    "url": "https://www.seattleu.edu/academics/all-programs/masters-professional-accounting/"
+  },
+  "Mathematics, BA & BS": {
+    "cip": "27.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/mathematics-ba--bs/"
+  },
+  "Mechanical Engineering, BS": {
+    "cip": "14.1901",
+    "url": "https://www.seattleu.edu/academics/all-programs/mechanical-engineering-bs/"
+  },
+  "Medieval & Early Modern Studies, Minor": {
+    "cip": "30.1301",
+    "url": "https://www.seattleu.edu/academics/all-programs/medieval--early-modern-studies-minor/"
+  },
+  "Middle Eastern Studies, Minor": {
+    "cip": "5.0108",
+    "url": "https://www.seattleu.edu/academics/all-programs/middle-eastern-studies-minor/"
+  },
+  "Music, BM": {
+    "cip": "50.0901",
+    "url": "https://www.seattleu.edu/academics/all-programs/music-bfa/"
+  },
+  "Music, Minor": {
+    "cip": "50.0901",
+    "url": "https://www.seattleu.edu/academics/all-programs/music-minor/"
+  },
+  "Musical Theater, BFA": {
+    "cip": "50.0509",
+    "url": "https://www.seattleu.edu/academics/all-programs/musical-theater-bfa/"
+  },
+  "Nonprofit Leadership, MNPL": {
+    "cip": "52.0206",
+    "url": "https://www.seattleu.edu/academics/all-programs/nonprofit-leadership-mnpl/"
+  },
+  "Nurse Practitioner, Adult-Gerontology Acute Care, DNP": {
+    "cip": "51.3801",
+    "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-acute-care-dnp/"
+  },
+  "Nurse Practitioner, Adult-Gerontology Acute Care, Post-Master's Certificate & Post-Doctoral Certificate": {
+    "cip": "51.3818",
+    "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-acute-care-certificate/"
+  },
+  "Nurse Practitioner, Family Nurse Practitioner, DNP": {
+    "cip": "51.3805",
+    "url": "https://www.seattleu.edu/academics/all-programs/primary-care-nurse-practitioner-dnp/"
+  },
+  "Nurse Practitioner, Family Nurse Practitioner, Post-Doctoral Certificate": {
+    "cip": "51.3805",
+    "url": "https://www.seattleu.edu/academics/all-programs/family-nurse-practitioner-certificate/"
+  },
+  "Nurse Practitioner, Psychiatric Mental Health, DNP": {
+    "cip": "51.1502",
+    "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-psychiatric-mental-health-dnp/"
+  },
+  "Nurse Practitioner, Psychiatric Mental Health, Post-Doctoral Certificate": {
+    "cip": "51.1502",
+    "url": "https://www.seattleu.edu/academics/all-programs/psychiatric-nurse-pmhnp-dnp-certificate/"
+  },
+  "Nurse Practitioner, Women\u2019s Health, DNP": {
+    "cip": "51.3801",
+    "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-womens-health-dnp/"
+  },
+  "Nurse-Midwifery, DNP": {
+    "cip": "51.3807",
+    "url": "https://www.seattleu.edu/academics/all-programs/nurse-midwifery-dnp/"
+  },
+  "Nurse-Midwifery, Post-Doctoral Certificate": {
+    "cip": "51.3807",
+    "url": "https://www.seattleu.edu/academics/all-programs/nurse-midwifery-post-doctoral-certificate/"
+  },
+  "Nursing, Advanced Practice Nursing Immersion, DNP": {
+    "cip": "51.3801",
+    "url": "https://www.seattleu.edu/academics/all-programs/nursing-advanced-practice-nursing-immersion-dnp/"
+  },
+  "Nursing, BS": {
+    "cip": "51.3801",
+    "url": "https://www.seattleu.edu/academics/all-programs/nursing-bs/"
+  },
+  "Nursing, Health Systems Leader, Post-Master's DNP": {
+    "cip": "51.3801",
+    "url": "https://www.seattleu.edu/academics/all-programs/nursing-health-systems-leader-post-masters-dnp/"
+  },
+  "Performance Production, BFA": {
+    "cip": "50.0502",
+    "url": "https://www.seattleu.edu/academics/all-programs/performance-production-bfa/"
+  },
+  "Personal Branding in Sport & Entertainment, Minor": {
+    "cip": "31.0504",
+    "url": "https://www.seattleu.edu/academics/all-programs/personal-branding-in-sport--entertainment-minor/"
+  },
+  "Philosophy, BA": {
+    "cip": "38.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/philosophy-ba/"
+  },
+  "Photography, BFA": {
+    "cip": "50.0605",
+    "url": "https://www.seattleu.edu/academics/all-programs/photography-bfa/"
+  },
+  "Physics, BA & BS": {
+    "cip": "40.0801",
+    "url": "https://www.seattleu.edu/academics/all-programs/physics-ba-bs/"
+  },
+  "Political Science, BA": {
+    "cip": "45.1001",
+    "url": "https://www.seattleu.edu/academics/all-programs/political-science-ba/"
+  },
+  "Post-Baccalaureate Pre Professional Health Studies Certificate": {
+    "cip": "51.1102",
+    "url": "https://www.seattleu.edu/academics/all-programs/pre-professional-health-studies-certificate/"
+  },
+  "Professional, MBA": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/professional-mba/"
+  },
+  "Psychology, BA & BS": {
+    "cip": "42.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/psychology-ba--bs/"
+  },
+  "Psychology, MA": {
+    "cip": "42.0101",
+    "url": "https://www.seattleu.edu/academics/all-programs/psychology-ma/"
+  },
+  "Public Administration, Certificate": {
+    "cip": "44.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/public-administration-certificate/"
+  },
+  "Public Administration, Joint MPA & JD": {
+    "cip": "44.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/public-administration-joint-mpa--jd/"
+  },
+  "Public Administration, MPA": {
+    "cip": "44.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/public-administration-mpa/"
+  },
+  "Public Affairs, BA": {
+    "cip": "44.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/public-affairs-ba/"
+  },
+  "Risk Advisory & Assurance, Certificate": {
+    "cip": "52.0201",
+    "url": "https://www.seattleu.edu/academics/all-programs/risk-advisory--assurance-certificate/"
+  },
+  "Robotics, Minor": {
+    "cip": "15.0405",
+    "url": "https://www.seattleu.edu/academics/all-programs/robotics-minor/"
+  },
+  "School Counseling, MAEd": {
+    "cip": "13.1101",
+    "url": "https://www.seattleu.edu/academics/all-programs/school-counseling-maed/"
+  },
+  "School Counseling, Online, MAEd": {
+    "cip": "13.1101",
+    "url": "https://www.seattleu.edu/academics/all-programs/school-counseling-online-maed/"
+  },
+  "School Psychology, EdS": {
+    "cip": "42.2805",
+    "url": "https://www.seattleu.edu/academics/all-programs/school-psychology-eds/"
+  },
+  "Social Work, MSW": {
+    "cip": "44.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/social-work-msw/"
+  },
+  "Spanish, BA": {
+    "cip": "16.0905",
+    "url": "https://www.seattleu.edu/academics/all-programs/spanish-ba/"
+  },
+  "Sport & Entertainment Management, MBA": {
+    "cip": "31.0504",
+    "url": "https://www.seattleu.edu/academics/all-programs/sport--entertainment-management-mba/"
+  },
+  "Sport & Entertainment Management, Online, MBA": {
+    "cip": "31.0504",
+    "url": "https://www.seattleu.edu/academics/all-programs/sport-entertainment-management-online-mba/"
+  },
+  "Sports Law, MLS": {
+    "cip": "22.0299",
+    "url": "https://www.seattleu.edu/academics/all-programs/sports-law-mls/"
+  },
+  "Technology, Innovation & Entrepreneurship, MLS": {
+    "cip": "52.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/technology-innovation-entrepreneurship-mls/"
+  },
+  "Technology, Innovation, & Entrepreneurship, LLM": {
+    "cip": "52.0701",
+    "url": "https://www.seattleu.edu/academics/all-programs/technology-innovation-entrepreneurship-llm/"
+  },
+  "Theatre, BA": {
+    "cip": "36.0117",
+    "url": "https://www.seattleu.edu/academics/all-programs/theatre-ba/"
+  },
+  "Theology & Religious Studies, BA": {
+    "cip": "39.0601",
+    "url": "https://www.seattleu.edu/academics/all-programs/theology--religious-studies-ba/"
+  },
+  "Transformational Teaching & Learning, MEd": {
+    "cip": "13.0401",
+    "url": "https://www.seattleu.edu/academics/all-programs/transformational-teaching-learning-med/"
+  },
+  "Women, Gender & Sexuality Studies, BA": {
+    "cip": "5.0207",
+    "url": "https://www.seattleu.edu/academics/all-programs/women-gender--sexuality-studies-ba/"
+  }
+}

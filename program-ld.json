@@ -1,19 +1,18 @@
 {
     "@context": "https://schema.org",
     "@type": "EducationalOccupationalProgram",
-    "name": "Business Analytics, BABA",
-    "description": "As a business analytics major, you'll gain the technical and professional skills to harness the power of data and help businesses thrive for the good of all.",
+    "name": "Accounting, BABA",
+    "description": "In this top-rated accounting program, you'll gain the technical skills and professional competencies for a thriving accounting career",
     "educationalCredentialAwarded": "BA in Business Administration",
     "timeToComplete": "P4Y",
     "numberOfCredits": "180",
     "educationalProgramMode": "In-Person",
-    "programType": "Major",
-    "programPrerequisites": "Business Calculus",
+    "programType": "Major|Minor",
     "occupationalCategory": [
         {
             "@type": "CategoryCode",
-            "name": "Credit Analyst",
-            "codeValue": "13-2041",
+            "name": "Accountant",
+            "codeValue": "13-2011",
             "inCodeSet": {
                 "@type": "CategoryCodeSet",
                 "name": "BLS SOC 2018"
@@ -21,8 +20,8 @@
         },
         {
             "@type": "CategoryCode",
-            "name": "Credit Analyst",
-            "codeValue": "2413",
+            "name": "Accountant",
+            "codeValue": "2411",
             "inCodeSet": {
                 "@type": "CategoryCodeSet",
                 "name": "ILO ISCO-08"
@@ -30,62 +29,8 @@
         },
         {
             "@type": "CategoryCode",
-            "name": "Credit Analysts",
-            "codeValue": "13-2041.00",
-            "inCodeSet": {
-                "@type": "CategoryCodeSet",
-                "name": "O*NET 29.1"
-            }
-        },
-        {
-            "@type": "CategoryCode",
-            "name": "Financial Analyst",
-            "codeValue": "13-2051",
-            "inCodeSet": {
-                "@type": "CategoryCodeSet",
-                "name": "BLS SOC 2018"
-            }
-        },
-        {
-            "@type": "CategoryCode",
-            "name": "Financial Analyst",
-            "codeValue": "2413",
-            "inCodeSet": {
-                "@type": "CategoryCodeSet",
-                "name": "ILO ISCO-08"
-            }
-        },
-        {
-            "@type": "CategoryCode",
-            "name": "Financial and Investment Analysts",
-            "codeValue": "13-2051.00",
-            "inCodeSet": {
-                "@type": "CategoryCodeSet",
-                "name": "O*NET 29.1"
-            }
-        },
-        {
-            "@type": "CategoryCode",
-            "name": "Financial Planner",
-            "codeValue": "13-2052",
-            "inCodeSet": {
-                "@type": "CategoryCodeSet",
-                "name": "BLS SOC 2018"
-            }
-        },
-        {
-            "@type": "CategoryCode",
-            "name": "Financial Planner",
-            "codeValue": "2412",
-            "inCodeSet": {
-                "@type": "CategoryCodeSet",
-                "name": "ILO ISCO-08"
-            }
-        },
-        {
-            "@type": "CategoryCode",
-            "name": "Personal Financial Advisors",
-            "codeValue": "13-2052.00",
+            "name": "Accountants and Auditors",
+            "codeValue": "13-2011.00",
             "inCodeSet": {
                 "@type": "CategoryCodeSet",
                 "name": "O*NET 29.1"
