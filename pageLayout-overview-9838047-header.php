@@ -40,7 +40,8 @@
 
     <t4 type="navigation" name="JSON-LD Meta Tags" id="1128" />
     <!-- JSON-LD -->
-     <script type="application/ld+json" id="breadcrumb-jsonld">
+     <script type="application/ld+json" id="breadcrumb-jsonld">    
+
         {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -49,6 +50,8 @@
             ]
         }
     </script>
+    <!-- TEMP: Breadcrumb JSON-LD hardcoded for validation; make conditional before prod -->
+
 
     <!-- Custom Head Code -->
     <t4 type="navigation" name="V10 - Custom Header Code" id="1014" />
