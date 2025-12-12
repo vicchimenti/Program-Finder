@@ -1,88 +1,138 @@
 {
-  "@context": "https://schema.org",
-  "@type": "EducationalOccupationalProgram",
-  "name": "Accounting, BABA",
-  "description": "In this top-rated accounting program, you'll gain the technical skills and professional competencies for a thriving accounting career.",
-  "educationalCredentialAwarded": "BA in Business Administration",
-  "timeToComplete": "P4Y",
-  "numberOfCredits": "180",
-  "educationalProgramMode": "In-Person",
-  "programType": "Major|Minor",
-  "programID": "BABA.ACCT",
-  "identifier": [
-    {
-      "@type": "PropertyValue",
-      "propertyID": "Registrar Program Code",
-      "value": "BABA.ACCT"
-    },
-    {
-      "@type": "PropertyValue",
-      "propertyID": "CIP 2020",
-      "value": "52.0301"
-    }
-  ],
-  "occupationalCategory": [
-    {
-      "@type": "CategoryCode",
-      "name": "Accountant",
-      "codeValue": "13-2011",
-      "inCodeSet": {
-        "@type": "CategoryCodeSet",
-        "name": "BLS SOC 2018"
-      }
-    },
-    {
-      "@type": "CategoryCode",
-      "name": "Accountant",
-      "codeValue": "2411",
-      "inCodeSet": {
-        "@type": "CategoryCodeSet",
-        "name": "ILO ISCO-08"
-      }
-    },
-    {
-      "@type": "CategoryCode",
-      "name": "Accountants and Auditors",
-      "codeValue": "13-2011.00",
-      "inCodeSet": {
-        "@type": "CategoryCodeSet",
-        "name": "O*NET 29.1"
-      }
-    }
-  ],
-  "provider": {
-    "@type": "CollegeOrUniversity",
-    "@id": "https://www.seattleu.edu/#organization",
-    "name": "Seattle University",
-    "url": "https://www.seattleu.edu/",
-    "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": "Business Analytics, BABA",
+    "url": "https://www.seattleu.edu/academics/all-programs/business-analytics-baba/",
+    "description": "As a business analytics major, you'll gain the technical and professional skills to harness the power of data and help businesses thrive for the good of all.",
+    "educationalCredentialAwarded": "BA in Business Administration",
+    "timeToComplete": "P4Y",
+    "numberOfCredits": "180",
+    "educationalProgramMode": "In-Person",
+    "programType": "Major",
+    "programPrerequisites": "Business Calculus",
     "identifier": [
-      {
-        "@type": "PropertyValue",
-        "propertyID": "IPEDS ID",
-        "value": "236595"
-      },
-      {
-        "@type": "PropertyValue",
-        "propertyID": "OPE ID",
-        "value": "00379000"
-      }
+        {
+            "@type": "PropertyValue",
+            "propertyID": "CIP 2020",
+            "value": "30.7102"
+        }
     ],
-    "sameAs": [
-      "https://x.com/seattleu/",
-      "https://www.facebook.com/seattleu/",
-      "https://www.instagram.com/seattleu/",
-      "https://www.linkedin.com/school/seattle-university/",
-      "https://en.wikipedia.org/wiki/Seattle_University"
+    "occupationalCategory": [
+        {
+            "@type": "CategoryCode",
+            "name": "Credit Analyst",
+            "codeValue": "13-2041",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "BLS SOC 2018"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Credit Analyst",
+            "codeValue": "2413",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "ILO ISCO-08"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Credit Analysts",
+            "codeValue": "13-2041.00",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "O*NET 29.1"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Analyst",
+            "codeValue": "13-2051",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "BLS SOC 2018"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Analyst",
+            "codeValue": "2413",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "ILO ISCO-08"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial and Investment Analysts",
+            "codeValue": "13-2051.00",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "O*NET 29.1"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Planner",
+            "codeValue": "13-2052",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "BLS SOC 2018"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Financial Planner",
+            "codeValue": "2412",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "ILO ISCO-08"
+            }
+        },
+        {
+            "@type": "CategoryCode",
+            "name": "Personal Financial Advisors",
+            "codeValue": "13-2052.00",
+            "inCodeSet": {
+                "@type": "CategoryCodeSet",
+                "name": "O*NET 29.1"
+            }
+        }
     ],
-    "department": {
-      "@type": "EducationalOrganization",
-      "name": "Albers School of Business & Economics",
-      "url": "https://www.seattleu.edu/business/",
-      "subOrganization": {
-        "@type": "EducationalOrganization",
-        "name": "Department of Accounting"
-      }
+    "provider": {
+        "@type": "CollegeOrUniversity",
+        "@id": "https://www.seattleu.edu/#organization",
+        "name": "Seattle University",
+        "url": "https://www.seattleu.edu/",
+        "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
+        "identifier": [
+            {
+                "@type": "PropertyValue",
+                "propertyID": "IPEDS ID",
+                "value": "236595"
+            },
+            {
+                "@type": "PropertyValue",
+                "propertyID": "OPE ID",
+                "value": "00379000"
+            }
+        ],
+        "sameAs": [
+            "https://x.com/seattleu/",
+            "https://www.facebook.com/seattleu/",
+            "https://www.instagram.com/seattleu/",
+            "https://www.linkedin.com/school/seattle-university/",
+            "https://en.wikipedia.org/wiki/Seattle_University"
+        ],
+        "department": {
+            "@type": "EducationalOrganization",
+            "name": "Albers School of Business & Economics",
+            "url": "https://www.seattleu.edu/business/",
+            "subOrganization": {
+                "@type": "EducationalOrganization",
+                "name": "Department of Accounting"
+            }
+        }
     }
-  }
 }

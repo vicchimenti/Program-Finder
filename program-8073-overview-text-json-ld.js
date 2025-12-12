@@ -56,12 +56,22 @@ try {
         return sMedia;
     }
 
+    // Load occupation dictionary
     var occupationDict = {};
     try {
         var dictJson = readMediaText(10011365);
         occupationDict = JSON.parse(dictJson);
     } catch (dictErr) {
         isPreview && document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
+    }
+
+    // Load CIP/URL dictionary
+    var cipDict = {};
+    try {
+        var cipJson = readMediaText(10014460);
+        cipDict = JSON.parse(cipJson);
+    } catch (cipErr) {
+        isPreview && document.write("<!-- CIP dictionary load error: " + cipErr + " -->");
     }
 
     var list = {};
@@ -87,6 +97,25 @@ try {
     if (!list["programName"]) {
         isPreview && document.write("<!-- JSON-LD skipped: missing programName -->");
     } else {
+
+        // Lookup CIP and URL from dictionary
+        var programInfo = cipDict[list["programName"]];
+        var programUrl = (programInfo && programInfo.url) ? programInfo.url : null;
+        var programCip = (programInfo && programInfo.cip) ? programInfo.cip : null;
+
+        if (!programInfo && isPreview) {
+            document.write("<!-- Program not found in CIP dictionary: " + list["programName"] + " -->");
+        }
+
+        // Build identifier array
+        var identifierArray = [];
+        if (programCip) {
+            identifierArray.push({
+                "@type": "PropertyValue",
+                "propertyID": "CIP 2020",
+                "value": programCip
+            });
+        }
 
         // College/School URL mapping
         var collegeUrls = {
@@ -214,6 +243,7 @@ try {
             "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
             "name": list["programName"],
+            "url": programUrl,
             "description": decodeHtmlEntities(list["programSummary"] || list["programDescription"]),
             "educationalCredentialAwarded": decodeHtmlEntities(list["degree"]),
             "timeToComplete": list["duration"],
@@ -221,6 +251,7 @@ try {
             "educationalProgramMode": decodeHtmlEntities(list["learningFormat"]),
             "programType": list["programType"],
             "programPrerequisites": decodeHtmlEntities(list["programPrerequisites"]),
+            "identifier": identifierArray,
             "occupationalCategory": occupationalCategoryArray,
             "provider": provider
         };
