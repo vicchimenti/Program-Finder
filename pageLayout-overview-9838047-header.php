@@ -40,6 +40,15 @@
 
     <t4 type="navigation" name="JSON-LD Meta Tags" id="1128" />
     <!-- JSON-LD -->
+     <script type="application/ld+json" id="breadcrumb-jsonld">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                <t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />
+            ]
+        }
+    </script>
 
     <!-- Custom Head Code -->
     <t4 type="navigation" name="V10 - Custom Header Code" id="1014" />
