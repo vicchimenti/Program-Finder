@@ -41,9 +41,9 @@ if not input_file.exists():
     raise FileNotFoundError(f"Input file not found: {input_file}")
 
 with open(input_file, "r", encoding="utf-8") as f:
-    programs = json.load(f)
+    programs_data = json.load(f)
 
-# If JSON is a dict of programs keyed by name, convert it to a list
+# Convert dict of programs to a list if needed
 if isinstance(programs_data, dict):
     programs_data = [
         {"name": name, **details} for name, details in programs_data.items()
@@ -55,47 +55,40 @@ if not isinstance(programs_data, list) or not programs_data:
 
 # === BUILD ITEMLIST ===
 item_list = []
-for i, p in enumerate(programs, start=1):
-    name = p.get("programName", "").strip()
-    url = p.get("programUrl", "").strip()
-    cip = p.get("cipCode", "").strip()
+for i, program in enumerate(programs_data, start=1):
+    name = program.get("name", "").strip()
+    url = program.get("url", "").strip()
+    cip = program.get("cip", "").strip()
 
-    if not (name and url and cip):
-        continue
-
-    item_list.append({
+    list_item = {
         "@type": "ListItem",
         "position": i,
+        "url": url,
         "item": {
             "@type": "EducationalOccupationalProgram",
             "name": name,
-            "url": url,
             "identifier": {
                 "@type": "PropertyValue",
-                "propertyID": "CIP 2020",
+                "propertyID": "CIP Code",
                 "value": cip
             },
             "provider": provider
         }
-    })
+    }
+    item_list.append(list_item)
 
-# === COMPOSE JSON-LD STRUCTURE ===
-jsonld = {
+# === FINAL JSON-LD ===
+collection_jsonld = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
+    "@type": "ItemList",
     "name": collection_name,
     "url": collection_url,
-    "mainEntity": {
-        "@type": "ItemList",
-        "name": "All Academic Programs",
-        "numberOfItems": len(item_list),
-        "itemListOrder": "Unordered",
-        "itemListElement": item_list
-    }
+    "numberOfItems": len(item_list),
+    "itemListElement": item_list
 }
 
-# === SAVE OUTPUT ===
+# === WRITE OUTPUT ===
 with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(jsonld, f, indent=2, ensure_ascii=False)
+    json.dump(collection_jsonld, f, ensure_ascii=False, indent=2)
 
 print(f"✅ JSON-LD generated: {output_file} ({len(item_list)} programs)")
