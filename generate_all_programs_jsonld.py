@@ -43,7 +43,14 @@ if not input_file.exists():
 with open(input_file, "r", encoding="utf-8") as f:
     programs = json.load(f)
 
-if not isinstance(programs, list) or not programs:
+# If JSON is a dict of programs keyed by name, convert it to a list
+if isinstance(programs_data, dict):
+    programs_data = [
+        {"name": name, **details} for name, details in programs_data.items()
+    ]
+
+# Validate structure after normalization
+if not isinstance(programs_data, list) or not programs_data:
     raise ValueError("No program data found or JSON is not an array.")
 
 # === BUILD ITEMLIST ===
