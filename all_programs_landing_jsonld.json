@@ -3,6 +3,13 @@
   "@type": "ItemList",
   "name": "All Academic Programs | Seattle University",
   "url": "https://www.seattleu.edu/academics/all-programs/",
+  "description": "Discover and compare Seattle University’s programs, dive into the specifics, and begin your own legendary journey.",
+  "about": {
+    "@type": "EducationalOrganization",
+    "name": "Seattle University",
+    "url": "https://www.seattleu.edu/"
+  },
+  "dateModified": "2025-12-14T07:04:13-08:00",
   "numberOfItems": 158,
   "itemListElement": [
     {

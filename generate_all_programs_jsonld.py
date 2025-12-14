@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from pathlib import Path
 
 # === CONFIG ===
@@ -7,6 +8,12 @@ output_file = Path("all_programs_landing_jsonld.json")
 
 collection_name = "All Academic Programs | Seattle University"
 collection_url = "https://www.seattleu.edu/academics/all-programs/"
+collection_description = (
+    "Discover and compare Seattle University’s programs, dive into the specifics, and begin your own legendary journey."
+)
+
+# Dynamically set last modified time (you can hardcode if preferred)
+date_modified = datetime.now().astimezone().isoformat(timespec="seconds")
 
 # === PROVIDER OBJECT (Full Organizational Info) ===
 provider = {
@@ -83,6 +90,13 @@ collection_jsonld = {
     "@type": "ItemList",
     "name": collection_name,
     "url": collection_url,
+    "description": collection_description,
+    "about": {
+        "@type": "EducationalOrganization",
+        "name": "Seattle University",
+        "url": "https://www.seattleu.edu/"
+    },
+    "dateModified": date_modified,
     "numberOfItems": len(item_list),
     "itemListElement": item_list
 }
@@ -92,3 +106,4 @@ with open(output_file, "w", encoding="utf-8") as f:
     json.dump(collection_jsonld, f, ensure_ascii=False, indent=2)
 
 print(f"✅ JSON-LD generated: {output_file} ({len(item_list)} programs)")
+print(f"🕒 Last modified: {date_modified}")
