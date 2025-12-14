@@ -12,27 +12,19 @@ collection_description = (
     "Discover and compare Seattle University’s programs, dive into the specifics, and begin your own legendary journey."
 )
 
-# Dynamically set last modified time (you can hardcode if preferred)
+# Dynamically set last modified timestamp
 date_modified = datetime.now().astimezone().isoformat(timespec="seconds")
 
-# === PROVIDER OBJECT (Full Organizational Info) ===
-provider = {
+# === DEFINE ORGANIZATION NODE (ONE TIME) ===
+organization_node = {
     "@type": "CollegeOrUniversity",
     "@id": "https://www.seattleu.edu/#organization",
     "name": "Seattle University",
     "url": "https://www.seattleu.edu/",
     "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
     "identifier": [
-        {
-            "@type": "PropertyValue",
-            "propertyID": "IPEDS ID",
-            "value": "236595"
-        },
-        {
-            "@type": "PropertyValue",
-            "propertyID": "OPE ID",
-            "value": "00379000"
-        }
+        {"@type": "PropertyValue", "propertyID": "IPEDS ID", "value": "236595"},
+        {"@type": "PropertyValue", "propertyID": "OPE ID", "value": "00379000"}
     ],
     "sameAs": [
         "https://x.com/seattleu/",
@@ -56,11 +48,10 @@ if isinstance(programs_data, dict):
         {"name": name, **details} for name, details in programs_data.items()
     ]
 
-# Validate structure after normalization
 if not isinstance(programs_data, list) or not programs_data:
     raise ValueError("No program data found or JSON is not an array.")
 
-# === BUILD ITEMLIST ===
+# === BUILD ITEMLIST ELEMENTS ===
 item_list = []
 for i, program in enumerate(programs_data, start=1):
     name = program.get("name", "").strip()
@@ -79,31 +70,32 @@ for i, program in enumerate(programs_data, start=1):
                 "propertyID": "CIP Code",
                 "value": cip
             },
-            "provider": provider
+            "provider": {"@id": "https://www.seattleu.edu/#organization"}
         }
     }
     item_list.append(list_item)
 
-# === FINAL JSON-LD ===
-collection_jsonld = {
-    "@context": "https://schema.org",
+# === DEFINE ITEMLIST NODE ===
+itemlist_node = {
     "@type": "ItemList",
     "name": collection_name,
     "url": collection_url,
     "description": collection_description,
-    "about": {
-        "@type": "EducationalOrganization",
-        "name": "Seattle University",
-        "url": "https://www.seattleu.edu/"
-    },
+    "about": {"@id": "https://www.seattleu.edu/#organization"},
     "dateModified": date_modified,
     "numberOfItems": len(item_list),
     "itemListElement": item_list
 }
 
+# === WRAP EVERYTHING IN @GRAPH ===
+graph = {
+    "@context": "https://schema.org",
+    "@graph": [organization_node, itemlist_node]
+}
+
 # === WRITE OUTPUT ===
 with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(collection_jsonld, f, ensure_ascii=False, indent=2)
+    json.dump(graph, f, ensure_ascii=False, indent=2)
 
-print(f"✅ JSON-LD generated: {output_file} ({len(item_list)} programs)")
+print(f"✅ JSON-LD graph generated: {output_file} ({len(item_list)} programs)")
 print(f"🕒 Last modified: {date_modified}")
