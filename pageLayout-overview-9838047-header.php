@@ -40,9 +40,9 @@
 
     <t4 type="navigation" name="JSON-LD Meta Tags" id="1128" />
     <!-- JSON-LD -->
-     <t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />
-     <!-- JSON-LD Breadcrumbs-->
-     <script type="application/ld+json" id="breadcrumb-jsonld-test">    
+    <t4 type="navigation" name="Breadcrumbs Structured Data" id="1130"/>
+    <!-- JSON-LD Breadcrumbs-->
+    <script type="application/ld+json" id="breadcrumb-jsonld-test">    
 
         {
             "@context": "https://schema.org",
