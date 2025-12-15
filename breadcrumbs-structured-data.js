@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.0.3
+ * @version 1.0.4
  * @fileoverview Programmable layout snippet to generate Breadcrumb JSON-LD
  *               using a T4 Navigation Object and BrokerUtils.
  * @author Victor Chimenti
@@ -35,7 +35,7 @@ function processT4Tag(tag) {
 
 try {
   // Pull and sanitize the Breadcrumbs navigation object
-  var rawNav = processT4Tag('<t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />')
+  var rawNav = String(processT4Tag('<t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />'))
     .replace(/,\s*$/, "") // Remove trailing commas
     .replace(/&quot;/g, '"') // Decode HTML entities
     .replace(/“|”/g, '"') // Normalize curly quotes
