@@ -42,18 +42,6 @@
     <!-- JSON-LD -->
     <t4 type="navigation" name="Breadcrumbs Structured Data" id="1130"/>
     <!-- JSON-LD Breadcrumbs-->
-    <script type="application/ld+json" id="breadcrumb-jsonld-test">    
-
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                <t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />
-            ]
-        }
-    </script>
-    <!-- TEMP: Breadcrumb JSON-LD hardcoded for validation; make conditional before prod -->
-
 
     <!-- Custom Head Code -->
     <t4 type="navigation" name="V10 - Custom Header Code" id="1014" />
