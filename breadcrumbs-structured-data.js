@@ -20,86 +20,71 @@
  */
 importClass(com.terminalfour.publish.utils.BrokerUtils);
 
-/***
- * Safely process T4 tags (navigation, content, meta, etc.)
- */
+/* eslint-disable no-undef, no-with, no-unused-vars */
+/* global dbStatement, publishCache, section, content, language, isPreview, document, com */
+
 function processT4Tag(tag) {
   try {
-    return String(
-      BrokerUtils.processT4Tags(
-        dbStatement,
-        publishCache,
-        section,
-        content,
-        language,
-        isPreview,
-        tag
-      )
-    );
+    var BrokerUtils = com.terminalfour.publish.utils.BrokerUtils;
+    return BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag);
   } catch (e) {
-    return null;
+    document.write("<!-- processT4Tag() error: " + e + " -->");
+    return "";
   }
 }
 
-/***
- * Build Breadcrumb JSON-LD from nav object output
- */
-function buildBreadcrumbJsonLd(navOutput) {
-  if (!navOutput) return '';
+try {
+  // Pull and sanitize the Breadcrumbs navigation object
+  var rawNav = processT4Tag('<t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />')
+    .replace(/,\s*$/, "") // Remove trailing commas
+    .replace(/&quot;/g, '"') // Decode HTML entities
+    .replace(/“|”/g, '"') // Normalize curly quotes
+    .replace(/\r?\n|\r/g, "") // Remove newlines
+    .trim();
 
+  // Debug output (truncated to avoid blowing out markup)
+  document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
+
+  // Parse into an array
+  var breadcrumbData;
   try {
-    var BreadcrumbImports = JavaImporter(
-      com.terminalfour.publish.utils.BrokerUtils
-    );
-    with (BreadcrumbImports) {
-
-      // Load and sanitize T4 nav object
-      var rawNav = processT4Tags('<t4 type="navigation" name="Breadcrumbs" id="1129" />')
-        .replace(/,\s*$/, "") // remove trailing comma
-        .replace(/&quot;/g, '"') // fix encoded quotes
-        .replace(/“|”/g, '"') // normalize curly quotes
-        .trim();
-
-      // Debug output
-      document.write('<!-- Raw Breadcrumb Nav: ' + rawNav.substring(0, 300) + ' -->');
-
-      // Convert safely to array (no eval)
-      var breadcrumbData;
-      try {
-        breadcrumbData = JSON.parse('[' + rawNav + ']');
-      } catch (parseErr) {
-        document.write('<!-- Breadcrumb parse error: ' + parseErr.message + ' -->');
-        breadcrumbData = [];
-      }
-
-      // Build schema
-      if (breadcrumbData.length > 0) {
-        var listItems = breadcrumbData.map(function (item, index) {
-          return {
-            "@type": "ListItem",
-            position: index + 1,
-            name: item.name || '(no name)',
-            item: item.item || ''
-          };
-        });
-
-        var breadcrumbJSONLD = {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": listItems
-        };
-
-        document.write(
-          '<script type="application/ld+json" id="breadcrumb-jsonld">' +
-          JSON.stringify(breadcrumbJSONLD, null, 2) +
-          '</script>'
-        );
-      } else {
-        document.write('<!-- Breadcrumb JSON-LD: no valid data -->');
-      }
-    }
-  } catch (err) {
-    var message = 'Breadcrumb Script Error: ' + err;
-    document.write('<script>console.error("' + message + '")</script>');
+    breadcrumbData = JSON.parse("[" + rawNav + "]");
+  } catch (parseErr) {
+    document.write("<!-- Breadcrumb parse error: " + parseErr.message + " -->");
+    breadcrumbData = [];
   }
+
+  // Validate and build list items
+  if (breadcrumbData.length > 0) {
+    var listItems = breadcrumbData.map(function (item, index) {
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name || "(no name)",
+        item: item.item || item.url || ""
+      };
+    });
+
+    var breadcrumbJSONLD = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: listItems
+    };
+
+    // Output the JSON-LD to page
+    document.write(
+      '<script type="application/ld+json" id="breadcrumb-jsonld">' +
+        JSON.stringify(breadcrumbJSONLD, null, 2) +
+      "</script>"
+    );
+
+  } else {
+    document.write("<!-- Breadcrumb JSON-LD: no valid data found -->");
+  }
+
+} catch (err) {
+  // Top-level error handler
+  var message = "Breadcrumb Script Error: " + err;
+  document.write("<!-- " + message + " -->");
+  document.write('<script>console.error("' + message + '")</script>');
 }
