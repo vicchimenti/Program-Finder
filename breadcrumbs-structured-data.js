@@ -35,7 +35,7 @@ function processT4Tag(tag) {
         isPreview,
         tag
       )
-    ).trim();
+    );
   } catch (e) {
     return null;
   }
