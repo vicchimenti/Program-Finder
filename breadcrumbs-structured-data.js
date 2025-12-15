@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.1.0
+ * @version 1.1.1
  * @fileoverview Generates valid Breadcrumb JSON-LD using a T4 Navigation Object.
  *               Runs server-side in TerminalFour at publish time.
  *               Includes short-circuit logging for preview environments.
@@ -42,7 +42,7 @@ function processT4Tag(tag) {
       tag
     );
   } catch (tagErr) {
-    if (isPreview) document.write("<!-- processT4Tag() error: " + tagErr + " -->");
+      isPreview && document.write("<!-- processT4Tag() error: " + tagErr + " -->");
     return "";
   }
 }
@@ -57,8 +57,7 @@ try {
     .replace(/\r?\n|\r/g, "")
     .trim();
 
-  if (isPreview)
-    document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
+    isPreview && document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
 
   // ==========================================================================
   // Step 2: Extract anchors from the navigation HTML
@@ -102,7 +101,7 @@ try {
         "</script>"
     );
   } else {
-    if (isPreview) document.write("<!-- Breadcrumb JSON-LD: no valid data found -->");
+    isPreview && document.write("<!-- Breadcrumb JSON-LD: no valid data found -->");
   }
 } catch (err) {
   // ==========================================================================
