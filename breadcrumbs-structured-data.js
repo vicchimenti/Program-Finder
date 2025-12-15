@@ -48,50 +48,58 @@ function buildBreadcrumbJsonLd(navOutput) {
   if (!navOutput) return '';
 
   try {
-    // Convert comma-separated ListItem fragments into an array
-    var items = JSON.parse('[' + navOutput + ']');
-
-    items = items.map(function(item, index) {
-      return {
-        "@type": "ListItem",
-        position: index + 1,
-        name: item.name ? item.name : item.name,
-        item: item.item ? item.item : item.item
-      };
-    });
-
-    // Build final JSON-LD object
-    var jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": items
-    };
-
-    return (
-      '<script type="application/ld+json" id="breadcrumb-jsonld">\n' +
-      JSON.stringify(jsonLd, null, 2) +
-      '\n</script>'
+    var BreadcrumbImports = JavaImporter(
+      com.terminalfour.publish.utils.BrokerUtils
     );
-  } catch (e) {
-    return '';
+    with (BreadcrumbImports) {
+
+      // Load and sanitize T4 nav object
+      var rawNav = processT4Tags('<t4 type="navigation" name="Breadcrumbs" id="1129" />')
+        .replace(/,\s*$/, "") // remove trailing comma
+        .replace(/&quot;/g, '"') // fix encoded quotes
+        .replace(/“|”/g, '"') // normalize curly quotes
+        .trim();
+
+      // Debug output
+      document.write('<!-- Raw Breadcrumb Nav: ' + rawNav.substring(0, 300) + ' -->');
+
+      // Convert safely to array (no eval)
+      var breadcrumbData;
+      try {
+        breadcrumbData = JSON.parse('[' + rawNav + ']');
+      } catch (parseErr) {
+        document.write('<!-- Breadcrumb parse error: ' + parseErr.message + ' -->');
+        breadcrumbData = [];
+      }
+
+      // Build schema
+      if (breadcrumbData.length > 0) {
+        var listItems = breadcrumbData.map(function (item, index) {
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.name || '(no name)',
+            item: item.item || ''
+          };
+        });
+
+        var breadcrumbJSONLD = {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": listItems
+        };
+
+        document.write(
+          '<script type="application/ld+json" id="breadcrumb-jsonld">' +
+          JSON.stringify(breadcrumbJSONLD, null, 2) +
+          '</script>'
+        );
+      } else {
+        document.write('<!-- Breadcrumb JSON-LD: no valid data -->');
+      }
+    }
+  } catch (err) {
+    var message = 'Breadcrumb Script Error: ' + err;
+    document.write('<script>console.error("' + message + '")</script>');
   }
-}
-
-/***
- * Pull breadcrumb nav object (Structured Data only)
- */
-var breadcrumbNav = processT4Tag(
-  '<t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />'
-);
-
-/***
- * Generate Breadcrumb JSON-LD
- */
-var breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbNav);
-
-/***
- * Write output to document
- */
-if (breadcrumbJsonLd) {
-  document.write(breadcrumbJsonLd);
 }
