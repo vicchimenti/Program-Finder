@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.0.4
+ * @version 1.0.5
  * @fileoverview Programmable layout snippet to generate Breadcrumb JSON-LD
  *               using a T4 Navigation Object and BrokerUtils.
  * @author Victor Chimenti
@@ -36,32 +36,31 @@ function processT4Tag(tag) {
 try {
   // Pull and sanitize the Breadcrumbs navigation object
   var rawNav = String(processT4Tag('<t4 type="navigation" name="Breadcrumbs for Structured Data" id="1129" />'))
-    .replace(/,\s*$/, "") // Remove trailing commas
-    .replace(/&quot;/g, '"') // Decode HTML entities
-    .replace(/“|”/g, '"') // Normalize curly quotes
-    .replace(/\r?\n|\r/g, "") // Remove newlines
+    .replace(/\r?\n|\r/g, "")
     .trim();
 
-  // Debug output (truncated to avoid blowing out markup)
+  // Debug output
   document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
 
-  // Parse into an array
-  var breadcrumbData;
-  try {
-    breadcrumbData = JSON.parse("[" + rawNav + "]");
-  } catch (parseErr) {
-    document.write("<!-- Breadcrumb parse error: " + parseErr.message + " -->");
-    breadcrumbData = [];
+  // Extract <a> tags and build breadcrumb data
+  var linkRegex = /<a\s+href="([^"]+)"[^>]*>(.*?)<\/a>/gi;
+  var breadcrumbData = [];
+  var match;
+  while ((match = linkRegex.exec(rawNav)) !== null) {
+    breadcrumbData.push({
+      name: match[2].replace(/<[^>]*>/g, "").trim(),
+      item: match[1].trim()
+    });
   }
 
-  // Validate and build list items
+  // Validate and build JSON-LD
   if (breadcrumbData.length > 0) {
     var listItems = breadcrumbData.map(function (item, index) {
       return {
         "@type": "ListItem",
         position: index + 1,
-        name: item.name || "(no name)",
-        item: item.item || item.url || ""
+        name: item.name,
+        item: item.item
       };
     });
 
@@ -71,16 +70,15 @@ try {
       itemListElement: listItems
     };
 
-    // Output the JSON-LD to page
     document.write(
       '<script type="application/ld+json" id="breadcrumb-jsonld">' +
-        JSON.stringify(breadcrumbJSONLD, null, 2) +
+      JSON.stringify(breadcrumbJSONLD, null, 2) +
       "</script>"
     );
-
   } else {
     document.write("<!-- Breadcrumb JSON-LD: no valid data found -->");
   }
+
 
 } catch (err) {
   // Top-level error handler
