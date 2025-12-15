@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.0.0
+ * @version 1.0.1
  * @fileoverview Programmable layout snippet to generate Breadcrumb JSON-LD
  *               using a T4 Navigation Object and BrokerUtils.
  * @author Victor Chimenti
@@ -51,9 +51,14 @@ function buildBreadcrumbJsonLd(navOutput) {
     // Convert comma-separated ListItem fragments into an array
     var items = JSON.parse('[' + navOutput + ']');
 
-    // Add positions
-    items.forEach(function (item, index) {
-      item.position = index + 1;
+    // Normalize at the item/property level
+    items = items.map(function(item, index) {
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name ? item.name.trim() : item.name,
+        item: item.item ? item.item.trim() : item.item
+      };
     });
 
     // Build final JSON-LD object
