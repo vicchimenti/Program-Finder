@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.0.2
+ * @version 1.0.3
  * @fileoverview Programmable layout snippet to generate Breadcrumb JSON-LD
  *               using a T4 Navigation Object and BrokerUtils.
  * @author Victor Chimenti
