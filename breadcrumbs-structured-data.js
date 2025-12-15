@@ -56,8 +56,8 @@ function buildBreadcrumbJsonLd(navOutput) {
       return {
         "@type": "ListItem",
         position: index + 1,
-        name: item.name ? item.name.trim() : item.name,
-        item: item.item ? item.item.trim() : item.item
+        name: item.name ? item.name : item.name,
+        item: item.item ? item.item : item.item
       };
     });
 
@@ -69,7 +69,7 @@ function buildBreadcrumbJsonLd(navOutput) {
     };
 
     return (
-      '<script type="application/ld+json">\n' +
+      '<script type="application/ld+json" id="breadcrumb-jsonld">\n' +
       JSON.stringify(jsonLd, null, 2) +
       '\n</script>'
     );
