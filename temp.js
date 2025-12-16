@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.2.2
+ * @version 1.2.3
  * @fileoverview Generates valid Breadcrumb JSON-LD using a T4 Navigation Object.
  *               Automatically prepends the full domain (https://www.seattleu.edu)
  *               to any relative links. Includes short-circuit logging for preview.
@@ -66,6 +66,20 @@ try {
   var breadcrumbData = [];
   var match;
   var baseDomain = "https://www.seattleu.edu";
+
+  while ((match = linkRegex.exec(rawNav)) !== null) {
+    try {
+        var href = match[1] ? match[1].trim() : "";
+        if (href.charAt(0) === "/") href = baseDomain + href;
+        
+        breadcrumbData.push({
+            name: match[2].replace(/<[^>]*>/g, "").trim(),
+            item: href,
+        });
+    } catch (loopErr) {
+        document.write("<!-- Loop error: " + loopErr + " -->");
+    }
+}
 
   while ((match = linkRegex.exec(rawNav)) !== null) {
     var href = match[1].trim();
