@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.1.1.4
+ * @version 1.1.1.5
  * @fileoverview Generates valid Breadcrumb JSON-LD using a T4 Navigation Object.
  *               Runs server-side in TerminalFour at publish time.
  *               Includes short-circuit logging for preview environments.
@@ -70,7 +70,10 @@ try {
   while ((match = linkRegex.exec(rawNav)) !== null && safetyCounter < 100) {
       safetyCounter++;
       var rawHref = match[1].trim();
-      var fullHref = (rawHref.charAt(0) === "/") ? "https://www.seattleu.edu" + rawHref : rawHref;
+      var fullHref = rawHref;
+      if (rawHref.charAt(0) === "/") {
+          fullHref = "https://www.seattleu.edu" + rawHref;
+      }
       breadcrumbData.push({
         name: match[2].replace(/<[^>]*>/g, "").trim(),
         item: fullHref,
