@@ -1,6 +1,6 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.2.3
+ * @version 2.0.0
  * @fileoverview Generates valid Breadcrumb JSON-LD using a T4 Navigation Object.
  *               Automatically prepends the full domain (https://www.seattleu.edu)
  *               to any relative links. Includes short-circuit logging for preview.
@@ -31,7 +31,6 @@ importClass(com.terminalfour.publish.utils.BrokerUtils);
  */
 function processT4Tag(tag) {
   try {
-    var BrokerUtils = com.terminalfour.publish.utils.BrokerUtils;
     return BrokerUtils.processT4Tags(
       dbStatement,
       publishCache,
@@ -47,6 +46,18 @@ function processT4Tag(tag) {
   }
 }
 
+/**
+ * Converts relative URLs to absolute URLs.
+ * @param {string} href - The href value to process.
+ * @returns {string} - The full URL with domain prepended if relative.
+ */
+function makeFullUrl(href) {
+  if (href.charAt(0) === "/") {
+    return "https://www.seattleu.edu" + href;
+  }
+  return href;
+}
+
 try {
   // ==========================================================================
   // Step 1: Retrieve and sanitize raw breadcrumb navigation markup
@@ -57,7 +68,7 @@ try {
     .replace(/\r?\n|\r/g, "")
     .trim();
 
-  document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
+  isPreview && document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
 
   // ==========================================================================
   // Step 2: Extract anchors from the navigation HTML
@@ -65,30 +76,11 @@ try {
   var linkRegex = /<a\s+href="([^"]+)"[^>]*>(.*?)<\/a>/gi;
   var breadcrumbData = [];
   var match;
-  var baseDomain = "https://www.seattleu.edu";
 
   while ((match = linkRegex.exec(rawNav)) !== null) {
-    try {
-        var href = match[1] ? match[1].trim() : "";
-        if (href.charAt(0) === "/") href = baseDomain + href;
-        
-        breadcrumbData.push({
-            name: match[2].replace(/<[^>]*>/g, "").trim(),
-            item: href,
-        });
-    } catch (loopErr) {
-        document.write("<!-- Loop error: " + loopErr + " -->");
-    }
-}
-
-  while ((match = linkRegex.exec(rawNav)) !== null) {
-    var href = match[1].trim();
-    // Prepend domain if relative
-    if (href.charAt(0) === "/") href = baseDomain + href;
-
     breadcrumbData.push({
       name: match[2].replace(/<[^>]*>/g, "").trim(),
-      item: href,
+      item: makeFullUrl(match[1].trim()),
     });
   }
 
