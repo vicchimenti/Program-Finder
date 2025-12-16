@@ -1,9 +1,9 @@
 /**
  * @file breadcrumbs-structured-data.js
- * @version 1.1.1
+ * @version 2.0.1
  * @fileoverview Generates valid Breadcrumb JSON-LD using a T4 Navigation Object.
- *               Runs server-side in TerminalFour at publish time.
- *               Includes short-circuit logging for preview environments.
+ *               Automatically prepends the full domain (https://www.seattleu.edu)
+ *               to any relative links. Includes short-circuit logging for preview.
  * @author Victor Chimenti
  * @copyright 2025
  *
@@ -31,7 +31,6 @@ importClass(com.terminalfour.publish.utils.BrokerUtils);
  */
 function processT4Tag(tag) {
   try {
-    var BrokerUtils = com.terminalfour.publish.utils.BrokerUtils;
     return BrokerUtils.processT4Tags(
       dbStatement,
       publishCache,
@@ -42,9 +41,21 @@ function processT4Tag(tag) {
       tag
     );
   } catch (tagErr) {
-      isPreview && document.write("<!-- processT4Tag() error: " + tagErr + " -->");
+    isPreview && document.write("<!-- processT4Tag() error: " + tagErr + " -->");
     return "";
   }
+}
+
+/**
+ * Converts relative URLs to absolute URLs.
+ * @param {string} href - The href value to process.
+ * @returns {string} - The full URL with domain prepended if relative.
+ */
+function makeFullUrl(href) {
+  if (href.charAt(0) === "/") {
+    return "https://www.seattleu.edu" + href;
+  }
+  return href;
 }
 
 try {
@@ -57,7 +68,7 @@ try {
     .replace(/\r?\n|\r/g, "")
     .trim();
 
-    isPreview && document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
+  isPreview && document.write("<!-- Raw Breadcrumb Nav (first 300 chars): " + rawNav.substring(0, 300) + " -->");
 
   // ==========================================================================
   // Step 2: Extract anchors from the navigation HTML
@@ -69,7 +80,7 @@ try {
   while ((match = linkRegex.exec(rawNav)) !== null) {
     breadcrumbData.push({
       name: match[2].replace(/<[^>]*>/g, "").trim(),
-      item: match[1].trim(),
+      item: makeFullUrl(match[1].trim()),
     });
   }
 
@@ -97,8 +108,8 @@ try {
     // ==========================================================================
     document.write(
       '<script type="application/ld+json" id="breadcrumb-jsonld">' +
-        JSON.stringify(breadcrumbJSONLD, null, 2) +
-        "</script>"
+      JSON.stringify(breadcrumbJSONLD, null, 2) +
+      "</script>"
     );
   } else {
     isPreview && document.write("<!-- Breadcrumb JSON-LD: no valid data found -->");
