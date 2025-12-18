@@ -35,8 +35,8 @@
       "about": {
         "@id": "https://www.seattleu.edu/#organization"
       },
-      "dateModified": "2025-12-14T07:24:24-08:00",
-      "numberOfItems": 158,
+      "dateModified": "2025-12-18T13:55:45-08:00",
+      "numberOfItems": 159,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -1350,6 +1350,23 @@
         {
           "@type": "ListItem",
           "position": 78,
+          "url": "https://www.seattleu.edu/academics/all-programs/higher-education-leadership--administration-ma/",
+          "item": {
+            "@type": "EducationalOccupationalProgram",
+            "name": "Higher Education Leadership & Administration, MA",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "CIP Code",
+              "value": "13.0406"
+            },
+            "provider": {
+              "@id": "https://www.seattleu.edu/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 79,
           "url": "https://www.seattleu.edu/academics/all-programs/history-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1366,7 +1383,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 79,
+          "position": 80,
           "url": "https://www.seattleu.edu/academics/all-programs/humanitarian-engineering-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1383,7 +1400,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 80,
+          "position": 81,
           "url": "https://www.seattleu.edu/academics/all-programs/humanities-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1400,7 +1417,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 81,
+          "position": 82,
           "url": "https://www.seattleu.edu/academics/all-programs/humanities-for-teaching-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1417,7 +1434,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 82,
+          "position": 83,
           "url": "https://www.seattleu.edu/academics/all-programs/illustration-bfa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1434,7 +1451,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 83,
+          "position": 84,
           "url": "https://www.seattleu.edu/academics/all-programs/individualized-major-baba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1451,7 +1468,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 84,
+          "position": 85,
           "url": "https://www.seattleu.edu/academics/all-programs/innovation--entrepreneurship-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1468,7 +1485,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 85,
+          "position": 86,
           "url": "https://www.seattleu.edu/academics/all-programs/interactive-ux-design-bfa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1485,7 +1502,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 86,
+          "position": 87,
           "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-arts-leadership-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1502,7 +1519,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 87,
+          "position": 88,
           "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-music-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1519,7 +1536,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 88,
+          "position": 89,
           "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-photography-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1536,7 +1553,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 89,
+          "position": 90,
           "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-theatre-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1553,7 +1570,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 90,
+          "position": 91,
           "url": "https://www.seattleu.edu/academics/all-programs/interdisciplinary-arts-visual-art-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1570,7 +1587,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 91,
+          "position": 92,
           "url": "https://www.seattleu.edu/academics/all-programs/international-studies-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1587,7 +1604,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 92,
+          "position": 93,
           "url": "https://www.seattleu.edu/academics/all-programs/japanese-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1604,7 +1621,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 93,
+          "position": 94,
           "url": "https://www.seattleu.edu/academics/all-programs/juridical-science-sjd/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1621,7 +1638,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 94,
+          "position": 95,
           "url": "https://www.seattleu.edu/academics/all-programs/juris-doctor-jd/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1638,7 +1655,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 95,
+          "position": 96,
           "url": "https://www.seattleu.edu/academics/all-programs/juris-doctor-jd-global-accelerated/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1655,7 +1672,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 96,
+          "position": 97,
           "url": "https://www.seattleu.edu/academics/all-programs/juris-doctor-jd-part-time-flex/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1672,7 +1689,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 97,
+          "position": 98,
           "url": "https://www.seattleu.edu/academics/all-programs/kinesiology-bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1689,7 +1706,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 98,
+          "position": 99,
           "url": "https://www.seattleu.edu/academics/all-programs/kinesiology-ms/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1706,7 +1723,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 99,
+          "position": 100,
           "url": "https://www.seattleu.edu/academics/all-programs/latin-america--latinx-studies-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1723,7 +1740,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 100,
+          "position": 101,
           "url": "https://www.seattleu.edu/academics/all-programs/leadership-executive-mba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1740,7 +1757,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 101,
+          "position": 102,
           "url": "https://www.seattleu.edu/academics/all-programs/leadership-formation-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1757,7 +1774,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 102,
+          "position": 103,
           "url": "https://www.seattleu.edu/academics/all-programs/legal-studies-mls/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1774,7 +1791,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 103,
+          "position": 104,
           "url": "https://www.seattleu.edu/academics/all-programs/management-baba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1791,7 +1808,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 104,
+          "position": 105,
           "url": "https://www.seattleu.edu/academics/all-programs/marine-conservation-biology-bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1808,7 +1825,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 105,
+          "position": 106,
           "url": "https://www.seattleu.edu/academics/all-programs/marketing-baba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1825,7 +1842,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 106,
+          "position": 107,
           "url": "https://www.seattleu.edu/academics/all-programs/marketing-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1842,7 +1859,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 107,
+          "position": 108,
           "url": "https://www.seattleu.edu/academics/all-programs/master-in-teaching-mit/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1859,7 +1876,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 108,
+          "position": 109,
           "url": "https://www.seattleu.edu/academics/all-programs/masters-professional-accounting/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1876,7 +1893,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 109,
+          "position": 110,
           "url": "https://www.seattleu.edu/academics/all-programs/mathematics-ba--bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1893,7 +1910,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 110,
+          "position": 111,
           "url": "https://www.seattleu.edu/academics/all-programs/mechanical-engineering-bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1910,7 +1927,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 111,
+          "position": 112,
           "url": "https://www.seattleu.edu/academics/all-programs/medieval--early-modern-studies-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1927,7 +1944,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 112,
+          "position": 113,
           "url": "https://www.seattleu.edu/academics/all-programs/middle-eastern-studies-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1944,7 +1961,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 113,
+          "position": 114,
           "url": "https://www.seattleu.edu/academics/all-programs/music-bfa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1961,7 +1978,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 114,
+          "position": 115,
           "url": "https://www.seattleu.edu/academics/all-programs/music-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1978,7 +1995,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 115,
+          "position": 116,
           "url": "https://www.seattleu.edu/academics/all-programs/musical-theater-bfa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -1995,7 +2012,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 116,
+          "position": 117,
           "url": "https://www.seattleu.edu/academics/all-programs/nonprofit-leadership-mnpl/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2012,7 +2029,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 117,
+          "position": 118,
           "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-acute-care-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2029,7 +2046,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 118,
+          "position": 119,
           "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-acute-care-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2046,7 +2063,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 119,
+          "position": 120,
           "url": "https://www.seattleu.edu/academics/all-programs/primary-care-nurse-practitioner-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2063,7 +2080,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 120,
+          "position": 121,
           "url": "https://www.seattleu.edu/academics/all-programs/family-nurse-practitioner-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2080,7 +2097,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 121,
+          "position": 122,
           "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-psychiatric-mental-health-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2097,7 +2114,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 122,
+          "position": 123,
           "url": "https://www.seattleu.edu/academics/all-programs/psychiatric-nurse-pmhnp-dnp-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2114,7 +2131,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 123,
+          "position": 124,
           "url": "https://www.seattleu.edu/academics/all-programs/nurse-practitioner-womens-health-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2131,7 +2148,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 124,
+          "position": 125,
           "url": "https://www.seattleu.edu/academics/all-programs/nurse-midwifery-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2148,7 +2165,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 125,
+          "position": 126,
           "url": "https://www.seattleu.edu/academics/all-programs/nurse-midwifery-post-doctoral-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2165,7 +2182,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 126,
+          "position": 127,
           "url": "https://www.seattleu.edu/academics/all-programs/nursing-advanced-practice-nursing-immersion-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2182,7 +2199,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 127,
+          "position": 128,
           "url": "https://www.seattleu.edu/academics/all-programs/nursing-bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2199,7 +2216,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 128,
+          "position": 129,
           "url": "https://www.seattleu.edu/academics/all-programs/nursing-health-systems-leader-post-masters-dnp/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2216,7 +2233,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 129,
+          "position": 130,
           "url": "https://www.seattleu.edu/academics/all-programs/performance-production-bfa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2233,7 +2250,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 130,
+          "position": 131,
           "url": "https://www.seattleu.edu/academics/all-programs/personal-branding-in-sport--entertainment-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2250,7 +2267,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 131,
+          "position": 132,
           "url": "https://www.seattleu.edu/academics/all-programs/philosophy-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2267,7 +2284,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 132,
+          "position": 133,
           "url": "https://www.seattleu.edu/academics/all-programs/photography-bfa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2284,7 +2301,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 133,
+          "position": 134,
           "url": "https://www.seattleu.edu/academics/all-programs/physics-ba-bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2301,7 +2318,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 134,
+          "position": 135,
           "url": "https://www.seattleu.edu/academics/all-programs/political-science-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2318,7 +2335,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 135,
+          "position": 136,
           "url": "https://www.seattleu.edu/academics/all-programs/pre-professional-health-studies-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2335,7 +2352,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 136,
+          "position": 137,
           "url": "https://www.seattleu.edu/academics/all-programs/professional-mba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2352,7 +2369,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 137,
+          "position": 138,
           "url": "https://www.seattleu.edu/academics/all-programs/psychology-ba--bs/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2369,7 +2386,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 138,
+          "position": 139,
           "url": "https://www.seattleu.edu/academics/all-programs/psychology-ma/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2386,7 +2403,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 139,
+          "position": 140,
           "url": "https://www.seattleu.edu/academics/all-programs/public-administration-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2403,7 +2420,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 140,
+          "position": 141,
           "url": "https://www.seattleu.edu/academics/all-programs/public-administration-joint-mpa--jd/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2420,7 +2437,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 141,
+          "position": 142,
           "url": "https://www.seattleu.edu/academics/all-programs/public-administration-mpa/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2437,7 +2454,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 142,
+          "position": 143,
           "url": "https://www.seattleu.edu/academics/all-programs/public-affairs-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2454,7 +2471,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 143,
+          "position": 144,
           "url": "https://www.seattleu.edu/academics/all-programs/risk-advisory--assurance-certificate/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2471,7 +2488,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 144,
+          "position": 145,
           "url": "https://www.seattleu.edu/academics/all-programs/robotics-minor/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2488,7 +2505,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 145,
+          "position": 146,
           "url": "https://www.seattleu.edu/academics/all-programs/school-counseling-maed/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2505,7 +2522,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 146,
+          "position": 147,
           "url": "https://www.seattleu.edu/academics/all-programs/school-counseling-online-maed/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2522,7 +2539,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 147,
+          "position": 148,
           "url": "https://www.seattleu.edu/academics/all-programs/school-psychology-eds/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2539,7 +2556,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 148,
+          "position": 149,
           "url": "https://www.seattleu.edu/academics/all-programs/social-work-msw/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2556,7 +2573,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 149,
+          "position": 150,
           "url": "https://www.seattleu.edu/academics/all-programs/spanish-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2573,7 +2590,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 150,
+          "position": 151,
           "url": "https://www.seattleu.edu/academics/all-programs/sport--entertainment-management-mba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2590,7 +2607,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 151,
+          "position": 152,
           "url": "https://www.seattleu.edu/academics/all-programs/sport-entertainment-management-online-mba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2607,7 +2624,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 152,
+          "position": 153,
           "url": "https://www.seattleu.edu/academics/all-programs/sports-law-mls/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2624,7 +2641,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 153,
+          "position": 154,
           "url": "https://www.seattleu.edu/academics/all-programs/technology-innovation-entrepreneurship-mls/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2641,7 +2658,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 154,
+          "position": 155,
           "url": "https://www.seattleu.edu/academics/all-programs/technology-innovation-entrepreneurship-llm/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2658,7 +2675,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 155,
+          "position": 156,
           "url": "https://www.seattleu.edu/academics/all-programs/theatre-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2675,7 +2692,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 156,
+          "position": 157,
           "url": "https://www.seattleu.edu/academics/all-programs/theology--religious-studies-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2692,7 +2709,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 157,
+          "position": 158,
           "url": "https://www.seattleu.edu/academics/all-programs/transformational-teaching-learning-med/",
           "item": {
             "@type": "EducationalOccupationalProgram",
@@ -2709,7 +2726,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 158,
+          "position": 159,
           "url": "https://www.seattleu.edu/academics/all-programs/women-gender--sexuality-studies-ba/",
           "item": {
             "@type": "EducationalOccupationalProgram",
