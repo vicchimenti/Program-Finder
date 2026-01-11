@@ -1,10 +1,31 @@
-/** 
- * program-7357-text-json-ld.js
- * text/json-ld for Program Detail Hero
- * id: 7357
- * 
+/**
+ * @file program-7357-text-json-ld.js
+ * @version 2.0.1
+ * @fileoverview Generates valid EducationalOccupationalProgram JSON-LD
+ *               for Seattle University academic program pages.
+ *               Adds alternateName support (first item only if multi-select).
+ *               Includes preview-only diagnostics and robust data sanitation.
+ * @author
+ * Victor Chimenti  |  Seattle University MarCom Web Team
+ * @copyright
+ * © 2025 Seattle University. All rights reserved.
+ *
+ * @requires com.terminalfour.publish.utils.BrokerUtils
+ * @requires Content Layout 7357 – "Program Overview JSON-LD"
+ *
+ * @description
+ * Pulls program data fields from T4 content metadata and constructs a
+ * Schema.org EducationalOccupationalProgram object for SEO and AI readiness.
+ * Handles multi-select fields (alternate names, occupations, learning modes)
+ * gracefully and outputs clean JSON-LD inside the page <body>.
  */
 
+/* eslint-disable no-undef, no-unused-vars */
+/* global dbStatement, publishCache, section, content, language, isPreview, document, com */
+
+// ============================================================================
+// Import T4 Utilities
+// ============================================================================
 importClass(com.terminalfour.media.IMediaManager);
 importClass(com.terminalfour.spring.ApplicationContextProvider);
 
@@ -74,6 +95,9 @@ try {
         isPreview && document.write("<!-- CIP dictionary load error: " + cipErr + " -->");
     }
 
+    // ==========================================================================
+    // Step 1: Gather field data from the T4 content item
+    // ==========================================================================
     var list = {};
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
     list["programID"] = processTags('<t4 type="meta" meta="content_id" />');
@@ -95,7 +119,9 @@ try {
     list["keywordTags"] = processTags('<t4 type="content" name="Hidden Seach Terms" output="normal" modifiers="striptags,htmlentities" delimiter="," />');
 
 
-    // Critical field check
+    // ==========================================================================
+    // Step 2: Construct the page URL and identifiers
+    // ==========================================================================
     if (!list["programName"]) {
         isPreview && document.write("<!-- JSON-LD skipped: missing programName -->");
     } else {
@@ -109,7 +135,9 @@ try {
             document.write("<!-- Program not found in CIP dictionary: " + list["programName"] + " -->");
         }
 
-        // Handle Alternate Name (only first in list)
+        // ==========================================================================
+        // Step 3: Handle Alternate Name Field (Only First Value)
+        // ==========================================================================
         var altNames = list["alternateName"]
             .split("|")
             .map(function (n) { return n.trim(); })
@@ -248,7 +276,9 @@ try {
             }
         });
 
-        // Build main JSON-LD object
+        // ==========================================================================
+        // Step 4: Assemble EducationalOccupationalProgram JSON-LD
+        // ==========================================================================
         var jsonLD = {
             "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
@@ -278,7 +308,9 @@ try {
             }
         });
 
-        // Output JSON-LD
+        // ==========================================================================
+        // Step 5: Output JSON-LD to page
+        // ==========================================================================
         document.write(
             '<script type="application/ld+json">' +
             JSON.stringify(jsonLD) +
