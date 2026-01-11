@@ -309,7 +309,7 @@ try {
         });
 
         // ==========================================================================
-        // Step 5: Output JSON-LD to page with pretty printing with 2-space indentation
+        // Step 5: Output JSON-LD to page with pretty printing 2-space indentation
         // ==========================================================================
         document.write(
         '<script type="application/ld+json">' +
