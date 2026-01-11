@@ -1,6 +1,6 @@
 /**
  * @file program-7357-text-json-ld.js
- * @version 2.0.1
+ * @version 2.1.0
  * @fileoverview Generates valid EducationalOccupationalProgram JSON-LD
  *               for Seattle University academic program pages.
  *               Adds alternateName support (first item only if multi-select).
@@ -309,13 +309,14 @@ try {
         });
 
         // ==========================================================================
-        // Step 5: Output JSON-LD to page
+        // Step 5: Output JSON-LD to page with pretty printing with 2-space indentation
         // ==========================================================================
         document.write(
-            '<script type="application/ld+json">' +
-            JSON.stringify(jsonLD) +
-            "</" + "script>"
+        '<script type="application/ld+json">' +
+            JSON.stringify(jsonLD, null, 2) +
+        '</script>'
         );
+
     }
 
 } catch (err) {
