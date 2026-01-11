@@ -77,7 +77,7 @@ try {
     var list = {};
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
     list["programID"] = processTags('<t4 type="meta" meta="content_id" />');
-    list["alternateName"] = processTags('<t4 type="content" name="Alternate Name" output="normal" display_field="value" modifiers="htmlentities" />');
+    list["alternateName"] = processTags('<t4 type="content" name="Alternate Name" output="normal" display_field="value" delimiter="|" />');
     list["school"] = processTags('<t4 type="content" name="School" output="normal" display_field="name" delimiter="|" />');
     list["programDepartment"] = processTags('<t4 type="content" name="Program Department" output="normal" display_field="value" delimiter="|" />');
     list["programType"] = processTags('<t4 type="content" name="Program Type" output="normal" display_field="name" delimiter="|" />');
@@ -108,6 +108,14 @@ try {
         if (!programInfo && isPreview) {
             document.write("<!-- Program not found in CIP dictionary: " + list["programName"] + " -->");
         }
+
+        // Handle Alternate Name (only first in list)
+        var altNames = list["alternateName"]
+            .split("|")
+            .map(function (n) { return n.trim(); })
+            .filter(function (n) { return n !== ""; });
+
+        var firstAltName = altNames.length > 0 ? altNames[0] : null;
 
         // Build identifier array
         var identifierArray = [];
@@ -245,6 +253,7 @@ try {
             "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
             "name": list["programName"],
+            "alternateName": firstAltName,
             "url": programUrl,
             "description": decodeHtmlEntities(list["programSummary"] || list["programDescription"]),
             "educationalCredentialAwarded": decodeHtmlEntities(list["degree"]),
