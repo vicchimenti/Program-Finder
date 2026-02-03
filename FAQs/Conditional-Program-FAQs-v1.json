@@ -1,0 +1,67 @@
+{
+  "programFaqQuestions": [
+    {
+      "id": "program_audience",
+      "question": "Who is this program designed for?",
+      "taxonomy": "Program Basics",
+      "tier": 2,
+      "notes": "Conditional question. Clarifies intended audience when relevant."
+    },
+    {
+      "id": "fully_online",
+      "question": "Is this program offered fully online?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "notes": "High-value conditional question. Must be accurate when used."
+    },
+    {
+      "id": "part_time_option",
+      "question": "Can this program be completed part-time?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "notes": "Applies mainly to graduate and professional programs."
+    },
+    {
+      "id": "professional_licensure",
+      "question": "Does this program prepare students for professional licensure?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "notes": "Use only for licensure-aligned programs. High accuracy required."
+    },
+    {
+      "id": "graduate_study_prep",
+      "question": "Does this program prepare students for graduate or professional study?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "notes": "Clarifies academic or professional pathways beyond completion."
+    },
+    {
+      "id": "admission_prerequisites",
+      "question": "Are there prerequisite courses or experience required for admission?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "notes": "Formal prerequisites or experience expectations."
+    },
+    {
+      "id": "related_background",
+      "question": "Is a background in a related field required to apply?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "notes": "Informal or recommended background expectations."
+    },
+    {
+      "id": "experiential_learning",
+      "question": "Does this program include experiential learning opportunities?",
+      "taxonomy": "Distinctives",
+      "tier": 2,
+      "notes": "Includes internships, practicums, fieldwork, or applied projects."
+    },
+    {
+      "id": "jesuit_values",
+      "question": "How does this program integrate Jesuit values or social justice?",
+      "taxonomy": "Distinctives",
+      "tier": 2,
+      "notes": "Mission-aligned distinctives. Avoid boilerplate answers."
+    }
+  ]
+}
