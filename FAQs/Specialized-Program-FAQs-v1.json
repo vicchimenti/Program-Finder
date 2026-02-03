@@ -1,0 +1,74 @@
+{
+  "programFaqQuestions": [
+    {
+      "id": "program_type_classification",
+      "question": "Is this program considered a professional, academic, or interdisciplinary program?",
+      "taxonomy": "Program Basics",
+      "tier": 3,
+      "notes": "Structural classification. High impact if misunderstood."
+    },
+    {
+      "id": "career_changer_experience",
+      "question": "Is this program intended for career changers or for students with prior experience in the field?",
+      "taxonomy": "Program Basics",
+      "tier": 3,
+      "notes": "Clarifies expected background when experience level matters."
+    },
+    {
+      "id": "accelerated_cohort_format",
+      "question": "Is this program offered in an accelerated or cohort-based format?",
+      "taxonomy": "Format & Delivery",
+      "tier": 3,
+      "notes": "Non-standard pacing or cohort structure."
+    },
+    {
+      "id": "required_on_campus_attendance",
+      "question": "Does this program require on-campus attendance even if coursework is delivered online?",
+      "taxonomy": "Format & Delivery",
+      "tier": 3,
+      "notes": "Critical for hybrid or low-residency programs."
+    },
+    {
+      "id": "state_specific_licensure",
+      "question": "Does this program meet state-specific licensure requirements?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 3,
+      "notes": "Regulatory and jurisdiction-dependent. High accuracy required."
+    },
+    {
+      "id": "jurisdictional_limitations",
+      "question": "Are there geographic or jurisdictional limitations on professional outcomes for this program?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 3,
+      "notes": "Covers licensure and non-licensure geographic constraints."
+    },
+    {
+      "id": "additional_application_materials",
+      "question": "Does this program require additional application materials beyond the standard application?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 3,
+      "notes": "Portfolios, auditions, interviews, or background checks."
+    },
+    {
+      "id": "separate_application_process",
+      "question": "Does this program have a separate or program-specific application process?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 3,
+      "notes": "Alternate workflows or systems beyond standard admissions."
+    },
+    {
+      "id": "specialized_accreditation",
+      "question": "Is this program subject to specialized accreditation or external oversight?",
+      "taxonomy": "Distinctives",
+      "tier": 3,
+      "notes": "External accreditation or regulatory governance."
+    },
+    {
+      "id": "required_fieldwork",
+      "question": "Does this program include required field placements, clinical hours, or supervised practice?",
+      "taxonomy": "Distinctives",
+      "tier": 3,
+      "notes": "Mandatory experiential requirements affecting time and location."
+    }
+  ]
+}
