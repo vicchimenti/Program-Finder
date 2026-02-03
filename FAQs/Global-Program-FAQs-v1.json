@@ -1,0 +1,39 @@
+{
+  "programFaqQuestions": [
+    {
+      "id": "program_focus",
+      "question": "What is the focus of this program?",
+      "taxonomy": "Program Basics",
+      "tier": 1,
+      "notes": "Core Tier 1 question. Applies to nearly all programs and anchors the FAQ set."
+    },
+    {
+      "id": "program_delivery",
+      "question": "How is this program delivered?",
+      "taxonomy": "Format & Delivery",
+      "tier": 1,
+      "notes": "High-level delivery question. Avoids over-specifying modality or schedule."
+    },
+    {
+      "id": "career_outcomes",
+      "question": "What careers does this program prepare students for?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 1,
+      "notes": "Career-oriented but non-guaranteeing. Validated later against CIP/SOC mappings."
+    },
+    {
+      "id": "eligibility_requirements",
+      "question": "Who is eligible to apply to this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 1,
+      "notes": "Eligibility-focused phrasing that reduces applicant anxiety without policy detail."
+    },
+    {
+      "id": "program_distinctives",
+      "question": "What makes this program distinct?",
+      "taxonomy": "Distinctives",
+      "tier": 1,
+      "notes": "Allows differentiation without marketing claims or institutional over-branding."
+    }
+  ]
+}
