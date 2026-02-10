@@ -1,0 +1,142 @@
+{
+  "programFaqQuestions_added_today": [
+    {
+      "id": "program_learning",
+      "question": "What will students learn in this program?",
+      "taxonomy": "Program Basics",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_field_fit",
+      "question": "How does this program fit within its academic or professional field?",
+      "taxonomy": "Program Basics",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_time_commitment",
+      "question": "What is the typical time commitment for this program?",
+      "taxonomy": "Format & Delivery",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "skills_competencies",
+      "question": "What skills or competencies do students develop in this program?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "application_process",
+      "question": "What is the application process for this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "outside_classroom_opps",
+      "question": "What opportunities are available to students outside the classroom?",
+      "taxonomy": "Distinctives",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+
+    {
+      "id": "ft_pt_choice",
+      "question": "Can students choose between full-time and part-time enrollment?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "course_sequence_flex",
+      "question": "Does this program follow a fixed sequence of courses or allow flexibility in course order?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "required_in_person",
+      "question": "Does this program include required in-person components?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+
+    {
+      "id": "min_academic_reqs",
+      "question": "Are there minimum academic requirements for admission to this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "additional_admissions_steps",
+      "question": "Are there additional steps in the admissions process for this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "program_deadlines",
+      "question": "Are there application deadlines specific to this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+
+    {
+      "id": "roles_industries",
+      "question": "What types of roles or industries do graduates commonly pursue?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "entry_vs_advanced_roles",
+      "question": "How does this program prepare students for entry-level or advanced roles in the field?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "portfolio_work",
+      "question": "Does this program provide opportunities to build a professional portfolio or body of work?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "career_support",
+      "question": "Does this program include career preparation or professional development support?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+
+    {
+      "id": "program_comparison",
+      "question": "How does this program differ from similar programs in the field?",
+      "taxonomy": "Program Basics",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "program_flex_life",
+      "question": "How flexible is this program for students with work or other commitments?",
+      "taxonomy": "Program Basics",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+
+    {
+      "id": "interdisciplinary_collab",
+      "question": "Does this program offer opportunities for interdisciplinary study or collaboration?",
+      "taxonomy": "Distinctives",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    }
+  ]
+}
