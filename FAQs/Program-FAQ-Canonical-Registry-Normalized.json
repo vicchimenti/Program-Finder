@@ -1,0 +1,351 @@
+{
+  "programFaqQuestions": [
+    {
+      "id": "program_focus",
+      "notes": "Core Tier 1 anchor question. Applies safely to most programs.",
+      "question": "What is the focus of this program?",
+      "taxonomy": "Program Basics",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_delivery",
+      "notes": "High-level delivery overview without modality assumptions.",
+      "question": "How is this program delivered?",
+      "taxonomy": "Format & Delivery",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "career_outcomes",
+      "notes": "Career-oriented but non-guaranteeing. Validated later against CIP/SOC mappings.",
+      "question": "What careers does this program prepare students for?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "eligibility_requirements",
+      "notes": "Reduces applicant anxiety without admissions-policy detail.",
+      "question": "Who is eligible to apply to this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_distinctives",
+      "notes": "Allows differentiation without marketing claims.",
+      "question": "What makes this program distinct?",
+      "taxonomy": "Distinctives",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_learning",
+      "notes": "High-level learning outcomes and areas of study. Avoid course-by-course detail.",
+      "question": "What will students learn in this program?",
+      "taxonomy": "Program Basics",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_field_fit",
+      "notes": "Positions the program within its academic or professional context.",
+      "question": "How does this program fit within its academic or professional field?",
+      "taxonomy": "Program Basics",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "program_time_commitment",
+      "notes": "Qualitative workload expectations without scheduling specifics.",
+      "question": "What is the typical time commitment for this program?",
+      "taxonomy": "Format & Delivery",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "skills_competencies",
+      "notes": "Describes skills and competencies developed. Avoid outcome guarantees.",
+      "question": "What skills or competencies do students develop in this program?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "application_process",
+      "notes": "High-level overview of application steps without deadlines or requirements.",
+      "question": "What is the application process for this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+    {
+      "id": "outside_classroom_opps",
+      "notes": "Co-curricular, experiential, or enrichment opportunities beyond coursework.",
+      "question": "What opportunities are available to students outside the classroom?",
+      "taxonomy": "Distinctives",
+      "tier": 1,
+      "tierLabel": "Standard Questions (Recommended)"
+    },
+
+    {
+      "id": "program_audience",
+      "notes": "Clarifies intended audience when relevant.",
+      "question": "Who is this program designed for?",
+      "taxonomy": "Program Basics",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "fully_online",
+      "notes": "Use only when modality is clearly defined and stable.",
+      "question": "Is this program offered fully online?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "part_time_option",
+      "notes": "Applies mainly to graduate and professional programs.",
+      "question": "Can this program be completed part-time?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "professional_licensure",
+      "notes": "Use only for licensure-aligned programs. High accuracy required.",
+      "question": "Does this program prepare students for professional licensure?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "graduate_study_prep",
+      "notes": "Clarifies pathways to further academic or professional study.",
+      "question": "Does this program prepare students for graduate or professional study?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "admission_prerequisites",
+      "notes": "Formal prerequisites or experience expectations.",
+      "question": "Are there prerequisite courses or experience required for admission?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "related_background",
+      "notes": "Informal or recommended background expectations.",
+      "question": "Is a background in a related field required to apply?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "experiential_learning",
+      "notes": "Internships, practicums, fieldwork, or applied projects.",
+      "question": "Does this program include experiential learning opportunities?",
+      "taxonomy": "Distinctives",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "jesuit_values",
+      "notes": "Mission-aligned distinctives. Avoid boilerplate answers.",
+      "question": "How does this program integrate Jesuit values or social justice?",
+      "taxonomy": "Distinctives",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+
+    {
+      "id": "ft_pt_choice",
+      "notes": "Clarifies enrollment flexibility when both options exist.",
+      "question": "Can students choose between full-time and part-time enrollment?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "course_sequence_flex",
+      "notes": "Describes program structure without listing individual courses.",
+      "question": "Does this program follow a fixed sequence of courses or allow flexibility in course order?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "required_in_person",
+      "notes": "Used for hybrid or low-residency programs requiring physical presence.",
+      "question": "Does this program include required in-person components?",
+      "taxonomy": "Format & Delivery",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "min_academic_reqs",
+      "notes": "Baseline academic readiness without numeric thresholds.",
+      "question": "Are there minimum academic requirements for admission to this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "additional_admissions_steps",
+      "notes": "Interviews, auditions, or program-specific reviews.",
+      "question": "Are there additional steps in the admissions process for this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "program_deadlines",
+      "notes": "Use when program-specific deadlines differ from general admissions.",
+      "question": "Are there application deadlines specific to this program?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "roles_industries",
+      "notes": "Describes common career directions without job guarantees.",
+      "question": "What types of roles or industries do graduates commonly pursue?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "entry_vs_advanced_roles",
+      "notes": "Clarifies whether the program prepares for entry-level or advanced roles.",
+      "question": "How does this program prepare students for entry-level or advanced roles in the field?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "portfolio_work",
+      "notes": "Applied or creative outputs such as portfolios or capstone work.",
+      "question": "Does this program provide opportunities to build a professional portfolio or body of work?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "career_support",
+      "notes": "Program-level career preparation distinct from general career services.",
+      "question": "Does this program include career preparation or professional development support?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "program_comparison",
+      "notes": "Used to describe positioning relative to similar programs.",
+      "question": "How does this program differ from similar programs in the field?",
+      "taxonomy": "Program Basics",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "program_flex_life",
+      "notes": "Addresses compatibility with work or other commitments.",
+      "question": "How flexible is this program for students with work or other commitments?",
+      "taxonomy": "Program Basics",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+    {
+      "id": "interdisciplinary_collab",
+      "notes": "Cross-disciplinary coursework or collaborative opportunities.",
+      "question": "Does this program offer opportunities for interdisciplinary study or collaboration?",
+      "taxonomy": "Distinctives",
+      "tier": 2,
+      "tierLabel": "Conditional Questions (Use When Applicable)"
+    },
+
+    {
+      "id": "program_type_classification",
+      "notes": "Structural classification. High impact if misunderstood.",
+      "question": "Is this program considered a professional, academic, or interdisciplinary program?",
+      "taxonomy": "Program Basics",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "career_changer_experience",
+      "notes": "Clarifies expected experience level when it materially affects applicants.",
+      "question": "Is this program intended for career changers or for students with prior experience in the field?",
+      "taxonomy": "Program Basics",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "accelerated_cohort_format",
+      "notes": "Non-standard pacing or cohort structure.",
+      "question": "Is this program offered in an accelerated or cohort-based format?",
+      "taxonomy": "Format & Delivery",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "required_on_campus_attendance",
+      "notes": "Critical for hybrid or low-residency programs.",
+      "question": "Does this program require on-campus attendance even if coursework is delivered online?",
+      "taxonomy": "Format & Delivery",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "state_specific_licensure",
+      "notes": "Regulatory and jurisdiction-dependent. High accuracy required.",
+      "question": "Does this program meet state-specific licensure requirements?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "jurisdictional_limitations",
+      "notes": "Covers licensure and non-licensure geographic constraints.",
+      "question": "Are there geographic or jurisdictional limitations on professional outcomes for this program?",
+      "taxonomy": "Outcomes & Careers",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "additional_application_materials",
+      "notes": "Portfolios, auditions, interviews, or background checks.",
+      "question": "Does this program require additional application materials beyond the standard application?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "separate_application_process",
+      "notes": "Alternate workflows or systems beyond standard admissions.",
+      "question": "Does this program have a separate or program-specific application process?",
+      "taxonomy": "Admissions & Prerequisites",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "specialized_accreditation",
+      "notes": "External accreditation or regulatory governance.",
+      "question": "Is this program subject to specialized accreditation or external oversight?",
+      "taxonomy": "Distinctives",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    },
+    {
+      "id": "required_fieldwork",
+      "notes": "Mandatory experiential requirements affecting time and location.",
+      "question": "Does this program include required field placements, clinical hours, or supervised practice?",
+      "taxonomy": "Distinctives",
+      "tier": 3,
+      "tierLabel": "Specialized Questions (Approval Required)"
+    }
+  ]
+}
