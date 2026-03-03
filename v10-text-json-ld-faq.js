@@ -1,6 +1,6 @@
 /**
- * @file v10-text-json-ld-faq.js
- * @version 1.0.0
+ * @file v10-text-json-ld-program-faq.js
+ * @version 1.0.1
  * @created 2026-03-03
  * @modified 2026-03-03
  * @fileoverview Generates valid FAQPage JSON-LD for Seattle University
@@ -188,7 +188,7 @@ try {
         };
 
         document.write(
-            '<script type="application/ld+json" id="faq-jsonld">' +
+            '<script type="application/ld+json" id="program-faq-jsonld">' +
                 JSON.stringify(jsonLD, null, 2) +
             '</script>'
         );
