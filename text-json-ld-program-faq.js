@@ -1,6 +1,6 @@
 /**
  * @file text-json-ld-program-faq.js
- * @version 1.1.2
+ * @version 1.1.3
  * @created 2026-03-03
  * @modified 2026-03-03
  * @fileoverview Generates valid FAQPage JSON-LD for Seattle University
