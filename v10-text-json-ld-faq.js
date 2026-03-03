@@ -1,6 +1,8 @@
 /**
- * @file v10-text-json-ld.js
- * @version 0.0.0
+ * @file v10-text-json-ld-faq.js
+ * @version 1.0.0
+ * @created 2026-03-03
+ * @modified 2026-03-03
  * @fileoverview Generates valid FAQPage JSON-LD for Seattle University
  *               academic program FAQ components. Outputs a separate
  *               structured data block in the page body alongside the
@@ -13,13 +15,13 @@
  *               least one complete pair exists.
  *
  * @author
- * Victor Chimenti  |  Seattle University MarCom Web Team
+ * Victor Chimenti  |  Seattle University WebOps
  *
  * @copyright
- * © 2025 Seattle University. All rights reserved.
+ * © 2026 Seattle University. All rights reserved.
  *
  * @requires com.terminalfour.publish.utils.BrokerUtils
- * @requires Content Layout v10 – "Program FAQ JSON-LD"
+ * @requires Content Layout v10/text/html.handlebars – "Program FAQ"
  *
  * @description
  * Five taxonomy categories are supported, each with a question (list
@@ -186,7 +188,7 @@ try {
         };
 
         document.write(
-            '<script type="application/ld+json">' +
+            '<script type="application/ld+json" id="faq-jsonld">' +
                 JSON.stringify(jsonLD, null, 2) +
             '</script>'
         );
