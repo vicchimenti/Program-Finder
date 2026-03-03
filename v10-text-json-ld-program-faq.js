@@ -1,6 +1,6 @@
 /**
- * @file v10-text-json-ld-program-faq.js
- * @version 1.1.1
+ * @file text-json-ld-program-faq.js
+ * @version 1.1.2
  * @created 2026-03-03
  * @modified 2026-03-03
  * @fileoverview Generates valid FAQPage JSON-LD for Seattle University
@@ -21,7 +21,9 @@
  * © 2026 Seattle University. All rights reserved.
  *
  * @requires com.terminalfour.publish.utils.BrokerUtils
- * @requires Content Layout v10/text/html.handlebars – "Program FAQ"
+ * @requires Content Layout v10/text/html.handlebars
+ * @requires Content Layout text/json-ld/program-faq
+ * @requires Components T4 Content Type Program-FAQ ID:8084
  *
  * @description
  * Five taxonomy categories are supported, each with a question (list
