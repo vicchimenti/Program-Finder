@@ -1,38 +1,23 @@
 /**
  * @file program-7357-text-json-ld.js
- * @version 2.2.0
- * @created 2025-10-07
- * @modified 2026-03-25
+ * @version 2.1.0
  * @fileoverview Generates valid EducationalOccupationalProgram JSON-LD
  *               for Seattle University academic program pages.
  *               Adds alternateName support (first item only if multi-select).
  *               Includes preview-only diagnostics and robust data sanitation.
- *
- *               v2.2.0 adds ROR, ISNI, and Wikidata identifiers to the
- *               provider entity for enhanced entity resolution in Google
- *               Knowledge Graph and AI Overviews.
- *
  * @author
- * Victor Chimenti  |  Seattle University WebOps
- *
+ * Victor Chimenti  |  Seattle University MarCom Web Team
  * @copyright
- * © 2026 Seattle University. All rights reserved.
+ * © 2025 Seattle University. All rights reserved.
  *
  * @requires com.terminalfour.publish.utils.BrokerUtils
- * @requires com.terminalfour.media.IMediaManager
- * @requires com.terminalfour.spring.ApplicationContextProvider
  * @requires Content Layout 7357 – "Program Overview JSON-LD"
- * @t4layout text/json-ld
  *
  * @description
  * Pulls program data fields from T4 content metadata and constructs a
  * Schema.org EducationalOccupationalProgram object for SEO and AI readiness.
  * Handles multi-select fields (alternate names, occupations, learning modes)
  * gracefully and outputs clean JSON-LD inside the page <body>.
- *
- * Provider entity includes four institutional identifiers (IPEDS, OPE, ROR,
- * ISNI) and eight sameAs links (social profiles, Wikipedia, Wikidata, ROR,
- * ISNI) for comprehensive entity resolution.
  */
 
 /* eslint-disable no-undef, no-unused-vars */
@@ -46,16 +31,6 @@ importClass(com.terminalfour.spring.ApplicationContextProvider);
 
 try {
 
-    // ========================================================================
-    // T4 Utilities
-    // ========================================================================
-
-    /**
-     * Processes a T4 tag string and returns the resolved value.
-     *
-     * @param {string} t4Tag - The T4 tag markup to evaluate.
-     * @returns {string} The resolved tag value from the content item.
-     */
     function processTags(t4Tag) {
         myContent = content || null;
         return String(
@@ -71,14 +46,6 @@ try {
         );
     }
 
-    /**
-     * Decodes common HTML entities returned by T4 tag processing.
-     * Handles smart quotes, dashes, ampersands, non-breaking spaces,
-     * and ellipses.
-     *
-     * @param {string} str - The string containing HTML entities.
-     * @returns {string} The decoded string, or the original if falsy.
-     */
     function decodeHtmlEntities(str) {
         if (!str) return str;
         return str
@@ -93,25 +60,12 @@ try {
             .replace(/&hellip;/g, "…");
     }
 
-    /**
-     * Retrieves a media object from the T4 MediaManager by ID.
-     *
-     * @param {number} mediaID - The T4 media library ID.
-     * @returns {object} The media object.
-     */
     function getMediaInfo(mediaID) {
         let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
         let media = mediaManager.get(mediaID, language);
         return media;
     }
 
-    /**
-     * Reads the full text content of a media item from the T4
-     * MediaManager. Used to load JSON dictionary files.
-     *
-     * @param {number} mediaID - The T4 media library ID.
-     * @returns {string} The full text content of the media item.
-     */
     function readMediaText(mediaID) {
         let mediaObj = getMediaInfo(mediaID);
         let oMediaStream = mediaObj.getMedia();
@@ -123,11 +77,7 @@ try {
         return sMedia;
     }
 
-    // ========================================================================
-    // Load MediaManager Dictionaries
-    // ========================================================================
-
-    // Load occupation dictionary (media ID 10011365)
+    // Load occupation dictionary
     var occupationDict = {};
     try {
         var dictJson = readMediaText(10011365);
@@ -136,7 +86,7 @@ try {
         isPreview && document.write("<!-- Occupation dictionary load error: " + dictErr + " -->");
     }
 
-    // Load CIP/URL dictionary (media ID 10014460)
+    // Load CIP/URL dictionary
     var cipDict = {};
     try {
         var cipJson = readMediaText(10014460);
@@ -145,9 +95,9 @@ try {
         isPreview && document.write("<!-- CIP dictionary load error: " + cipErr + " -->");
     }
 
-    // ========================================================================
+    // ==========================================================================
     // Step 1: Gather field data from the T4 content item
-    // ========================================================================
+    // ==========================================================================
     var list = {};
     list["programName"] = processTags('<t4 type="content" name="Program Title" output="normal" display_field="value" delimiter="|" />');
     list["programID"] = processTags('<t4 type="meta" meta="content_id" />');
@@ -169,9 +119,9 @@ try {
     list["keywordTags"] = processTags('<t4 type="content" name="Hidden Seach Terms" output="normal" modifiers="striptags,htmlentities" delimiter="," />');
 
 
-    // ========================================================================
+    // ==========================================================================
     // Step 2: Construct the page URL and identifiers
-    // ========================================================================
+    // ==========================================================================
     if (!list["programName"]) {
         isPreview && document.write("<!-- JSON-LD skipped: missing programName -->");
     } else {
@@ -185,9 +135,9 @@ try {
             document.write("<!-- Program not found in CIP dictionary: " + list["programName"] + " -->");
         }
 
-        // ====================================================================
+        // ==========================================================================
         // Step 3: Handle Alternate Name Field (Only First Value)
-        // ====================================================================
+        // ==========================================================================
         var altNames = list["alternateName"]
             .split("|")
             .map(function (n) { return n.trim(); })
@@ -205,10 +155,6 @@ try {
             });
         }
 
-        // ====================================================================
-        // Step 4: Build provider entity with institutional identifiers
-        // ====================================================================
-
         // College/School URL mapping
         var collegeUrls = {
             "Albers School of Business & Economics": "https://www.seattleu.edu/business/",
@@ -223,14 +169,13 @@ try {
         var collegeName = list["school"];
         var collegeUrl = collegeUrls[collegeName] || "https://www.seattleu.edu/";
 
-        // Build provider with full institutional identity
+        // Build provider with conditional college/department nesting
         var provider = {
             "@type": "CollegeOrUniversity",
             "@id": "https://www.seattleu.edu/#organization",
             "name": "Seattle University",
             "url": "https://www.seattleu.edu/",
             "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
-            "foundingDate": "1891",
             "identifier": [
                 {
                     "@type": "PropertyValue",
@@ -241,16 +186,6 @@ try {
                     "@type": "PropertyValue",
                     "propertyID": "OPE ID",
                     "value": "00379000"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "propertyID": "ROR",
-                    "value": "https://ror.org/02jqc0m91"
-                },
-                {
-                    "@type": "PropertyValue",
-                    "propertyID": "ISNI",
-                    "value": "0000 0000 9949 9403"
                 }
             ],
             "sameAs": [
@@ -258,14 +193,10 @@ try {
                 "https://www.facebook.com/seattleu/",
                 "https://www.instagram.com/seattleu/",
                 "https://www.linkedin.com/school/seattle-university/",
-                "https://en.wikipedia.org/wiki/Seattle_University",
-                "https://www.wikidata.org/wiki/Q615873",
-                "https://ror.org/02jqc0m91",
-                "https://isni.org/isni/0000000099499403"
+                "https://en.wikipedia.org/wiki/Seattle_University"
             ]
         };
 
-        // Conditional college/department nesting
         if (collegeName && list["programDepartment"]) {
             provider["department"] = {
                 "@type": "EducationalOrganization",
@@ -288,10 +219,6 @@ try {
                 "name": list["programDepartment"]
             };
         }
-
-        // ====================================================================
-        // Step 5: Build occupationalCategory with classification codes
-        // ====================================================================
 
         // Process occupationalCategory: split, trim, filter empties
         var categories = list["occupationalCategory"]
@@ -349,9 +276,9 @@ try {
             }
         });
 
-        // ====================================================================
-        // Step 6: Assemble EducationalOccupationalProgram JSON-LD
-        // ====================================================================
+        // ==========================================================================
+        // Step 4: Assemble EducationalOccupationalProgram JSON-LD
+        // ==========================================================================
         var jsonLD = {
             "@context": "https://schema.org",
             "@type": "EducationalOccupationalProgram",
@@ -381,13 +308,13 @@ try {
             }
         });
 
-        // ====================================================================
-        // Step 7: Output JSON-LD to page
-        // ====================================================================
+        // ==========================================================================
+        // Step 5: Output JSON-LD to page with pretty printing 2-space indentation
+        // ==========================================================================
         document.write(
-            '<script type="application/ld+json" id="program-jsonld">' +
-                JSON.stringify(jsonLD, null, 2) +
-            '</script>'
+        '<script type="application/ld+json">' +
+            JSON.stringify(jsonLD, null, 2) +
+        '</script>'
         );
 
     }
