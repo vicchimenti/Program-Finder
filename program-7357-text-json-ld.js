@@ -1,6 +1,6 @@
 /**
  * @file program-7357-text-json-ld.js
- * @version 2.2.0
+ * @version 2.2.1
  * @created 2025-10-07
  * @modified 2026-03-25
  * @fileoverview Generates valid EducationalOccupationalProgram JSON-LD
