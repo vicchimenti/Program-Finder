@@ -7,6 +7,7 @@
       "name": "Seattle University",
       "url": "https://www.seattleu.edu/",
       "logo": "https://www.seattleu.edu/media/seattle-university/site-assets/branding/seattleu-logo-300x300.png",
+      "foundingDate": "1891",
       "identifier": [
         {
           "@type": "PropertyValue",
@@ -17,6 +18,16 @@
           "@type": "PropertyValue",
           "propertyID": "OPE ID",
           "value": "00379000"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ROR",
+          "value": "https://ror.org/02jqc0m91"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ISNI",
+          "value": "0000 0000 9949 9403"
         }
       ],
       "sameAs": [
@@ -24,7 +35,10 @@
         "https://www.facebook.com/seattleu/",
         "https://www.instagram.com/seattleu/",
         "https://www.linkedin.com/school/seattle-university/",
-        "https://en.wikipedia.org/wiki/Seattle_University"
+        "https://en.wikipedia.org/wiki/Seattle_University",
+        "https://www.wikidata.org/wiki/Q615873",
+        "https://ror.org/02jqc0m91",
+        "https://isni.org/isni/0000000099499403"
       ]
     },
     {
@@ -35,7 +49,7 @@
       "about": {
         "@id": "https://www.seattleu.edu/#organization"
       },
-      "dateModified": "2025-12-24T22:09:29-08:00",
+      "dateModified": "2026-03-25T14:26:29-07:00",
       "numberOfItems": 156,
       "itemListElement": [
         {
