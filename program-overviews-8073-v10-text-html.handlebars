@@ -177,13 +177,15 @@
                             {{publish element="Credits"}}
                         </dd>
                         {{#and (ifSet element="Graduate Program Cost") (ifSet element="Graduate Program Fees")~}}
-                        <dt>Graduate Program Cost</dt>
-                        <dd>{{publish element="Graduate Program Cost"}}</dd>
-
+                        <dt>Estimated Program Cost</dt>
+                        <dd>
+                            {{publish element="Graduate Program Cost"}}
+                            <i class="fa-solid fa-plus fa-xs" aria-hidden="true"></i>
+                        </dd>
                         <dt class="sr-only">Graduate tuition and fees information</dt>
                         <dd>
                             <a href="{{#link element=" Graduate Program Fees"}}{{linkUrl}}{{/link}}">
-                                Graduate Program Fees
+                                Fees
                             </a>
                         </dd>
                         {{~else~}}
