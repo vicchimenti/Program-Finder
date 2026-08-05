@@ -177,7 +177,12 @@
                             {{publish element="Credits"}}
                         </dd>
                         {{#and (ifSet element="Graduate Program Cost") (ifSet element="Graduate Program Fees")~}}
-                        <dt>Estimated Program Cost</dt>
+                        <dt>
+                            Estimated Program Cost
+                            <sup aria-hidden="true">
+                                <i class="fa-solid fa-asterisk fa-2xs"></i>
+                            </sup>
+                        </dt>
                         <dd>
                             {{publish element="Graduate Program Cost"}}
                             <i class="fa-solid fa-plus fa-xs" aria-hidden="true"></i>
@@ -200,7 +205,7 @@
                         {{~/and}}
                     </dl>
                 </aside>
-                <div class="wysiwyg global-spacing--3x">
+                <div class="wysiwyg disclaimer-note">
                     {{{publish element="Disclaimer"}}}
                 </div>
             </div>
