@@ -1,0 +1,17 @@
+.disclaimer-note {
+    margin-top: 1rem;
+}
+
+.disclaimer-note p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.disclaimer-note p:first-child::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\2a";
+    font-size: 0.8em;
+    vertical-align: super;
+    margin-right: 0.2rem;
+}
