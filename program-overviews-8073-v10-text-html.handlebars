@@ -176,36 +176,20 @@
                         <dd>
                             {{publish element="Credits"}}
                         </dd>
-                        {{#and (ifSet element="Graduate Program Cost") (ifSet element="Graduate Program Fees")~}}
+                        {{#ifSet element="Disclaimer" ~}}
                         <dt>
-                            Estimated Program Cost
+                            Estimated Total Program Tuition
                             <sup aria-hidden="true">
                                 <i class="fa-solid fa-asterisk fa-2xs"></i>
                             </sup>
                         </dt>
-                        <dd>
-                            {{publish element="Graduate Program Cost"}}
-                            <i class="fa-solid fa-plus fa-xs" aria-hidden="true"></i>
+                        <dd class="wysiwyg disclaimer-note">
+                            {{publish element="Disclaimer"}}
                         </dd>
-                        <dt class="sr-only">Graduate tuition and fees information</dt>
-                        <dd>
-                            <a href="{{#link element=" Graduate Program Fees"}}{{linkUrl}}{{/link}}">
-                                Fees
-                            </a>
-                        </dd>
-                        {{~else~}}
-                        {{#and (ifSet element="Tuition & Fees - Link") (ifSet element="Tuition & Fees - Text")~}}
-                        <dt>Tuition & Fees</dt>
-                        <dd>
-                            <a href="{{#link element=" Tuition & Fees - Link"}}{{linkUrl}}{{/link}}">
-                                {{publish element="Tuition & Fees - Text"}}
-                            </a>
-                        </dd>
-                        {{~/and}}
-                        {{~/and}}
                     </dl>
                 </aside>
                 <div class="wysiwyg disclaimer-note">
+                    <h3 class="h6">Estimated Total Program Tuition</h3>
                     {{{publish element="Disclaimer"}}}
                 </div>
             </div>
