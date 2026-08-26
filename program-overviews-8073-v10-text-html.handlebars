@@ -186,12 +186,15 @@
                         <dd class="wysiwyg disclaimer-note">
                             {{publish element="Disclaimer"}}
                         </dd>
+                        {{~/ifSet}}
                     </dl>
                 </aside>
+                {{#ifSet element="Disclaimer" ~}}
                 <div class="wysiwyg disclaimer-note">
                     <h3 class="h6">Estimated Total Program Tuition</h3>
                     {{{publish element="Disclaimer"}}}
                 </div>
+                {{~/ifSet}}
             </div>
         </div>
     </div>
