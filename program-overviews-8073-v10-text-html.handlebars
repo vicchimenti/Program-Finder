@@ -176,6 +176,11 @@
                         <dd>
                             {{publish element="Credits"}}
                         </dd>
+                        {{#and (ifSet element="Tuition & Fees - Link") (ifSet element="Tuition & Fees - Text")~}}
+                        <dt>Tuition & Fees</dt>
+                        <dd><a href="{{#link element=" Tuition & Fees - Link" }}{{linkUrl}}{{/link}}">{{publish
+                                element="Tuition & Fees - Text"}}</a></dd>
+                        {{~/and}}
                     </dl>
                 </aside>
                 {{#ifSet element="Disclaimer" ~}}
