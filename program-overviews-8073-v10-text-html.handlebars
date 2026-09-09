@@ -183,24 +183,25 @@
                         {{~/and}}
                         {{#ifSet element="Graduate Program Cost" ~}}
                         <dt>
-                            Estimated Program Cost
+                            Estimated Total Program Tuition
                             <sup aria-hidden="true">
                                 <i class="fa-solid fa-asterisk fa-2xs"></i>
                             </sup>
                         </dt>
                         <dd>
                             {{publish element="Graduate Program Cost"}}
-                            <i class="fa-solid fa-plus fa-xs" aria-hidden="true"></i> Fees
+                        </dd>
+                        {{~/ifSet}}
+                        {{#ifSet element="Disclaimer" ~}}
+                        <dt class="sr-only">
+                            Estimated Total Program Tuition Notice
+                        </dt>
+                        <dd class="disclaimer-note">
+                            {{{publish element="Disclaimer"}}}
                         </dd>
                         {{~/ifSet}}
                     </dl>
                 </aside>
-                {{#ifSet element="Disclaimer" ~}}
-                <div class="wysiwyg disclaimer-note">
-                    <h3 class="h6">Estimated Total Program Tuition</h3>
-                    {{{publish element="Disclaimer"}}}
-                </div>
-                {{~/ifSet}}
             </div>
         </div>
     </div>
